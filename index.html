@@ -43,15 +43,17 @@
   --c-intl:var(--gold-3);
   --c-league:var(--blue-2);
   --c-event:#A27BE0;
+  --c-champ:#5FD38D;
   --c-patch:var(--grey-1);
   --s1:#5E95E0;   /* Demacia */
   --s2:var(--red);/* Pandemonium */
   --s3:#D98C4A;   /* Classic */
   --ok:var(--blue-2);
 
-  --font-display:"Cinzel","Beaufort for LOL","Trajan Pro",Georgia,serif;
-  --font-body:"Barlow","Spiegel","Segoe UI",system-ui,sans-serif;
-  --font-cond:"Barlow Condensed","Arial Narrow",sans-serif;
+  --cjk:"Noto Sans KR","Noto Sans SC","Apple SD Gothic Neo","Malgun Gothic","PingFang SC","Microsoft YaHei";
+  --font-display:"Cinzel","Beaufort for LOL","Trajan Pro",Georgia,var(--cjk),serif;
+  --font-body:"Barlow","Spiegel","Segoe UI",system-ui,var(--cjk),sans-serif;
+  --font-cond:"Barlow Condensed","Arial Narrow",var(--cjk),sans-serif;
   --label-w:178px;
   --row:28px;
   --bar:22px;
@@ -69,7 +71,7 @@ button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--blue-2);outline-offset:2px}
 a{color:var(--gold-2)}
 a:hover{color:var(--gold-1)}
-.wrap{max-width:1440px;margin:0 auto;padding:28px clamp(16px,3vw,40px) 48px;display:grid;grid-template-columns:minmax(0,1fr);gap:22px}
+.wrap{position:relative;max-width:1440px;margin:0 auto;padding:28px clamp(16px,3vw,40px) 48px;display:grid;grid-template-columns:minmax(0,1fr);gap:22px}
 .wrap>*{min-width:0}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
@@ -80,14 +82,19 @@ a:hover{color:var(--gold-1)}
 .btn:disabled{opacity:.4;cursor:not-allowed}
 
 /* En-tête */
-header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;padding-top:18px}
 .brand h1{font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:.06em;margin:0;line-height:1;text-wrap:balance;
   background:linear-gradient(180deg,var(--gold-1) 20%,var(--gold-2) 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .brand p{margin:8px 0 0;color:var(--muted)}
 .ctrls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.langs,.years{display:flex;gap:6px;align-items:center}
-.langs{padding-right:10px;border-right:1px solid var(--gold-5)}
-.langs .btn,.years .btn{font-variant-numeric:tabular-nums}
+.years{display:flex;gap:6px;align-items:center}
+.years .btn{font-variant-numeric:tabular-nums}
+/* Sélecteur de langue : discret, en haut à droite */
+.lang-pick{position:absolute;top:10px;right:clamp(16px,3vw,40px);display:flex;align-items:center;gap:6px;z-index:10}
+.lang-pick select{appearance:none;-webkit-appearance:none;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23785A28'/%3E%3C/svg%3E") no-repeat right 8px center;
+  border:1px solid var(--gold-5);border-radius:2px;color:var(--grey-1);font:500 12px/1.2 var(--font-body);padding:5px 24px 5px 8px;cursor:pointer;max-width:150px}
+.lang-pick select:hover,.lang-pick select:focus-visible{border-color:var(--gold-4);color:var(--gold-1)}
+.lang-pick select option{background:var(--blue-7);color:var(--gold-1)}
 .rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold-4) 15%,var(--gold-3) 50%,var(--gold-4) 85%,transparent);position:relative}
 .rule::after{content:"";position:absolute;left:50%;top:-5px;width:9px;height:9px;background:var(--bg);border:1px solid var(--gold-3);transform:translateX(-50%) rotate(45deg)}
 
@@ -168,6 +175,9 @@ button.tile:hover{border-color:var(--gold-4)}
 .detail dt{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-3);font-weight:600}
 .detail dd{margin:2px 0 0;color:var(--ink)}
 .detail .res{font-weight:700;color:var(--gold-1)}
+.detail ul.links{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:6px}
+.detail ul.links a{display:inline-flex;gap:4px;align-items:baseline;color:var(--blue-2);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--blue-2) 35%,transparent);padding-bottom:1px}
+.detail ul.links a:hover{color:var(--blue-1);border-bottom-color:var(--blue-1)}
 .detail .close{display:none;position:absolute;top:8px;right:8px;width:40px;height:40px;align-items:center;justify-content:center;border:1px solid var(--gold-4);background:var(--blue-6);color:var(--gold-1);font-size:22px;line-height:1;cursor:pointer;border-radius:2px}
 .detail .grab{display:none}
 .scrim{display:none}
@@ -221,7 +231,8 @@ footer p{margin:0;max-width:75ch}
   .wrap{padding:18px 14px 40px;gap:16px}
   header{align-items:flex-start}
   .brand p{font-size:14px}
-  .ctrls{width:100%;justify-content:space-between}
+  .ctrls{width:100%}
+  .lang-pick{top:8px;right:14px}
   /* cartes « en ce moment » : carrousel horizontal */
   .now{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin:0 -14px;padding:0 14px 4px;scrollbar-width:none}
   .now::-webkit-scrollbar{display:none}
@@ -257,13 +268,16 @@ footer p{margin:0;max-width:75ch}
 </head>
 <body>
 <div class="wrap">
+  <div class="lang-pick">
+    <label class="sr" for="langSel" id="langSelLabel">Langue</label>
+    <select id="langSel"></select>
+  </div>
   <header>
     <div class="brand">
       <h1 data-i18n="title"></h1>
       <p data-i18n="tagline"></p>
     </div>
     <div class="ctrls">
-      <nav class="langs" id="langs" data-i18n-aria="langNav"></nav>
       <nav class="years" id="years" data-i18n-aria="yearNav"></nav>
     </div>
   </header>
@@ -295,6 +309,14 @@ footer p{margin:0;max-width:75ch}
 <script src="data/2026.js"></script>
 <script src="lang/fr.js"></script>
 <script src="lang/en.js"></script>
+<script src="lang/es.js"></script>
+<script src="lang/pt.js"></script>
+<script src="lang/de.js"></script>
+<script src="lang/pl.js"></script>
+<script src="lang/tr.js"></script>
+<script src="lang/ko.js"></script>
+<script src="lang/zh.js"></script>
+<script src="lang/vi.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

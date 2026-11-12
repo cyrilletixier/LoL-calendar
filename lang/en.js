@@ -1,7 +1,7 @@
 /* English texts. Any key missing here falls back to lang/fr.js. */
 window.LOL_I18N = window.LOL_I18N || {};
 window.LOL_I18N.en = {
-  meta: { code: "en", label: "EN", name: "English", htmlLang: "en" },
+  meta: { code: "en", label: "EN", name: "English", htmlLang: "en", le: "en-US", lol: "en-us", sup: "en-us" },
 
   months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
   monthsLong: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
@@ -57,18 +57,30 @@ window.LOL_I18N.en = {
     leagueKind: function (l) { return "Regional league · " + l; },
     status: { done: "Finished", live: "Ongoing", next: "Upcoming", planned: "Announced", postponed: "Postponed" },
     close: "Close details",
+    links: "Official links",
     swipeHint: "Swipe the timeline to change months and tap a bar to open its details. Dashed outline: approximate dates."
   },
 
   kinds: {
-    season: "Season", act: "Act", patch: "Patch", event: "In-game event",
+    season: "Season", act: "Act", patch: "Patch", champ: "Champion", event: "In-game event",
     intl: "International competition", league: "Regional league"
   },
-  tags: { season: "Game", act: "Game", patch: "Patch", event: "Event", intl: "Competition" },
+  tags: { season: "Game", act: "Game", patch: "Patch", champ: "Champion", event: "Event", intl: "Competition" },
+
+  linkLabels: {
+    handbook: "Official LoL Esports handbook",
+    news: "Official LoL Esports announcement",
+    results: "Results on LoL Esports",
+    patch: function (p) { return "Patch " + p + " notes"; },
+    riot: "Event page (Riot Games)",
+    ewc: "Esports World Cup (official site)",
+    lpl: "Official LPL website"
+  },
 
   lanes: {
     season: { label: "Seasons & acts", short: "Seasons" },
     patch:  { label: "Patches", short: "Patches" },
+    champ:  { label: "Champions", short: "Champs" },
     event:  { label: "In-game events", short: "Events" },
     intl:   { label: "International", short: "Intl", sub: "First Stand, MSI, Worlds…" },
     LEC:    { label: "LEC", sub: "Europe" },
@@ -88,8 +100,7 @@ window.LOL_I18N.en = {
     ["LoL Esports: Caps joins the Hall of Legends", "https://lolesports.com/en-US/news/caps-becomes-first-western-pro-for-hall-of-legends"],
     ["lolnow.gg: 2026 regional league calendar", "https://lolnow.gg/lol-tournament-calendar/"],
     ["Inven Global: Gen.G win the 2026 LCK", "https://www.invenglobal.com/articles/25926/geng-defeats-hanwha-life-esports-to-win-back-to-back-lck-titles"],
-    ["Esports World Cup: Dplus KIA win LoL at EWC 26", "https://esportsworldcup.com/en/press-releases/dplus-kia-win-lol-at-ewc26"],
-    ["Sheep Esports: Nations Cup postponed to November 2027", "https://www.sheepesports.com/articles/esports-nations-cup-postponed-to-november-2027/en"]
+    ["Esports World Cup: Dplus KIA win LoL at EWC 26", "https://esportsworldcup.com/en/press-releases/dplus-kia-win-lol-at-ewc26"]
   ],
 
   items: {
@@ -101,7 +112,7 @@ window.LOL_I18N.en = {
       "s2":   { t: "Season 2: Pandemonium", s: "Season 2 · Pandemonium", name: "Pandemonium",
                 notes: "Demon season centred on Vayne on the outskirts of Demacia. Shortened to 6 patches. Arena takes the spotlight with a new map, reworked role quests, pass with “Fiendish” mystery orbs." },
       "s2a1": { t: "Season 2 · Act 1", s: "Act 1", notes: "Pandemonium skins (Annie, Kindred)." },
-      "s2a2": { t: "Season 2 · Act 2", s: "Act 2", notes: "New champion: Roke, an assassin. Sinful Shores skins (Prestige LeBlanc, Brand, Hwei)." },
+      "s2a2": { t: "Season 2 · Act 2", s: "Act 2", notes: "Locke, the only new champion of the year, releases (patch 26.13). Sinful Shores skins (Prestige LeBlanc, Brand, Hwei)." },
       "s3":   { t: "Season 3: Classic", s: "Season 3 · Classic", name: "Classic",
                 notes: "Nostalgia theme: a look back at League's early days and the launch of the permanent League Classic mode. Season ends January 5, 2027." },
       "s3a1": { t: "Season 3 · Act 1", s: "Act 1", notes: "League Classic, ARAM: Mayhem Classic-ish, Bel'Veth update, duo queue back in Master; Aegis of Valor now only applies to wins." },
@@ -111,9 +122,11 @@ window.LOL_I18N.en = {
       "p02": { notes: "Lunar Revel: Firecracker returns, first wave of Petals of Spring; Battle Academia skins (Briar, Samira)." },
       "p04": { notes: "Second wave of Petals of Spring (Camille, Jayce, Katarina, Lillia, Yasuo) and Winter Sports skins return." },
       "p05": { notes: "Act 2 begins, Brawl returns." },
+      "p06": { notes: "Shyvana rework, Warhound skins." },
       "p07": { notes: "April Fools' skins." },
       "p09": { notes: "Season 2 “Pandemonium” begins." },
-      "p12": { notes: "Act 2: Roke releases, Sinful Shores skins." },
+      "p12": { notes: "Act 2 begins, Sinful Shores skins." },
+      "p13": { notes: "Locke, a new champion, releases." },
       "p14": { notes: "2025 World Champions skins (T1)." },
       "p15": { notes: "Season 3 “Classic” begins, League Classic launches, Bel'Veth update." },
       "p17": { notes: "Heartsong Seraphine, Ocean Song Soraka and Jinx skins." },
@@ -121,6 +134,13 @@ window.LOL_I18N.en = {
       "p20": { notes: "Act 2 “Worlds 2026”, the patch played at Worlds, HEARTSTEEL skins." },
       "p23": { notes: "Winter Summoner's Rift announced to return." },
       "p24": { notes: "Last patch of 2026." },
+
+      "c-shyvana": { t: "Shyvana rework", s: "Shyvana (rework)",
+                     notes: "Full visual and gameplay update, her first in 15 years: new model, effects, voice and a kit rebuilt around her dragon form." },
+      "c-locke":   { t: "Locke, the Ashen Exorcist, releases", s: "Locke",
+                     notes: "The 173rd champion and the only new one in 2026: an AP mid-lane assassin and demon hunter, revealed with the animated short “Back from the Brink”." },
+      "c-belveth": { t: "Bel'Veth update", s: "Bel'Veth (update)",
+                     notes: "Gameplay update that leans into her evolution fantasy, released with the start of Season 3." },
 
       "e-lunar":      { t: "Lunar Revel 2026", s: "Lunar Revel",
                         notes: "Lunar New Year: the Firecracker skin line returns (Ziggs, Ashe…) and the new Petals of Spring line arrives in two waves (26.02 and 26.04), plus an event pass. End date approximate." },
@@ -158,8 +178,6 @@ window.LOL_I18N.en = {
                       notes: "Quarterfinals November 3–6 (including T1 3-1 Karmine Corp, Gen.G 3-0 LYON, BLG 3-0 Dplus KIA), semifinals November 7–8." },
       "i-w-final":  { t: "Worlds 2026 Final", s: "Worlds Final", place: "Brooklyn, New York (Barclays Center)", res: "Gen.G vs Bilibili Gaming",
                       notes: "Gen.G's first shot at the world title since the Samsung era. $1 million for the winner." },
-      "i-enc":      { t: "Esports Nations Cup: LoL", s: "Nations Cup (postponed)", place: "Riyadh, Saudi Arabia (planned)", res: "Postponed to November 2027",
-                      notes: "On August 18 the Esports Foundation postponed the first edition to November 2027, citing the regional situation. It was set for November 21–29, 2026, with 32 national teams and $1.5 million at stake. Not part of Riot's circuit." },
 
       "lec-v":  { t: "LEC Versus", s: "Versus", place: "Berlin", res: "G2 Esports champions (final vs Karmine Corp)",
                   notes: "New 12-team format including 2 invited regional league teams; the winner goes to First Stand. MVP: Caps." },

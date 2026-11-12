@@ -1,7 +1,7 @@
 /* Textes en français. Langue de référence : toute clé absente d'une autre langue est reprise d'ici. */
 window.LOL_I18N = window.LOL_I18N || {};
 window.LOL_I18N.fr = {
-  meta: { code: "fr", label: "FR", name: "Français", htmlLang: "fr" },
+  meta: { code: "fr", label: "FR", name: "Français", htmlLang: "fr", le: "fr-FR", lol: "fr-fr", sup: "fr-fr" },
 
   months: ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."],
   monthsLong: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
@@ -57,19 +57,32 @@ window.LOL_I18N.fr = {
     leagueKind: function (l) { return "Ligue régionale · " + l; },
     status: { done: "Terminé", live: "En cours", next: "À venir", planned: "Annoncé", postponed: "Reporté" },
     close: "Fermer la fiche",
+    links: "Liens officiels",
     swipeHint: "Faites glisser la frise pour changer de mois et touchez une barre pour ouvrir sa fiche. Contour pointillé : dates approximatives."
   },
 
   kinds: {
-    season: "Saison", act: "Acte", patch: "Patch", event: "Événement en jeu",
+    season: "Saison", act: "Acte", patch: "Patch", champ: "Champion", event: "Événement en jeu",
     intl: "Compétition internationale", league: "Ligue régionale"
   },
   /* Étiquette courte devant chaque ligne de l'agenda (les ligues affichent leur sigle) */
-  tags: { season: "Jeu", act: "Jeu", patch: "Patch", event: "Événement", intl: "Compétition" },
+  tags: { season: "Jeu", act: "Jeu", patch: "Patch", champ: "Champion", event: "Événement", intl: "Compétition" },
+
+  /* Libellés des liens officiels (types utilisés dans data/<année>.js) */
+  linkLabels: {
+    handbook: "Guide officiel LoL Esports",
+    news: "Annonce officielle LoL Esports",
+    results: "Résultats sur LoL Esports",
+    patch: function (p) { return "Notes du patch " + p; },
+    riot: "Page de l'événement (Riot Games)",
+    ewc: "Esports World Cup (site officiel)",
+    lpl: "Site officiel de la LPL"
+  },
 
   lanes: {
     season: { label: "Saisons & actes", short: "Saisons" },
     patch:  { label: "Patchs", short: "Patchs" },
+    champ:  { label: "Champions", short: "Champ." },
     event:  { label: "Événements en jeu", short: "Évén." },
     intl:   { label: "International", short: "Intl", sub: "First Stand, MSI, Worlds…" },
     LEC:    { label: "LEC", sub: "Europe" },
@@ -89,8 +102,7 @@ window.LOL_I18N.fr = {
     ["LoL Esports : Caps entre au Hall of Legends", "https://lolesports.com/en-US/news/caps-becomes-first-western-pro-for-hall-of-legends"],
     ["lolnow.gg : calendrier des ligues régionales 2026", "https://lolnow.gg/lol-tournament-calendar/"],
     ["Inven Global : Gen.G champion LCK 2026", "https://www.invenglobal.com/articles/25926/geng-defeats-hanwha-life-esports-to-win-back-to-back-lck-titles"],
-    ["Esports World Cup : Dplus KIA remporte LoL à l'EWC 26", "https://esportsworldcup.com/en/press-releases/dplus-kia-win-lol-at-ewc26"],
-    ["Sheep Esports : la Nations Cup reportée à novembre 2027", "https://www.sheepesports.com/fr/lol/articles/esports-nations-cup-postponed-to-november-2027/en"]
+    ["Esports World Cup : Dplus KIA remporte LoL à l'EWC 26", "https://esportsworldcup.com/en/press-releases/dplus-kia-win-lol-at-ewc26"]
   ],
 
   /* Textes des éléments, par année puis par identifiant (voir data/<année>.js).
@@ -105,7 +117,7 @@ window.LOL_I18N.fr = {
       "s2":   { t: "Saison 2 : Pandemonium", s: "Saison 2 · Pandemonium", name: "Pandemonium",
                 notes: "Saison des démons, centrée sur Vayne aux confins de Demacia. Saison raccourcie à 6 patchs. Arena mise en avant avec une nouvelle carte, quêtes de rôle retravaillées, pass avec orbes mystère « Fiendish »." },
       "s2a1": { t: "Saison 2 · Acte 1", s: "Acte 1", notes: "Skins Pandemonium (Annie, Kindred)." },
-      "s2a2": { t: "Saison 2 · Acte 2", s: "Acte 2", notes: "Nouveau champion : Roke, assassin. Skins Sinful Shores (LeBlanc prestige, Brand, Hwei)." },
+      "s2a2": { t: "Saison 2 · Acte 2", s: "Acte 2", notes: "Sortie de Locke, seul nouveau champion de l'année (patch 26.13). Skins Sinful Shores (LeBlanc prestige, Brand, Hwei)." },
       "s3":   { t: "Saison 3 : Classic", s: "Saison 3 · Classic", name: "Classic",
                 notes: "Thème nostalgie : retour aux débuts de LoL et lancement du mode permanent League Classic. Fin de saison le 5 janvier 2027." },
       "s3a1": { t: "Saison 3 · Acte 1", s: "Acte 1", notes: "League Classic, ARAM: Mayhem Classic-ish, mise à jour de Bel'Veth, retour du duo en Maître ; l'Aegis of Valor ne s'utilise plus que sur les victoires." },
@@ -115,9 +127,11 @@ window.LOL_I18N.fr = {
       "p02": { notes: "Lunar Revel : retour de Firecracker, première vague Petals of Spring ; skins Battle Academia (Briar, Samira)." },
       "p04": { notes: "Deuxième vague Petals of Spring (Camille, Jayce, Katarina, Lillia, Yasuo) et retour des skins Sports d'hiver." },
       "p05": { notes: "Début de l'Acte 2, retour du Brawl." },
+      "p06": { notes: "Refonte de Shyvana, skins Warhound." },
       "p07": { notes: "Skins du 1er avril." },
       "p09": { notes: "Début de la Saison 2 « Pandemonium »." },
-      "p12": { notes: "Acte 2 : sortie de Roke, skins Sinful Shores." },
+      "p12": { notes: "Début de l'Acte 2, skins Sinful Shores." },
+      "p13": { notes: "Sortie de Locke, nouveau champion." },
       "p14": { notes: "Skins des champions du monde 2025 (T1)." },
       "p15": { notes: "Début de la Saison 3 « Classic », lancement de League Classic, mise à jour de Bel'Veth." },
       "p17": { notes: "Skins Heartsong Seraphine, Ocean Song Soraka et Jinx." },
@@ -125,6 +139,13 @@ window.LOL_I18N.fr = {
       "p20": { notes: "Acte 2 « Worlds 2026 », patch joué aux Worlds, skins HEARTSTEEL." },
       "p23": { notes: "Retour annoncé de la Faille de l'invocateur hivernale." },
       "p24": { notes: "Dernier patch de 2026." },
+
+      "c-shyvana": { t: "Refonte de Shyvana", s: "Shyvana (refonte)",
+                     notes: "Mise à jour visuelle et de gameplay complète, la première en 15 ans : nouveau modèle, effets, voix et kit retravaillé autour de la forme de dragon." },
+      "c-locke":   { t: "Sortie de Locke, l'Exorciste cendré", s: "Locke",
+                     notes: "173e champion et seul nouveau champion de 2026 : assassin AP de la voie du milieu, chasseur de démons. Présenté avec le court métrage animé « Back from the Brink »." },
+      "c-belveth": { t: "Mise à jour de Bel'Veth", s: "Bel'Veth (mise à jour)",
+                     notes: "Mise à jour de gameplay qui renforce son fantasme d'évolution, avec le début de la Saison 3." },
 
       "e-lunar":      { t: "Lunar Revel 2026", s: "Lunar Revel",
                         notes: "Nouvel an lunaire : retour de la gamme Firecracker (Ziggs, Ashe…) et nouvelle gamme Petals of Spring, sortie en deux vagues (26.02 et 26.04), plus un pass d'événement. Date de fin approximative." },
@@ -162,8 +183,6 @@ window.LOL_I18N.fr = {
                       notes: "Quarts du 3 au 6 novembre (dont T1 3-1 Karmine Corp, Gen.G 3-0 LYON, BLG 3-0 Dplus KIA), demies les 7 et 8." },
       "i-w-final":  { t: "Finale des Worlds 2026", s: "Finale Worlds", place: "Brooklyn, New York (Barclays Center)", res: "Gen.G contre Bilibili Gaming",
                       notes: "Premier match pour le titre mondial de Gen.G depuis l'époque Samsung. 1 million de dollars pour le vainqueur." },
-      "i-enc":      { t: "Esports Nations Cup : LoL", s: "Nations Cup (reportée)", place: "Riyad, Arabie saoudite (prévu)", res: "Reportée à novembre 2027",
-                      notes: "L'Esports Foundation a annoncé le 18 août le report de la première édition à novembre 2027, en raison de la situation régionale. Prévue du 21 au 29 novembre 2026 avec 32 sélections nationales et 1,5 million de dollars en jeu. Tournoi hors circuit Riot." },
 
       "lec-v":  { t: "LEC Versus", s: "Versus", place: "Berlin", res: "G2 Esports champion (finale contre Karmine Corp)",
                   notes: "Nouveau format à 12 équipes dont 2 invitées des ligues régionales ; le vainqueur va au First Stand. MVP : Caps." },

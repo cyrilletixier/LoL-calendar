@@ -6,11 +6,14 @@
   var DATA = window.LOL_DATA || { years: {} };
   var I18N = window.LOL_I18N || {};
   var REF = "fr";                    // langue de référence pour les clés manquantes
+  var FALLBACK = "en";               // seconde langue de secours pour les autres langues
+  var LANG_ORDER = ["fr", "en", "es", "pt", "de", "pl", "tr", "ko", "zh", "vi"];
   var PLANNED_YEARS = [2027];        // années affichées grisées, pas encore renseignées
   var LANES = [
     { group: "groupGame" },
     { id: "season", cat: "var(--gold)" },
     { id: "patch",  cat: "var(--c-patch)" },
+    { id: "champ",  cat: "var(--c-champ)" },
     { id: "event",  cat: "var(--c-event)" },
     { group: "groupPro" },
     { id: "intl",  cat: "var(--c-intl)" },
@@ -22,7 +25,7 @@
     { id: "LCP",   cat: "var(--c-league)" },
     { id: "LFL",   cat: "var(--c-league)" }
   ];
-  var GAME_LANES = ["season", "patch", "event"];
+  var GAME_LANES = ["season", "patch", "champ", "event"];
   var DAY = 86400000;
 
   /* ============ Stockage local (facultatif) ============ */
@@ -38,42 +41,59 @@
     if (q && I18N[q]) return q;
     var saved = store.get("lolcal-lang", null);
     if (saved && I18N[saved]) return saved;
-    var prefs = (navigator.languages || [navigator.language || ""]);
+    var prefs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ""];
     for (var i = 0; i < prefs.length; i++) {
       var c = String(prefs[i]).slice(0, 2).toLowerCase();
       if (I18N[c]) return c;
     }
-    return I18N[REF] ? REF : Object.keys(I18N)[0];
+    return I18N[FALLBACK] ? FALLBACK : REF;
   }
   var lang = pickLang();
   var L = I18N[lang];
-  var R = I18N[REF] || L;
 
+  /* Chaîne de repli : langue choisie, puis anglais, puis français */
+  function chain() {
+    var c = [L];
+    if (lang !== FALLBACK && I18N[FALLBACK]) c.push(I18N[FALLBACK]);
+    if (lang !== REF && I18N[REF]) c.push(I18N[REF]);
+    return c;
+  }
+  function pick(fn) {
+    var c = chain();
+    for (var i = 0; i < c.length; i++) { var v = fn(c[i]); if (v !== undefined && v !== null) return { v: v, src: c[i] }; }
+    return { v: undefined, src: L };
+  }
   function ui(key) {
-    var v = (L.ui && L.ui[key] !== undefined) ? L.ui[key] : (R.ui ? R.ui[key] : undefined);
+    var r = pick(function (x) { return x.ui && x.ui[key]; });
+    var v = r.v;
     if (typeof v === "function") return v.apply(null, Array.prototype.slice.call(arguments, 1));
     return v === undefined ? key : v;
   }
-  function statusLabel(k) { return (L.ui.status && L.ui.status[k]) || R.ui.status[k]; }
-  function kindLabel(k) { return (L.kinds && L.kinds[k]) || R.kinds[k]; }
-  function tagLabel(k) { return (L.tags && L.tags[k]) || R.tags[k]; }
+  function statusLabel(k) { return pick(function (x) { return x.ui && x.ui.status && x.ui.status[k]; }).v || k; }
+  function kindLabel(k) { return pick(function (x) { return x.kinds && x.kinds[k]; }).v || k; }
+  function tagLabel(k) { return pick(function (x) { return x.tags && x.tags[k]; }).v || k; }
+  function linkLabel(k, arg) {
+    var v = pick(function (x) { return x.linkLabels && x.linkLabels[k]; }).v;
+    return typeof v === "function" ? v(arg) : (v || k);
+  }
   function laneText(id, f) {
-    var a = L.lanes && L.lanes[id] && L.lanes[id][f];
-    if (a !== undefined) return a;
-    var b = R.lanes && R.lanes[id] && R.lanes[id][f];
-    return b !== undefined ? b : (f === "label" ? id : "");
+    var v = pick(function (x) { return x.lanes && x.lanes[id] && x.lanes[id][f]; }).v;
+    return v !== undefined ? v : (f === "label" ? id : "");
   }
   function itemText(id, f) {
-    var a = L.items && L.items[year] && L.items[year][id] && L.items[year][id][f];
-    if (a !== undefined) return a;
-    var b = R.items && R.items[year] && R.items[year][id] && R.items[year][id][f];
-    return b !== undefined ? b : "";
+    var v = pick(function (x) { return x.items && x.items[year] && x.items[year][id] && x.items[year][id][f]; }).v;
+    return v !== undefined ? v : "";
   }
-  function months() { return L.months || R.months; }
-  function monthsLong() { return L.monthsLong || R.monthsLong; }
+  function meta(k) { return pick(function (x) { return x.meta && x.meta[k]; }).v; }
+  function months() { return pick(function (x) { return x.months; }).v; }
+  function monthsLong() { return pick(function (x) { return x.monthsLong; }).v; }
   function fmt(d, withYear) {
-    var f = L.date || R.date;
-    return f.call(L.months ? L : R, d.getDate(), d.getMonth(), withYear ? d.getFullYear() : null);
+    var r = pick(function (x) { return x.date; });
+    return r.v.call(r.src, d.getDate(), d.getMonth(), withYear ? d.getFullYear() : null);
+  }
+  function monthTitle(m, y) {
+    var r = pick(function (x) { return x.monthTitle; });
+    return r.v ? r.v.call(r.src, m, y) : monthsLong()[m] + " " + y;
   }
   function fmtRange(it) {
     var a = it.start, b = it.end;
@@ -81,10 +101,34 @@
     if (!it.range) return pre + fmt(a, a.getFullYear() !== year);
     var cross = b.getFullYear() !== a.getFullYear();
     if (!cross && a.getMonth() === b.getMonth()) {
-      var f = L.sameMonth || R.sameMonth;
-      return pre + f.call(L.months ? L : R, a.getDate(), b.getDate(), a.getMonth());
+      var r = pick(function (x) { return x.sameMonth; });
+      return pre + r.v.call(r.src, a.getDate(), b.getDate(), a.getMonth());
     }
     return pre + fmt(a, cross) + " → " + fmt(b, cross);
+  }
+  /* Liens officiels, adaptés à la langue */
+  function patchUrl(p) {
+    var n = parseInt(String(p).split(".")[1], 10);
+    return "https://www.leagueoflegends.com/" + (meta("lol") || "en-us") + "/news/game-updates/league-of-legends-patch-" + String(p).split(".")[0] + "-" + n + "-notes/";
+  }
+  function linksOf(it) {
+    var out = [], t = today0(), seen = {};
+    var list = (it.links || []).slice();
+    if (it.kind === "patch") list.unshift(["patch", it.s]);
+    list.forEach(function (l) {
+      var url, label;
+      if (l[0] === "patch") {
+        var pt = ITEMS.filter(function (x) { return x.kind === "patch" && x.s === l[1]; })[0];
+        if (pt && pt.start > t) return;            // notes pas encore publiées
+        url = patchUrl(l[1]); label = linkLabel("patch", l[1]);
+      } else {
+        url = l[1].replace("{le}", meta("le") || "en-US").replace("{lol}", meta("lol") || "en-us").replace("{sup}", meta("sup") || "en-us");
+        label = linkLabel(l[0]);
+      }
+      if (seen[url]) return; seen[url] = 1;
+      out.push({ url: url, label: label });
+    });
+    return out;
   }
 
   /* ============ Outils ============ */
@@ -109,6 +153,7 @@
   function catOf(it) {
     if (it.kind === "season" || it.kind === "act") return "var(--" + it.color + ")";
     if (it.kind === "patch") return "var(--c-patch)";
+    if (it.kind === "champ") return "var(--c-champ)";
     if (it.kind === "event") return "var(--c-event)";
     if (it.kind === "intl") return "var(--c-intl)";
     return "var(--c-league)";
@@ -149,11 +194,11 @@
 
   /* ============ Textes fixes de la page ============ */
   function applyStatic() {
-    document.documentElement.lang = (L.meta && L.meta.htmlLang) || lang;
+    document.documentElement.lang = meta("htmlLang") || lang;
     document.title = ui("title");
     document.querySelectorAll("[data-i18n]").forEach(function (el) { el.textContent = ui(el.getAttribute("data-i18n")); });
     document.querySelectorAll("[data-i18n-aria]").forEach(function (el) { el.setAttribute("aria-label", ui(el.getAttribute("data-i18n-aria"))); });
-    var src = L.sources || R.sources || [];
+    var src = pick(function (x) { return x.sources; }).v || [];
     document.getElementById("sources").innerHTML = src.map(function (s) {
       return '<li><a href="' + esc(s[1]) + '" target="_blank" rel="noopener">' + esc(s[0]) + "</a></li>";
     }).join("");
@@ -161,19 +206,21 @@
 
   /* ============ Sélecteurs langue et année ============ */
   function renderLangs() {
-    var nav = document.getElementById("langs");
-    var codes = Object.keys(I18N);
-    nav.innerHTML = codes.map(function (c) {
-      var m = I18N[c].meta || { label: c.toUpperCase(), name: c };
-      return '<button type="button" class="btn" lang="' + esc(m.htmlLang || c) + '" aria-pressed="' + (c === lang) + '" data-lang="' + esc(c) + '" title="' + esc(m.name) + '">' + esc(m.label) + "</button>";
+    var sel = document.getElementById("langSel");
+    var codes = LANG_ORDER.filter(function (c) { return I18N[c]; }).concat(Object.keys(I18N).filter(function (c) { return LANG_ORDER.indexOf(c) < 0; }));
+    sel.innerHTML = codes.map(function (c) {
+      var m = I18N[c].meta || { name: c };
+      return '<option value="' + esc(c) + '" lang="' + esc(m.htmlLang || c) + '"' + (c === lang ? " selected" : "") + ">" + esc(m.name) + "</option>";
     }).join("");
-    nav.querySelectorAll("button[data-lang]").forEach(function (b) {
-      b.addEventListener("click", function () {
-        if (b.dataset.lang === lang) return;
-        lang = b.dataset.lang; L = I18N[lang]; store.set("lolcal-lang", lang);
+    sel.setAttribute("aria-label", ui("langNav"));
+    document.getElementById("langSelLabel").textContent = ui("langNav");
+    if (!sel.dataset.bound) {
+      sel.dataset.bound = "1";
+      sel.addEventListener("change", function () {
+        lang = sel.value; L = I18N[lang]; store.set("lolcal-lang", lang);
         renderAll(false);
       });
-    });
+    }
   }
   function renderYears() {
     var nav = document.getElementById("years");
@@ -357,7 +404,7 @@
     byMonth.forEach(function (list, mi) {
       if (!list.length) return;
       var pro = list.filter(function (i) { return i.kind === "intl" || i.kind === "league"; }).length;
-      html += '<section id="mois-' + (mi + 1) + '"><h3>' + esc(ML[mi]) + " " + year + "<small>" + esc(ui("entries", list.length)) + (pro ? " · " + esc(ui("competitions", pro)) : "") + '</small></h3><div class="ag-list">';
+      html += '<section id="mois-' + (mi + 1) + '"><h3>' + esc(monthTitle(mi, year)) + "<small>" + esc(ui("entries", list.length)) + (pro ? " · " + esc(ui("competitions", pro)) : "") + '</small></h3><div class="ag-list">';
       list.forEach(function (i) {
         var st = status(i);
         var meta;
@@ -394,6 +441,10 @@
     if (it.place) dl += "<div><dt>" + esc(ui("place")) + "</dt><dd>" + esc(it.place) + "</dd></div>";
     if (it.res) dl += "<div><dt>" + esc(st === "postponed" ? ui("statusTitle") : st === "done" ? ui("result") : ui("matchup")) + '</dt><dd class="res">' + esc(it.res) + "</dd></div>";
     if (it.notes) dl += "<div><dt>" + esc(ui("notes")) + "</dt><dd>" + esc(it.notes) + "</dd></div>";
+    var lk = linksOf(it);
+    if (lk.length) dl += "<div><dt>" + esc(ui("links")) + '</dt><dd><ul class="links">' + lk.map(function (l) {
+      return '<li><a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + ' <span aria-hidden="true">↗</span></a></li>';
+    }).join("") + "</ul></dd></div>";
     if (it.range) {
       var n = Math.round((it.end - it.start) / DAY) + 1;
       dl += "<div><dt>" + esc(ui("duration")) + "</dt><dd>" + esc(ui("days", n)) + (it.approx ? " " + esc(ui("approx")) : "") + "</dd></div>";

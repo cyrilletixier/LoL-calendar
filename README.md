@@ -1,13 +1,14 @@
 # lol calendar
 
-Calendrier League of Legends sur une seule page : saisons et actes, patchs, événements en jeu et compétitions pro d'une année. La première année renseignée est 2026. Le site est disponible en français et en anglais.
+Calendrier League of Legends sur une seule page : saisons et actes, patchs, événements en jeu et compétitions pro d'une année. La première année renseignée est 2026. Le site est disponible en 10 langues : français, anglais, espagnol, portugais (Brésil), allemand, polonais, turc, coréen, chinois simplifié et vietnamien.
 
 ## Ce que contient la page
 
-- **En jeu** : les saisons et leurs actes (2026 : For Demacia, Pandemonium, Classic), les 24 patchs, les événements en jeu (Lunar Revel, Brawl, League Classic, Hall of Legends, HEARTSTEEL…).
-- **Esport** : les compétitions internationales (First Stand, MSI, Esports World Cup, Worlds, Nations Cup…) et les ligues LEC, LCK, LPL, LCS, CBLOL, LCP et LFL, avec les vainqueurs connus.
+- **En jeu** : les saisons et leurs actes (2026 : For Demacia, Pandemonium, Classic), les 24 patchs, les sorties et refontes de champions (Shyvana, Locke, Bel'Veth), les événements en jeu (Lunar Revel, Brawl, League Classic, Hall of Legends, HEARTSTEEL…).
+- **Esport** : les compétitions internationales (First Stand, MSI, Esports World Cup, Worlds…) et les ligues LEC, LCK, LPL, LCS, CBLOL, LCP et LFL, avec les vainqueurs connus.
+- **Liens officiels** dans chaque fiche : guides et annonces LoL Esports, notes de patch, pages d'événements Riot, dans la langue choisie quand le site officiel la propose.
 - Un résumé « en ce moment » (saison, patch, prochain rendez-vous), des filtres par couloir, une frise annuelle et un agenda mois par mois avec une fiche détail.
-- Un choix de langue (FR / EN), mémorisé dans le navigateur.
+- Un choix de langue discret en haut à droite. Par défaut, le site prend la langue du navigateur ; le choix du visiteur est ensuite mémorisé.
 - Une mise en page adaptée aux smartphones : cartes et filtres défilants, frise à faire glisser, fiche détail qui s'ouvre en panneau depuis le bas de l'écran.
 - Les couleurs du client League of Legends (noir hextech, bleus profonds, ors).
 
@@ -17,7 +18,7 @@ Les barres en pointillé signalent des dates approximatives.
 
 Site statique sans dépendance ni étape de build : ouvrez `index.html` dans un navigateur, ou servez le dossier avec n'importe quel serveur web (GitHub Pages, par exemple).
 
-La langue est choisie dans cet ordre : paramètre `?lang=en` dans l'URL, dernier choix mémorisé, langue du navigateur, puis le français par défaut.
+La langue est choisie dans cet ordre : paramètre `?lang=en` dans l'URL, dernier choix mémorisé, langue du navigateur, puis l'anglais.
 
 ## Organisation des fichiers
 
@@ -26,27 +27,29 @@ index.html        structure de la page et styles (aucun texte affiché)
 js/app.js         logique d'affichage (aucun texte affiché)
 data/2026.js      données de l'année, indépendantes de la langue : identifiants, dates, couloirs
 lang/fr.js        tous les textes en français (langue de référence)
-lang/en.js        tous les textes en anglais
+lang/en.js        tous les textes en anglais (première langue de secours)
+lang/es.js, pt.js, de.js, pl.js, tr.js, ko.js, zh.js, vi.js   les autres langues
 ```
 
 Chaque fichier de langue contient :
 
-- `meta` : code, libellé du bouton (`FR`), nom de la langue, attribut `lang` du document ;
+- `meta` : code, nom affiché dans la liste, attribut `lang` du document, et codes de langue des sites officiels (`le` pour LoL Esports, `lol` pour leagueoflegends.com, `sup` pour le support Riot) ;
 - `months`, `monthsLong`, `date()` et `sameMonth()` : noms des mois et format des dates ;
 - `ui` : textes de l'interface (certains sont des fonctions pour gérer pluriels et variables) ;
 - `kinds`, `tags`, `lanes` : libellés des types d'éléments et des couloirs ;
+- `linkLabels` : libellés des liens officiels ;
 - `sources` : liens vers les sources, avec leur libellé ;
 - `items[année][id]` : textes de chaque élément (`t` titre, `s` libellé court, `name` nom de saison, `place` lieu, `res` résultat ou affiche, `notes` précisions).
 
-Une clé absente d'une langue est reprise du français.
+Une clé absente d'une langue est reprise de l'anglais, puis du français. Les noms propres identiques partout (par exemple « LEC Spring ») n'ont donc pas besoin d'être recopiés.
 
 ## Ajouter une langue
 
-1. Copiez `lang/en.js` en `lang/<code>.js` (par exemple `lang/es.js`) et remplacez `LOL_I18N.en` par `LOL_I18N.es`.
+1. Copiez `lang/en.js` en `lang/<code>.js` (par exemple `lang/it.js`) et remplacez `LOL_I18N.en` par `LOL_I18N.it`.
 2. Traduisez les textes et adaptez `meta`, `months` et le format des dates.
-3. Ajoutez `<script src="lang/es.js"></script>` dans `index.html`, avant `js/app.js`.
+3. Ajoutez `<script src="lang/it.js"></script>` dans `index.html`, avant `js/app.js`, et le code dans `LANG_ORDER` (`js/app.js`) pour choisir sa place dans la liste.
 
-Le bouton de la nouvelle langue apparaît automatiquement.
+La nouvelle langue apparaît automatiquement dans la liste.
 
 ## Ajouter une année
 
@@ -65,6 +68,7 @@ Format d'un élément dans `data/<année>.js` :
 - `kind` : `season`, `act`, `patch`, `event`, `intl` ou `league`.
 - `approx: true` affiche la barre en pointillé ; `planned: true` affiche « Annoncé » au lieu de « À venir » ; `postponed: true` barre l'élément et l'affiche « Reporté ».
 - Pour un patch, `s` donne le numéro (`"26.01"`), identique dans toutes les langues.
+- `links` : liens officiels `[type, adresse]`. Dans l'adresse, `{le}`, `{lol}` et `{sup}` sont remplacés par la langue du visiteur. `["patch", "26.06"]` crée le lien vers les notes de patch, affiché seulement une fois le patch sorti.
 
 ## Sources des données 2026
 
