@@ -1,4 +1,4 @@
-# wow calendar
+# lol calendar
 
 Calendrier League of Legends sur une seule page : saisons et actes, patchs, événements en jeu et compétitions pro d'une année. La première année renseignée est 2026.
 

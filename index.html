@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>wow calendar</title>
+<title>lol calendar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
@@ -180,7 +180,7 @@ footer p{margin:0;max-width:75ch}
 <div class="wrap">
   <header>
     <div class="brand">
-      <h1>wow calendar</h1>
+      <h1>lol calendar</h1>
       <p>League of Legends : saisons, patchs, événements en jeu et compétitions pro, sur une seule page.</p>
     </div>
     <nav class="years" id="years" aria-label="Année"></nav>
@@ -434,9 +434,9 @@ function laneLabel(id){const l=LANES.find(x=>x.id===id);return l?l.label:id}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 
 /* ============ État ============ */
-let year = Number(store.get("wowcal-year", 2026));
+let year = Number(store.get("lolcal-year", 2026));
 if(!CAL[year]) year = Number(Object.keys(CAL)[0]);
-let hidden = new Set(store.get("wowcal-hidden", []));
+let hidden = new Set(store.get("lolcal-hidden", []));
 let selId = null;
 let ITEMS = [];
 
@@ -464,7 +464,7 @@ function renderYears(){
   nav.innerHTML = ys.map(y=>`<button type="button" aria-pressed="${y===year}" data-y="${y}">${y}</button>`).join("")
     + PLANNED_YEARS.filter(y=>!CAL[y]).map(y=>`<button type="button" disabled title="Année pas encore renseignée">${y}</button>`).join("");
   nav.querySelectorAll("button[data-y]").forEach(b=>b.addEventListener("click",()=>{
-    year=Number(b.dataset.y); store.set("wowcal-year",year); selId=null; renderAll();
+    year=Number(b.dataset.y); store.set("lolcal-year",year); selId=null; renderAll();
   }));
 }
 
@@ -518,7 +518,7 @@ function renderFilters(){
   document.getElementById("fGame").onclick=()=>{hidden=new Set(lanes.map(l=>l.id).filter(i=>!game.includes(i)));saveHidden();renderAll(false)};
   document.getElementById("fPro").onclick=()=>{hidden=new Set(game);saveHidden();renderAll(false)};
 }
-function saveHidden(){store.set("wowcal-hidden",[...hidden])}
+function saveHidden(){store.set("lolcal-hidden",[...hidden])}
 
 /* ============ Rendu : frise ============ */
 let measureCtx=null;
