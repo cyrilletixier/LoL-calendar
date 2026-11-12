@@ -21,7 +21,7 @@ window.LOL_I18N.en = {
     agendaAria: "Month-by-month agenda",
     monthJumpAria: "Jump to month",
     tlNote: "Click a bar to open its details. Dashed outline: approximate dates. Patches release on the date shown, Pacific Time.",
-    footer: "Fan-made calendar, not affiliated with Riot Games. Data as of November 12, 2026: future dates may still change.",
+    footer: "Fan-made calendar, not affiliated with Riot Games. Data as of November 13, 2026: future dates may still change.",
     show: "Show",
     all: "All",
     gameOnly: "In-game only",
@@ -48,13 +48,16 @@ window.LOL_I18N.en = {
     place: "Location",
     result: "Result",
     matchup: "Matchup",
+    statusTitle: "Status",
     notes: "Good to know",
     duration: "Duration",
     days: function (n) { return n + " day" + (n > 1 ? "s" : ""); },
     approx: "(approximate)",
     patch: "Patch",
     leagueKind: function (l) { return "Regional league · " + l; },
-    status: { done: "Finished", live: "Ongoing", next: "Upcoming", planned: "Announced" }
+    status: { done: "Finished", live: "Ongoing", next: "Upcoming", planned: "Announced", postponed: "Postponed" },
+    close: "Close details",
+    swipeHint: "Swipe the timeline to change months and tap a bar to open its details. Dashed outline: approximate dates."
   },
 
   kinds: {
@@ -64,10 +67,10 @@ window.LOL_I18N.en = {
   tags: { season: "Game", act: "Game", patch: "Patch", event: "Event", intl: "Competition" },
 
   lanes: {
-    season: { label: "Seasons & acts" },
-    patch:  { label: "Patches" },
-    event:  { label: "In-game events" },
-    intl:   { label: "International", sub: "First Stand, MSI, Worlds…" },
+    season: { label: "Seasons & acts", short: "Seasons" },
+    patch:  { label: "Patches", short: "Patches" },
+    event:  { label: "In-game events", short: "Events" },
+    intl:   { label: "International", short: "Intl", sub: "First Stand, MSI, Worlds…" },
     LEC:    { label: "LEC", sub: "Europe" },
     LCK:    { label: "LCK", sub: "Korea" },
     LPL:    { label: "LPL", sub: "China" },
@@ -85,7 +88,8 @@ window.LOL_I18N.en = {
     ["LoL Esports: Caps joins the Hall of Legends", "https://lolesports.com/en-US/news/caps-becomes-first-western-pro-for-hall-of-legends"],
     ["lolnow.gg: 2026 regional league calendar", "https://lolnow.gg/lol-tournament-calendar/"],
     ["Inven Global: Gen.G win the 2026 LCK", "https://www.invenglobal.com/articles/25926/geng-defeats-hanwha-life-esports-to-win-back-to-back-lck-titles"],
-    ["Esports World Cup: Dplus KIA win LoL at EWC 26", "https://esportsworldcup.com/en/press-releases/dplus-kia-win-lol-at-ewc26"]
+    ["Esports World Cup: Dplus KIA win LoL at EWC 26", "https://esportsworldcup.com/en/press-releases/dplus-kia-win-lol-at-ewc26"],
+    ["Sheep Esports: Nations Cup postponed to November 2027", "https://www.sheepesports.com/articles/esports-nations-cup-postponed-to-november-2027/en"]
   ],
 
   items: {
@@ -154,8 +158,8 @@ window.LOL_I18N.en = {
                       notes: "Quarterfinals November 3–6 (including T1 3-1 Karmine Corp, Gen.G 3-0 LYON, BLG 3-0 Dplus KIA), semifinals November 7–8." },
       "i-w-final":  { t: "Worlds 2026 Final", s: "Worlds Final", place: "Brooklyn, New York (Barclays Center)", res: "Gen.G vs Bilibili Gaming",
                       notes: "Gen.G's first shot at the world title since the Samsung era. $1 million for the winner." },
-      "i-enc":      { t: "Esports Nations Cup: LoL", s: "Nations Cup", place: "Riyadh, Saudi Arabia",
-                      notes: "First edition: 32 national teams and $1.5 million at stake. Not part of Riot's circuit." },
+      "i-enc":      { t: "Esports Nations Cup: LoL", s: "Nations Cup (postponed)", place: "Riyadh, Saudi Arabia (planned)", res: "Postponed to November 2027",
+                      notes: "On August 18 the Esports Foundation postponed the first edition to November 2027, citing the regional situation. It was set for November 21–29, 2026, with 32 national teams and $1.5 million at stake. Not part of Riot's circuit." },
 
       "lec-v":  { t: "LEC Versus", s: "Versus", place: "Berlin", res: "G2 Esports champions (final vs Karmine Corp)",
                   notes: "New 12-team format including 2 invited regional league teams; the winner goes to First Stand. MVP: Caps." },

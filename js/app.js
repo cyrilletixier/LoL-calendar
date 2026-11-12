@@ -96,12 +96,16 @@
   function today0() { var n = new Date(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function status(it) {
+    if (it.postponed) return "postponed";
     var t = today0();
     if (t > it.end) return "done";
     if (t >= it.start) return "live";
     return it.planned ? "planned" : "next";
   }
-  function pillClass(k) { return k === "live" ? "live" : (k === "next" || k === "planned") ? "next" : ""; }
+  function pillClass(k) { return k === "live" ? "live" : (k === "next" || k === "planned") ? "next" : k === "postponed" ? "off" : ""; }
+  function isMobile() { return window.matchMedia && matchMedia("(max-width: 700px)").matches; }
+  function isSheet() { return window.matchMedia && matchMedia("(max-width: 900px)").matches; }
+  function cssPx(name, d) { return parseFloat(getComputedStyle(document.documentElement).getPropertyValue(name)) || d; }
   function catOf(it) {
     if (it.kind === "season" || it.kind === "act") return "var(--" + it.color + ")";
     if (it.kind === "patch") return "var(--c-patch)";
@@ -161,7 +165,7 @@
     var codes = Object.keys(I18N);
     nav.innerHTML = codes.map(function (c) {
       var m = I18N[c].meta || { label: c.toUpperCase(), name: c };
-      return '<button type="button" lang="' + esc(m.htmlLang || c) + '" aria-pressed="' + (c === lang) + '" data-lang="' + esc(c) + '" title="' + esc(m.name) + '">' + esc(m.label) + "</button>";
+      return '<button type="button" class="btn" lang="' + esc(m.htmlLang || c) + '" aria-pressed="' + (c === lang) + '" data-lang="' + esc(c) + '" title="' + esc(m.name) + '">' + esc(m.label) + "</button>";
     }).join("");
     nav.querySelectorAll("button[data-lang]").forEach(function (b) {
       b.addEventListener("click", function () {
@@ -174,9 +178,9 @@
   function renderYears() {
     var nav = document.getElementById("years");
     nav.innerHTML = yearsAvail.map(function (y) {
-      return '<button type="button" aria-pressed="' + (y === year) + '" data-y="' + y + '">' + y + "</button>";
+      return '<button type="button" class="btn" aria-pressed="' + (y === year) + '" data-y="' + y + '">' + y + "</button>";
     }).join("") + PLANNED_YEARS.filter(function (y) { return !DATA.years[y]; }).map(function (y) {
-      return '<button type="button" disabled title="' + esc(ui("yearNotReady")) + '">' + y + "</button>";
+      return '<button type="button" class="btn" disabled title="' + esc(ui("yearNotReady")) + '">' + y + "</button>";
     }).join("");
     nav.querySelectorAll("button[data-y]").forEach(function (b) {
       b.addEventListener("click", function () {
@@ -209,11 +213,11 @@
       var past = patches.filter(function (p) { return p.start <= t; }), fut = patches.filter(function (p) { return p.start > t; });
       var cur = past[past.length - 1], nxt = fut[0];
       tiles.push('<button type="button" class="tile"' + (cur ? ' data-sel="' + cur.id + '"' : "") + '><span class="k">' + esc(ui("currentPatch")) + '</span><span class="v">' + (cur ? esc(cur.s) : "—") + '</span><span class="s">' + esc(nxt ? ui("nextPatch", nxt.s, fmt(nxt.start)) : ui("lastPatch")) + "</span></button>");
-      var live = ITEMS.filter(function (i) { return i.kind !== "season" && i.kind !== "act" && i.kind !== "patch" && i.range && t >= i.start && t <= i.end; });
+      var live = ITEMS.filter(function (i) { return !i.postponed && i.kind !== "season" && i.kind !== "act" && i.kind !== "patch" && i.range && t >= i.start && t <= i.end; });
       tiles.push('<div class="tile"><span class="k">' + esc(ui("rightNow")) + "</span>" + (live.length
         ? "<ul>" + live.map(function (l) { return '<li><span class="v" style="font-size:15px">' + esc(l.t) + '</span> <span class="s">' + esc(ui("until", fmt(l.end))) + "</span></li>"; }).join("") + "</ul>"
         : '<span class="v">' + esc(ui("nothingLive")) + '</span><span class="s">' + esc(ui("nothingLiveSub")) + "</span>") + "</div>");
-      var upcoming = pro.filter(function (i) { return i.start > t; }).slice(0, 2);
+      var upcoming = pro.filter(function (i) { return i.start > t && !i.postponed; }).slice(0, 2);
       if (upcoming[0]) {
         var u = upcoming[0], days = Math.round((u.start - t) / DAY);
         tiles.push('<button type="button" class="tile" data-sel="' + u.id + '"><span class="k">' + esc(ui("nextUp", days)) + '</span><span class="v">' + esc(u.t) + '</span><span class="s">' + esc(fmtRange(u)) + (u.res ? " · " + esc(u.res) : (u.place ? " · " + esc(u.place) : "")) + "</span>" + (upcoming[1] ? '<span class="s">' + esc(ui("then", upcoming[1].t, fmtRange(upcoming[1]))) + "</span>" : "") + "</button>");
@@ -253,7 +257,7 @@
     measureCtx.font = (patch ? "500 11.5px" : "600 12.5px") + ' "Barlow Condensed", "Arial Narrow", sans-serif';
     return measureCtx.measureText(text).width;
   }
-  var ROW = 28, PAD = 7;
+  var ROW = 28, BAR = 22, PAD = 7;
   function layoutLane(items, ppd, trackW) {
     var rows = [];
     items.forEach(function (it) {
@@ -287,7 +291,8 @@
   function renderTimeline() {
     var scroll = document.getElementById("tlScroll"), tl = document.getElementById("tl");
     var labelW = labelWidth();
-    var trackW = Math.max(scroll.clientWidth - labelW - 2, 1060);
+    ROW = cssPx("--row", 28); BAR = cssPx("--bar", 22);
+    var trackW = Math.max(scroll.clientWidth - labelW - 2, isMobile() ? 1240 : 1060);
     var daysInYear = Math.round((new Date(year + 1, 0, 1) - new Date(year, 0, 1)) / DAY);
     var ppd = trackW / daysInYear;
     var M = months();
@@ -305,13 +310,14 @@
       if (pendingGroup) { html += '<div class="row group"><div class="lane-label">' + esc(ui(pendingGroup)) + '</div><div class="track"></div></div>'; pendingGroup = null; }
       var items = ITEMS.filter(function (i) { return i.lane === lane.id; });
       var nRows = layoutLane(items, ppd, trackW);
-      var h = nRows * ROW + PAD * 2 - (ROW - 22);
+      var h = nRows * ROW + PAD * 2 - (ROW - BAR);
       var sub = laneText(lane.id, "sub");
-      html += '<div class="row"><div class="lane-label" style="--cat:' + lane.cat + '"><span class="sw" aria-hidden="true"></span><span>' + esc(laneText(lane.id, "label")) + (sub ? "<small>" + esc(sub) + "</small>" : "") + '</span></div><div class="track" style="height:' + h + 'px">';
+      var short = laneText(lane.id, "short") || laneText(lane.id, "label");
+      html += '<div class="row"><div class="lane-label" style="--cat:' + lane.cat + '"><span class="sw" aria-hidden="true"></span><span class="ll-full">' + esc(laneText(lane.id, "label")) + (sub ? "<small>" + esc(sub) + "</small>" : "") + '</span><span class="ll-short" title="' + esc(laneText(lane.id, "label")) + '">' + esc(short) + '</span></div><div class="track" style="height:' + h + 'px">';
       items.forEach(function (it) {
         var top = PAD + it.row * ROW;
-        var cls = ["item", it.kind, it.approx ? "approx" : "", it.cont ? "cont" : "", it.flip ? "flip" : "", it.key ? "key" : "", it.id === selId ? "sel" : ""].join(" ");
-        var aria = esc(it.t + ", " + fmtRange(it) + (it.res ? ", " + it.res : ""));
+        var cls = ["item", it.kind, it.approx ? "approx" : "", it.postponed ? "off" : "", it.cont ? "cont" : "", it.flip ? "flip" : "", it.key ? "key" : "", it.id === selId ? "sel" : ""].join(" ");
+        var aria = esc(it.t + ", " + fmtRange(it) + (it.res ? ", " + it.res : "") + (it.postponed ? ", " + statusLabel("postponed") : ""));
         var inner;
         if (it.kind === "patch") inner = '<span class="tick"></span><span class="out">' + esc(it.label) + "</span>";
         else if (!it.range) inner = '<span class="dia"></span><span class="out">' + esc(it.label) + "</span>";
@@ -346,7 +352,7 @@
     var tNow = today0(), curM = tNow.getFullYear() === year ? tNow.getMonth() : -1;
     var M = months(), ML = monthsLong();
     var html = '<nav class="jump" aria-label="' + esc(ui("monthJumpAria")) + '">' + M.map(function (n, mi) {
-      return '<button type="button" data-m="' + mi + '"' + (byMonth[mi].length ? "" : " disabled") + ' class="' + (mi === curM ? "cur" : "") + '">' + esc(n) + "</button>";
+      return '<button type="button" data-m="' + mi + '"' + (byMonth[mi].length ? "" : " disabled") + ' class="btn' + (mi === curM ? " cur" : "") + '">' + esc(n) + "</button>";
     }).join("") + "</nav>";
     byMonth.forEach(function (list, mi) {
       if (!list.length) return;
@@ -358,9 +364,9 @@
         if (i.kind === "patch") meta = i.notes ? esc(i.notes) : "";
         else meta = [i.place ? esc(i.place) : null, i.res ? "<b>" + esc(i.res) + "</b>" : null].filter(Boolean).join(" · ");
         var tag = i.kind === "league" ? i.lane : tagLabel(i.kind);
-        html += '<button type="button" class="ag ' + (i.kind === "patch" ? "patch " : "") + (i.id === selId ? "sel" : "") + '" style="--cat:' + i.cat + '" data-id="' + i.id + '">' +
+        html += '<button type="button" class="ag ' + (i.kind === "patch" ? "patch " : "") + (i.postponed ? "off " : "") + (i.id === selId ? "sel" : "") + '" style="--cat:' + i.cat + '" data-id="' + i.id + '">' +
           '<span class="d">' + esc(fmtRange(i)) + "</span>" +
-          '<span><span class="t"><span class="tag">' + esc(tag) + "</span>" + esc(i.t) + "</span>" + (meta ? '<br><span class="m">' + meta + "</span>" : "") + "</span>" +
+          '<span class="body"><span class="t"><span class="tag">' + esc(tag) + "</span>" + esc(i.t) + "</span>" + (meta ? '<br><span class="m">' + meta + "</span>" : "") + "</span>" +
           '<span class="pill ' + pillClass(st) + (i.approx ? " approx" : "") + '">' + esc(statusLabel(st)) + "</span></button>";
       });
       html += "</div></section>";
@@ -379,22 +385,42 @@
   function renderDetail() {
     var el = document.getElementById("detail");
     var it = ITEMS.filter(function (i) { return i.id === selId; })[0];
-    if (!it) { el.innerHTML = "<p>" + esc(ui("pickItem")) + "</p>"; return; }
+    var closeBtn = '<span class="grab" aria-hidden="true"></span><button type="button" class="close" id="detailClose" aria-label="' + esc(ui("close")) + '">×</button>';
+    if (!it) { el.innerHTML = closeBtn + "<p>" + esc(ui("pickItem")) + "</p>"; bindClose(); return; }
     var st = status(it);
     el.style.setProperty("--cat", it.cat);
     var kind = it.kind === "league" ? ui("leagueKind", laneText(it.lane, "label")) : kindLabel(it.kind);
     var dl = "";
     if (it.place) dl += "<div><dt>" + esc(ui("place")) + "</dt><dd>" + esc(it.place) + "</dd></div>";
-    if (it.res) dl += "<div><dt>" + esc(st === "done" ? ui("result") : ui("matchup")) + '</dt><dd class="res">' + esc(it.res) + "</dd></div>";
+    if (it.res) dl += "<div><dt>" + esc(st === "postponed" ? ui("statusTitle") : st === "done" ? ui("result") : ui("matchup")) + '</dt><dd class="res">' + esc(it.res) + "</dd></div>";
     if (it.notes) dl += "<div><dt>" + esc(ui("notes")) + "</dt><dd>" + esc(it.notes) + "</dd></div>";
     if (it.range) {
       var n = Math.round((it.end - it.start) / DAY) + 1;
       dl += "<div><dt>" + esc(ui("duration")) + "</dt><dd>" + esc(ui("days", n)) + (it.approx ? " " + esc(ui("approx")) : "") + "</dd></div>";
     }
-    el.innerHTML = '<span class="kind"><i aria-hidden="true"></i>' + esc(kind) + "</span>" +
+    el.innerHTML = closeBtn + '<span class="kind"><i aria-hidden="true"></i>' + esc(kind) + "</span>" +
       "<h2>" + esc(it.t) + "</h2>" +
       '<div class="when"><span>' + esc(fmtRange(it)) + '</span><span class="pill ' + pillClass(st) + '">' + esc(statusLabel(st)) + "</span></div>" +
       (dl ? "<dl>" + dl + "</dl>" : "");
+    bindClose();
+  }
+  function bindClose() {
+    var b = document.getElementById("detailClose");
+    if (b) b.addEventListener("click", closeSheet);
+  }
+  var lastFocus = null;
+  function openSheet() {
+    if (!isSheet()) return;
+    var d = document.getElementById("detail");
+    lastFocus = document.activeElement;
+    d.classList.add("open"); d.scrollTop = 0;
+    document.getElementById("scrim").classList.add("open");
+    var c = document.getElementById("detailClose"); if (c) c.focus({ preventScroll: true });
+  }
+  function closeSheet() {
+    document.getElementById("detail").classList.remove("open");
+    document.getElementById("scrim").classList.remove("open");
+    if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
   }
 
   /* ============ Sélection ============ */
@@ -403,6 +429,7 @@
     document.querySelectorAll(".item.sel,.ag.sel").forEach(function (e) { e.classList.remove("sel"); });
     document.querySelectorAll('[data-id="' + CSS.escape(id) + '"]').forEach(function (e) { e.classList.add("sel"); });
     renderDetail();
+    openSheet();
     if (scrollTl) {
       var b = document.querySelector('.item[data-id="' + CSS.escape(id) + '"]'), sc = document.getElementById("tlScroll");
       if (b) {
@@ -416,7 +443,7 @@
     var t = today0();
     var pro = ITEMS.filter(function (i) { return i.kind === "intl" || i.kind === "league"; });
     var live = pro.filter(function (i) { return t >= i.start && t <= i.end && i.kind === "intl"; })[0];
-    var nxt = pro.filter(function (i) { return i.start > t; })[0];
+    var nxt = pro.filter(function (i) { return i.start > t && !i.postponed; })[0];
     return (live || nxt || ITEMS.filter(function (i) { return i.id === "i-w-final"; })[0] || ITEMS[0]).id;
   }
 
@@ -427,6 +454,8 @@
     applyStatic(); renderLangs(); renderYears(); renderNow(); renderFilters(); renderTimeline(); renderAgenda(); renderDetail();
   }
 
+  document.getElementById("scrim").addEventListener("click", closeSheet);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeSheet(); });
   var rT;
   window.addEventListener("resize", function () { clearTimeout(rT); rT = setTimeout(renderTimeline, 120); });
   renderAll();

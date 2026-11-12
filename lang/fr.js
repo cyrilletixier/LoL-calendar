@@ -21,7 +21,7 @@ window.LOL_I18N.fr = {
     agendaAria: "Agenda mois par mois",
     monthJumpAria: "Aller au mois",
     tlNote: "Cliquez sur une barre pour afficher sa fiche. Contour pointillé : dates approximatives. Les patchs sortent à la date indiquée, heure du Pacifique.",
-    footer: "Calendrier de fan, sans lien avec Riot Games. Données arrêtées au 12 novembre 2026 : les dates futures peuvent encore bouger.",
+    footer: "Calendrier de fan, sans lien avec Riot Games. Données arrêtées au 13 novembre 2026 : les dates futures peuvent encore bouger.",
     show: "Afficher",
     all: "Tout",
     gameOnly: "En jeu seulement",
@@ -48,13 +48,16 @@ window.LOL_I18N.fr = {
     place: "Lieu",
     result: "Résultat",
     matchup: "Affiche",
+    statusTitle: "Statut",
     notes: "À savoir",
     duration: "Durée",
     days: function (n) { return n + " jour" + (n > 1 ? "s" : ""); },
     approx: "(approximatif)",
     patch: "Patch",
     leagueKind: function (l) { return "Ligue régionale · " + l; },
-    status: { done: "Terminé", live: "En cours", next: "À venir", planned: "Annoncé" }
+    status: { done: "Terminé", live: "En cours", next: "À venir", planned: "Annoncé", postponed: "Reporté" },
+    close: "Fermer la fiche",
+    swipeHint: "Faites glisser la frise pour changer de mois et touchez une barre pour ouvrir sa fiche. Contour pointillé : dates approximatives."
   },
 
   kinds: {
@@ -65,10 +68,10 @@ window.LOL_I18N.fr = {
   tags: { season: "Jeu", act: "Jeu", patch: "Patch", event: "Événement", intl: "Compétition" },
 
   lanes: {
-    season: { label: "Saisons & actes" },
-    patch:  { label: "Patchs" },
-    event:  { label: "Événements en jeu" },
-    intl:   { label: "International", sub: "First Stand, MSI, Worlds…" },
+    season: { label: "Saisons & actes", short: "Saisons" },
+    patch:  { label: "Patchs", short: "Patchs" },
+    event:  { label: "Événements en jeu", short: "Évén." },
+    intl:   { label: "International", short: "Intl", sub: "First Stand, MSI, Worlds…" },
     LEC:    { label: "LEC", sub: "Europe" },
     LCK:    { label: "LCK", sub: "Corée" },
     LPL:    { label: "LPL", sub: "Chine" },
@@ -86,7 +89,8 @@ window.LOL_I18N.fr = {
     ["LoL Esports : Caps entre au Hall of Legends", "https://lolesports.com/en-US/news/caps-becomes-first-western-pro-for-hall-of-legends"],
     ["lolnow.gg : calendrier des ligues régionales 2026", "https://lolnow.gg/lol-tournament-calendar/"],
     ["Inven Global : Gen.G champion LCK 2026", "https://www.invenglobal.com/articles/25926/geng-defeats-hanwha-life-esports-to-win-back-to-back-lck-titles"],
-    ["Esports World Cup : Dplus KIA remporte LoL à l'EWC 26", "https://esportsworldcup.com/en/press-releases/dplus-kia-win-lol-at-ewc26"]
+    ["Esports World Cup : Dplus KIA remporte LoL à l'EWC 26", "https://esportsworldcup.com/en/press-releases/dplus-kia-win-lol-at-ewc26"],
+    ["Sheep Esports : la Nations Cup reportée à novembre 2027", "https://www.sheepesports.com/fr/lol/articles/esports-nations-cup-postponed-to-november-2027/en"]
   ],
 
   /* Textes des éléments, par année puis par identifiant (voir data/<année>.js).
@@ -158,8 +162,8 @@ window.LOL_I18N.fr = {
                       notes: "Quarts du 3 au 6 novembre (dont T1 3-1 Karmine Corp, Gen.G 3-0 LYON, BLG 3-0 Dplus KIA), demies les 7 et 8." },
       "i-w-final":  { t: "Finale des Worlds 2026", s: "Finale Worlds", place: "Brooklyn, New York (Barclays Center)", res: "Gen.G contre Bilibili Gaming",
                       notes: "Premier match pour le titre mondial de Gen.G depuis l'époque Samsung. 1 million de dollars pour le vainqueur." },
-      "i-enc":      { t: "Esports Nations Cup : LoL", s: "Nations Cup", place: "Riyad, Arabie saoudite",
-                      notes: "Première édition : 32 sélections nationales et 1,5 million de dollars en jeu. Tournoi hors circuit Riot." },
+      "i-enc":      { t: "Esports Nations Cup : LoL", s: "Nations Cup (reportée)", place: "Riyad, Arabie saoudite (prévu)", res: "Reportée à novembre 2027",
+                      notes: "L'Esports Foundation a annoncé le 18 août le report de la première édition à novembre 2027, en raison de la situation régionale. Prévue du 21 au 29 novembre 2026 avec 32 sélections nationales et 1,5 million de dollars en jeu. Tournoi hors circuit Riot." },
 
       "lec-v":  { t: "LEC Versus", s: "Versus", place: "Berlin", res: "G2 Esports champion (finale contre Karmine Corp)",
                   notes: "Nouveau format à 12 équipes dont 2 invitées des ligues régionales ; le vainqueur va au First Stand. MVP : Caps." },

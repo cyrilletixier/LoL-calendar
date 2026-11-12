@@ -1,7 +1,8 @@
 /* Données 2026, indépendantes de la langue.
    Les textes (titres, lieux, résultats, notes) sont dans lang/<code>.js, sous items[2026][id].
    d0 / d1 : "MM-JJ" dans l'année, ou "AAAA-MM-JJ" pour une autre année. Sans d1 : événement d'un jour.
-   approx : dates approximatives (contour pointillé). planned : annoncé mais pas confirmé. */
+   approx : dates approximatives (contour pointillé). planned : annoncé mais pas confirmé.
+   postponed : reporté ou annulé (barre barrée, ignoré dans « prochain rendez-vous »). */
 window.LOL_DATA = window.LOL_DATA || { years: {} };
 window.LOL_DATA.years[2026] = {
   items: [
@@ -64,7 +65,7 @@ window.LOL_DATA.years[2026] = {
     { id: "i-w-swiss",  lane: "intl", kind: "intl", d0: "10-23", d1: "10-31" },
     { id: "i-w-ko",     lane: "intl", kind: "intl", d0: "11-03", d1: "11-08" },
     { id: "i-w-final",  lane: "intl", kind: "intl", d0: "11-14" },
-    { id: "i-enc",      lane: "intl", kind: "intl", d0: "11-21", d1: "11-29" },
+    { id: "i-enc",      lane: "intl", kind: "intl", d0: "11-21", d1: "11-29", postponed: true },
 
     /* LEC */
     { id: "lec-v",  lane: "LEC", kind: "league", d0: "01-17", d1: "03-01" },

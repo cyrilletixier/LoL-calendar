@@ -8,6 +8,8 @@ Calendrier League of Legends sur une seule page : saisons et actes, patchs, év�
 - **Esport** : les compétitions internationales (First Stand, MSI, Esports World Cup, Worlds, Nations Cup…) et les ligues LEC, LCK, LPL, LCS, CBLOL, LCP et LFL, avec les vainqueurs connus.
 - Un résumé « en ce moment » (saison, patch, prochain rendez-vous), des filtres par couloir, une frise annuelle et un agenda mois par mois avec une fiche détail.
 - Un choix de langue (FR / EN), mémorisé dans le navigateur.
+- Une mise en page adaptée aux smartphones : cartes et filtres défilants, frise à faire glisser, fiche détail qui s'ouvre en panneau depuis le bas de l'écran.
+- Les couleurs du client League of Legends (noir hextech, bleus profonds, ors).
 
 Les barres en pointillé signalent des dates approximatives.
 
@@ -61,12 +63,12 @@ Format d'un élément dans `data/<année>.js` :
 - `d0` / `d1` : `"MM-JJ"` dans l'année, ou `"AAAA-MM-JJ"` pour une autre année ; sans `d1`, l'événement dure un jour.
 - `lane` : `season`, `patch`, `event`, `intl`, ou le code d'une ligue (`LEC`, `LCK`, `LPL`, `LCS`, `CBLOL`, `LCP`, `LFL`).
 - `kind` : `season`, `act`, `patch`, `event`, `intl` ou `league`.
-- `approx: true` affiche la barre en pointillé ; `planned: true` affiche « Annoncé » au lieu de « À venir ».
+- `approx: true` affiche la barre en pointillé ; `planned: true` affiche « Annoncé » au lieu de « À venir » ; `postponed: true` barre l'élément et l'affiche « Reporté ».
 - Pour un patch, `s` donne le numéro (`"26.01"`), identique dans toutes les langues.
 
 ## Sources des données 2026
 
-Calendrier officiel des patchs de Riot Games, pages d'événements Riot, LoL Esports, Sheep Esports, lolnow.gg et la presse esport (Inven Global, GosuGamers, Dot Esports…). Données arrêtées au 12 novembre 2026.
+Calendrier officiel des patchs de Riot Games, pages d'événements Riot, LoL Esports, Sheep Esports, lolnow.gg et la presse esport (Inven Global, GosuGamers, Dot Esports…). Données arrêtées au 13 novembre 2026.
 
 ## Avertissement
 
