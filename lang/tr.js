@@ -177,6 +177,9 @@ window.LOL_I18N.tr = {
       "i-w-final": { place: "Seul, Güney Kore (Gocheok Sky Dome)" }
     },
     2024: {
+      "x-stillhere": { notes: "Forts, 2WEI ve Tiffany Aris'in özgün şarkısıyla 2024 sezonu sinematiği. Tarih yaklaşık." },
+      "x-arcane2": { t: "Arcane · 2. Sezon", s: "Arcane 2. Sezon", place: "Netflix", notes: "Riot Games ve Fortiche'nin dizisinin ikinci ve son sezonu: üç perdede dokuz bölüm, 9, 16 ve 23 Kasım'da." },
+      "x-artbook": { place: "Insight Editions", notes: "Arcane'in iki sezonunun yapımını anlatan, Elisabeth Vincentelli'nin yazdığı sanat kitabı (224 sayfa). 31 Aralık'ta çıkacağı duyuruldu; çoğu kitapçı 3 Aralık tarihini veriyor." },
       "sp1": { notes: "Yılın ilk dereceli etabı, 14.1 yamasıyla başladı: yeniden şekillenen Vadi, yeni bir Hiçlik canavarı ve yenilenen birçok eşya." },
       "sp2": { notes: "15 Mayıs'ta sunucu saatiyle öğlen 14.10 yamasıyla başlıyor." },
       "sp3": { notes: "25 Eylül'de 14.19 yamasıyla başlıyor, 8 Ocak 2025'te bitiyor." },
@@ -220,6 +223,12 @@ window.LOL_I18N.tr = {
       "lfl-su": { notes: "BDS Academy'nin ilk LFL şampiyonluğu. Tarihler yaklaşık." }
     },
     2025: {
+      "x-noxus": { notes: "2025 1. Sezonu sinematiği; Fortiche ile TEYA'nın “Bite Marks” şarkısı eşliğinde hazırlandı. Mel Medarda, Arcane'in sonundan sonra ortaya çıkıyor." },
+      "x-expo-mtp": { t: "Sergi: “Arcane'in Perde Arkası”", s: "Arcane sergisi", place: "Montpellier, Fransa (Belediye Binası)", notes: "Fortiche stüdyosuyla birlikte, Arcane'in iki sezonunun nasıl yapıldığını anlatan ücretsiz sergi. Yaklaşık 15.000 ziyaretçi." },
+      "x-ambessa": { place: "Orbit", notes: "C. L. Clark'ın Ambessa Medarda hakkındaki, Arcane'den on yıl önce geçen romanı. ABD ve Birleşik Krallık'ta çıktı; diğer ülkeler ardından geldi." },
+      "x-chronicles": { t: "CHRONICLES: dünya prömiyeri", place: "Prag, Çekya (Forum Karlín)", notes: "Topluluk girişimiyle doğan, League of Legends müziklerine adanmış senfonik ve görsel konser. Biletler tükendi, 4.000'den fazla seyirci." },
+      "x-beginning": { notes: "Fortiche'nin hazırladığı, Xin Zhao odaklı 3. Sezon (Trials of Twilight) sinematiği. Tarih yaklaşık." },
+      "x-twilight": { place: "Chengdu'daki Worlds'te tanıtıldı", notes: "Fortiche'nin yılın dört sinematiğinin sonuncusu (Welcome to Noxus, A Dark Gambit, Beginning of the End, Twilight's End); LeBlanc, Vladimir ve Xin Zhao etrafında." },
       "s1": { notes: "İlk temalı sezon: Noxus tarzı Vadi, yeni destansı canavar Atakhan ve Feats of Strength. Yamalar önce 25.S1.x, ardından 25.04 ve sonrası olarak adlandırılıyor." },
       "s1a2": { notes: "Arena Noxus temasıyla, Hextech sandıkları da geri dönüyor." },
       "s2": { notes: "Ionia temalı sezon." },
@@ -279,6 +288,16 @@ window.LOL_I18N.tr = {
       "i-enc": { place: "Riyad, Suudi Arabistan", notes: "Milli takımların yer aldığı ilk turnuva, Kasım 2026'dan Kasım 2027'ye ertelendi. Kesin tarihler açıklanmadı." }
     },
     2026: {
+      "x-salvation": { notes: "Unit Image ve Ben Hibon ile hazırlanan 1. Sezon (For Demacia) sinematiği; Forts'un yer aldığı özgün bir şarkıyla." },
+      "x-bloom": { notes: "Yasuo, Katarina ve Lillia'nın Petals of Spring kostümleriyle yer aldığı Lunar Revel 2026 sinematiği. Tarih yaklaşık." },
+      "x-immersive": { t: "Immersive Arcane: Şanghay prömiyeri", place: "Şanghay, Çin (Shanghai Hotel ek binası)", notes: "Arcane'in ilk sahne uyarlaması: Punchdrunk tiyatro topluluğuyla ortak yapım, Çince sahnelenen 120 dakikalık sürükleyici bir müzikal. Ön gösterimler 22 Ocak'tan itibaren, prömiyer 10 Mart'ta." },
+      "x-brink": { notes: "Şampiyonun çıkışından iki hafta önce Locke'u ele geçirilmiş bir Vayne karşısında tanıtan 2D animasyon kısa film. Tarih yaklaşık." },
+      "x-ambessa-pb": { t: "Ambessa: Chosen of the Wolf (cep boy)", s: "Ambessa (cep boy)", place: "Orbit", notes: "C. L. Clark'ın romanının Birleşik Krallık cep boy baskısı (448 sayfa)." },
+      "x-tempo": { place: "Louis Vuitton", notes: "Louis Vuitton'un Travel Book koleksiyonundan K/DA'ya adanmış resimli kitap: Ahri, Akali, Evelynn ve Kai'Sa'nın hayatından 24 saat. İngilizce, Fransızca ve Çince." },
+      "x-firestarter": { notes: "K/DA'nın altı yıl sonraki dönüşü için Fortiche'nin canlandırdığı müzik videosu. Planlanandan bir gün önce yayımlandı; FIRESTARTER EP'si 21 Ekim'de geldi." },
+      "x-netflix": { t: "Netflix'te League of Legends müzik videoları", s: "Netflix'te LoL müzik videoları", place: "Netflix (ABD)", notes: "K/DA, HEARTSTEEL ve True Damage'in on müzik videosu Netflix'in ABD kataloğuna eklendi." },
+      "x-chronicles": { t: "CHRONICLES: Celebration of League of Legends Music", place: "Katowice, Polonya (Spodek)", notes: "Necrit'in sunduğu, Jørn Lande ve Wønder'in yer aldığı orkestralı konser. Bir Avrupa turnesinin ilk tarihi; Asya ve ABD 2027 için planlanıyor." },
+      "x-headliners": { place: "Insight Editions", notes: "Riot'un sanal gruplarını (K/DA, HEARTSTEEL, True Damage, Pentakill) anlatan, koleksiyon objeleriyle satılan 148 sayfalık kitap. 8 Aralık'ta çıkacağı duyuruldu; bazı kitapçılar 24 Kasım tarihini veriyor." },
       "s1": { t: "1. Sezon: For Demacia", s: "1. Sezon · For Demacia", name: "For Demacia", notes: "Demacia teması: Demacia tarzı Sihirdar Vadisi, rol görevleri, daha hızlı maçlar ve genişletilmiş ARAM: Mayhem. Dereceli oyunla kazanılan Muzaffer Braum kostümü." },
       "s1a1": { t: "1. Sezon · 1. Perde", s: "1. Perde", notes: "For Demacia savaş bileti, 8 Ocak – 3 Mart." },
       "s1a2": { t: "1. Sezon · 2. Perde", s: "2. Perde", notes: "Daha karanlık Demacia kostümleriyle 2. Perde bileti, Shyvana yenilemesi, Brawl'ın dönüşü ve “Requiem” animasyonlu çizgi romanı." },

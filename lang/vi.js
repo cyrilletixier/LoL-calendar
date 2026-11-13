@@ -177,6 +177,9 @@ window.LOL_I18N.vi = {
       "i-w-final": { place: "Seoul, Hàn Quốc (Gocheok Sky Dome)" }
     },
     2024: {
+      "x-stillhere": { notes: "Đoạn phim mùa giải 2024, với ca khúc gốc của Forts, 2WEI và Tiffany Aris. Ngày dự kiến." },
+      "x-arcane2": { t: "Arcane · Mùa 2", s: "Arcane M2", place: "Netflix", notes: "Mùa thứ hai và cũng là mùa cuối của bộ phim do Riot Games và Fortiche sản xuất: chín tập trong ba màn, phát hành ngày 9, 16 và 23/11." },
+      "x-artbook": { place: "Insight Editions", notes: "Sách nghệ thuật về quá trình làm hai mùa Arcane, do Elisabeth Vincentelli viết (224 trang). Dự kiến phát hành 31/12; phần lớn nhà sách ghi ngày 3/12." },
       "sp1": { notes: "Giai đoạn xếp hạng đầu tiên trong năm, bắt đầu với bản 14.1: bản đồ được thiết kế lại, quái vật Hư Không mới và nhiều trang bị được làm lại." },
       "sp2": { notes: "Bắt đầu lúc 12 giờ trưa (giờ máy chủ) ngày 15/5 với bản 14.10." },
       "sp3": { notes: "Bắt đầu ngày 25/9 với bản 14.19, kết thúc ngày 8/1/2025." },
@@ -220,6 +223,12 @@ window.LOL_I18N.vi = {
       "lfl-su": { notes: "Danh hiệu LFL đầu tiên của BDS Academy. Ngày dự kiến." }
     },
     2025: {
+      "x-noxus": { notes: "Đoạn phim Mùa 1 năm 2025, thực hiện cùng Fortiche trên nền ca khúc “Bite Marks” của TEYA. Mel Medarda xuất hiện sau cái kết của Arcane." },
+      "x-expo-mtp": { t: "Triển lãm: Hậu trường Arcane", s: "Triển lãm Arcane", place: "Montpellier, Pháp (Tòa thị chính)", notes: "Triển lãm miễn phí về quá trình làm hai mùa Arcane, cùng xưởng phim Fortiche. Khoảng 15.000 khách tham quan." },
+      "x-ambessa": { place: "Orbit", notes: "Tiểu thuyết của C. L. Clark về Ambessa Medarda, lấy bối cảnh mười năm trước Arcane. Phát hành tại Hoa Kỳ và Vương quốc Anh; các nước khác ra mắt sau." },
+      "x-chronicles": { t: "CHRONICLES: buổi công diễn đầu tiên trên thế giới", place: "Praha, Séc (Forum Karlín)", notes: "Buổi hòa nhạc giao hưởng và hình ảnh về âm nhạc Liên Minh Huyền Thoại, ra đời từ sáng kiến của cộng đồng. Cháy vé, hơn 4.000 khán giả." },
+      "x-beginning": { notes: "Đoạn phim Mùa 3, Trials of Twilight, do Fortiche thực hiện, xoay quanh Xin Zhao. Ngày dự kiến." },
+      "x-twilight": { place: "Ra mắt tại CKTG ở Thành Đô", notes: "Đoạn phim cuối cùng trong bốn phim của năm do Fortiche thực hiện (Welcome to Noxus, A Dark Gambit, Beginning of the End, Twilight's End), xoay quanh LeBlanc, Vladimir và Xin Zhao." },
       "s1": { notes: "Mùa giải theo chủ đề đầu tiên: bản đồ phong cách Noxus, quái vật sử thi mới Atakhan, Feats of Strength. Các bản cập nhật mang tên 25.S1.x, sau đó từ 25.04." },
       "s1a2": { notes: "Đấu Trường trở lại với chủ đề Noxus, cùng rương Hextech." },
       "s2": { notes: "Mùa giải chủ đề Ionia." },
@@ -279,6 +288,16 @@ window.LOL_I18N.vi = {
       "i-enc": { place: "Riyadh, Ả Rập Xê Út", notes: "Lần tổ chức đầu tiên, với các đội tuyển quốc gia, dời từ tháng 11/2026 sang tháng 11/2027. Chưa công bố ngày cụ thể." }
     },
     2026: {
+      "x-salvation": { notes: "Đoạn phim Mùa 1, For Demacia, thực hiện cùng Unit Image và Ben Hibon, với ca khúc gốc có sự tham gia của Forts." },
+      "x-bloom": { notes: "Đoạn phim Lunar Revel 2026, với Yasuo, Katarina và Lillia trong trang phục Petals of Spring. Ngày dự kiến." },
+      "x-immersive": { t: "Immersive Arcane: công diễn tại Thượng Hải", place: "Thượng Hải, Trung Quốc (tòa nhà phụ của Shanghai Hotel)", notes: "Lần đầu Arcane được chuyển thể lên sân khấu: vở nhạc kịch nhập vai dài 120 phút, đồng sản xuất với đoàn kịch Punchdrunk, diễn bằng tiếng Trung. Suất diễn thử từ 22/1, công diễn ngày 10/3." },
+      "x-brink": { notes: "Phim ngắn hoạt hình 2D giới thiệu Locke đối đầu với Vayne bị chiếm xác, hai tuần trước khi tướng ra mắt. Ngày dự kiến." },
+      "x-ambessa-pb": { t: "Ambessa: Chosen of the Wolf (bản bìa mềm)", s: "Ambessa (bìa mềm)", place: "Orbit", notes: "Bản bìa mềm tại Anh của tiểu thuyết của C. L. Clark (448 trang)." },
+      "x-tempo": { place: "Louis Vuitton", notes: "Sách minh họa trong bộ sưu tập Travel Book của Louis Vuitton về K/DA: 24 giờ trong cuộc sống của Ahri, Akali, Evelynn và Kai'Sa. Bằng tiếng Anh, Pháp và Trung." },
+      "x-firestarter": { notes: "MV hoạt hình do Fortiche thực hiện cho sự trở lại của K/DA sau sáu năm. Phát hành sớm một ngày so với dự kiến; EP FIRESTARTER ra mắt ngày 21/10." },
+      "x-netflix": { t: "MV Liên Minh Huyền Thoại trên Netflix", s: "MV LMHT trên Netflix", place: "Netflix (Hoa Kỳ)", notes: "Mười MV của K/DA, HEARTSTEEL và True Damage được thêm vào kho phim Netflix tại Mỹ." },
+      "x-chronicles": { t: "CHRONICLES: Celebration of League of Legends Music", place: "Katowice, Ba Lan (Spodek)", notes: "Buổi hòa nhạc cùng dàn nhạc do Necrit dẫn dắt, với Jørn Lande và Wønder. Điểm diễn đầu tiên của chuyến lưu diễn châu Âu; châu Á và Hoa Kỳ dự kiến vào năm 2027." },
+      "x-headliners": { place: "Insight Editions", notes: "Sách 148 trang về các nhóm nhạc ảo của Riot (K/DA, HEARTSTEEL, True Damage, Pentakill), bán kèm vật phẩm sưu tầm. Dự kiến phát hành 8/12; một số nhà sách ghi ngày 24/11." },
       "s1": { t: "Mùa 1: For Demacia", s: "Mùa 1 · For Demacia", name: "For Demacia", notes: "Chủ đề Demacia: Summoner's Rift mang phong cách Demacia, nhiệm vụ vai trò, trận đấu nhanh hơn và ARAM: Mayhem mở rộng. Trang phục Braum Chiến Thắng cho xếp hạng." },
       "s1a1": { t: "Mùa 1 · Màn 1", s: "Màn 1", notes: "Thẻ sự kiện For Demacia, từ 8/1 đến 3/3." },
       "s1a2": { t: "Mùa 1 · Màn 2", s: "Màn 2", notes: "Thẻ Màn 2 với trang phục Demacia u tối hơn, làm lại Shyvana, Brawl trở lại và truyện tranh động «Requiem»." },

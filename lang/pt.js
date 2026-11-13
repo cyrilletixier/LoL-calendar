@@ -177,6 +177,9 @@ window.LOL_I18N.pt = {
       "i-w-final": { place: "Seul, Coreia do Sul (Gocheok Sky Dome)" }
     },
     2024: {
+      "x-stillhere": { notes: "Cinemática da temporada 2024, com uma música original de Forts, 2WEI e Tiffany Aris. Data aproximada." },
+      "x-arcane2": { t: "Arcane · Temporada 2", s: "Arcane T2", place: "Netflix", notes: "Segunda e última temporada da série da Riot Games e da Fortiche: nove episódios em três atos, em 9, 16 e 23 de novembro." },
+      "x-artbook": { place: "Insight Editions", notes: "Livro de arte sobre a criação das duas temporadas de Arcane, escrito por Elisabeth Vincentelli (224 páginas). Anunciado para 31 de dezembro; a maioria das livrarias indica 3 de dezembro." },
       "sp1": { notes: "Primeiro split ranqueado do ano, lançado com o patch 14.1: mapa remodelado, um novo monstro do Vazio e muitos itens reformulados." },
       "sp2": { notes: "Começa em 15 de maio ao meio-dia (horário do servidor) com o patch 14.10." },
       "sp3": { notes: "Começa em 25 de setembro com o patch 14.19 e termina em 8 de janeiro de 2025." },
@@ -220,6 +223,12 @@ window.LOL_I18N.pt = {
       "lfl-su": { notes: "Primeiro título da BDS Academy na LFL. Datas aproximadas." }
     },
     2025: {
+      "x-noxus": { notes: "Cinemática da temporada 1 de 2025, feita com a Fortiche ao som de “Bite Marks”, de TEYA. Mel Medarda aparece depois do fim de Arcane." },
+      "x-expo-mtp": { t: "Exposição “Os bastidores de Arcane”", s: "Exposição Arcane", place: "Montpellier, França (prefeitura)", notes: "Exposição gratuita sobre como as duas temporadas de Arcane foram feitas, com o estúdio Fortiche. Cerca de 15 mil visitantes." },
+      "x-ambessa": { place: "Orbit", notes: "Romance de C. L. Clark sobre Ambessa Medarda, ambientado dez anos antes de Arcane. Lançado nos Estados Unidos e no Reino Unido; outros países vieram depois." },
+      "x-chronicles": { t: "CHRONICLES: estreia mundial", place: "Praga, Tchéquia (Forum Karlín)", notes: "Concerto sinfônico e visual dedicado às músicas de League of Legends, nascido de uma iniciativa da comunidade. Ingressos esgotados, mais de 4 mil espectadores." },
+      "x-beginning": { notes: "Cinemática da temporada 3, Trials of Twilight, feita pela Fortiche e centrada em Xin Zhao. Data aproximada." },
+      "x-twilight": { place: "Revelada no Worlds, em Chengdu", notes: "Última das quatro cinemáticas do ano feitas pela Fortiche (Welcome to Noxus, A Dark Gambit, Beginning of the End, Twilight's End), sobre LeBlanc, Vladimir e Xin Zhao." },
       "s1": { notes: "Primeira temporada temática: mapa no estilo de Noxus, novo monstro épico Atakhan e Feats of Strength. Os patches se chamam 25.S1.x e depois 25.04 em diante." },
       "s1a2": { notes: "O Arena volta com tema de Noxus, e os baús hextec também." },
       "s2": { notes: "Temporada com tema de Ionia." },
@@ -279,6 +288,16 @@ window.LOL_I18N.pt = {
       "i-enc": { place: "Riad, Arábia Saudita", notes: "Primeira edição, com seleções nacionais, adiada de novembro de 2026 para novembro de 2027. Datas exatas não anunciadas." }
     },
     2026: {
+      "x-salvation": { notes: "Cinemática da temporada 1, For Demacia, feita com a Unit Image e Ben Hibon, com uma música original com Forts." },
+      "x-bloom": { notes: "Cinemática do Lunar Revel 2026, com Yasuo, Katarina e Lillia nas skins Petals of Spring. Data aproximada." },
+      "x-immersive": { t: "Immersive Arcane: estreia em Xangai", place: "Xangai, China (anexo do Shanghai Hotel)", notes: "Primeira adaptação de Arcane para o palco: um musical imersivo de 120 minutos coproduzido com a companhia Punchdrunk, encenado em chinês. Pré-estreias a partir de 22 de janeiro, estreia em 10 de março." },
+      "x-brink": { notes: "Curta de animação 2D que apresenta Locke diante de uma Vayne possuída, duas semanas antes do lançamento do campeão. Data aproximada." },
+      "x-ambessa-pb": { t: "Ambessa: Chosen of the Wolf (edição de bolso)", s: "Ambessa (bolso)", place: "Orbit", notes: "Edição de bolso britânica do romance de C. L. Clark (448 páginas)." },
+      "x-tempo": { place: "Louis Vuitton", notes: "Livro ilustrado da coleção Travel Book da Louis Vuitton dedicado ao K/DA: 24 horas na vida de Ahri, Akali, Evelynn e Kai'Sa. Em inglês, francês e chinês." },
+      "x-firestarter": { notes: "Clipe animado pela Fortiche para a volta do K/DA depois de seis anos. Saiu um dia antes do previsto; o EP FIRESTARTER veio em 21 de outubro." },
+      "x-netflix": { t: "Clipes de League of Legends na Netflix", s: "Clipes de LoL na Netflix", place: "Netflix (Estados Unidos)", notes: "Dez clipes de K/DA, HEARTSTEEL e True Damage adicionados ao catálogo americano da Netflix." },
+      "x-chronicles": { t: "CHRONICLES: Celebration of League of Legends Music", place: "Katowice, Polônia (Spodek)", notes: "Concerto com orquestra apresentado por Necrit, com Jørn Lande e Wønder. Primeira data de uma turnê europeia; Ásia e Estados Unidos estão previstos para 2027." },
+      "x-headliners": { place: "Insight Editions", notes: "Livro de 148 páginas sobre as bandas virtuais da Riot (K/DA, HEARTSTEEL, True Damage, Pentakill), vendido com itens colecionáveis. Anunciado para 8 de dezembro; algumas livrarias indicam 24 de novembro." },
       "s1": { t: "Temporada 1: For Demacia", s: "Temporada 1 · For Demacia", name: "For Demacia", notes: "Tema Demacia: Summoner's Rift no estilo de Demacia, missões de rota, partidas mais rápidas e ARAM: Mayhem ampliado. Skin Braum Vitorioso no ranqueado." },
       "s1a1": { t: "Temporada 1 · Ato 1", s: "Ato 1", notes: "Passe de batalha For Demacia, de 8 de janeiro a 3 de março." },
       "s1a2": { t: "Temporada 1 · Ato 2", s: "Ato 2", notes: "Passe do Ato 2 com skins demacianas mais sombrias, rework da Shyvana, volta do Brawl e a HQ animada «Requiem»." },

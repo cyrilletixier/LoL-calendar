@@ -180,6 +180,9 @@ window.LOL_I18N.zh = {
       "i-w-final": { place: "韩国首尔（Gocheok Sky Dome）" }
     },
     2024: {
+      "x-stillhere": { notes: "2024 赛季 CG，由 Forts、2WEI 和 Tiffany Aris 演唱原创歌曲。日期为大致时间。" },
+      "x-arcane2": { t: "《双城之战》第二季", s: "双城之战 S2", place: "Netflix", notes: "Riot Games 与 Fortiche 剧集的第二季也是最终季：三幕共九集，于 11 月 9 日、16 日和 23 日上线。" },
+      "x-artbook": { place: "Insight Editions", notes: "讲述《双城之战》两季创作过程的艺术设定集，作者 Elisabeth Vincentelli（224 页）。原定 12 月 31 日出版，多数书店标注为 12 月 3 日。" },
       "sp1": { notes: "全年首个排位赛段，随 14.1 版本开启：峡谷地形重塑，新增虚空怪物，大量装备重做。" },
       "sp2": { notes: "5 月 15 日服务器时间中午随 14.10 版本开启。" },
       "sp3": { notes: "9 月 25 日随 14.19 版本开启，2025 年 1 月 8 日结束。" },
@@ -223,6 +226,12 @@ window.LOL_I18N.zh = {
       "lfl-su": { notes: "BDS Academy 首个 LFL 冠军。日期为大致时间。" }
     },
     2025: {
+      "x-noxus": { notes: "2025 年第一赛季 CG，与 Fortiche 合作，配乐为 TEYA 的《Bite Marks》。梅尔·米达尔达在《双城之战》结局之后登场。" },
+      "x-expo-mtp": { t: "展览：《双城之战》幕后", s: "《双城之战》展览", place: "法国蒙彼利埃（市政厅）", notes: "与 Fortiche 工作室合办的免费展览，介绍《双城之战》两季的制作过程。观众约 1.5 万人。" },
+      "x-ambessa": { place: "Orbit", notes: "C. L. Clark 创作的安蓓萨·米达尔达小说，故事发生在《双城之战》十年前。先在美国和英国出版，随后其他国家陆续推出。" },
+      "x-chronicles": { t: "CHRONICLES：全球首演", place: "捷克布拉格（Forum Karlín）", notes: "源自社区倡议的英雄联盟音乐交响视听音乐会。门票售罄，观众超过 4000 人。" },
+      "x-beginning": { notes: "第三赛季“Trials of Twilight”CG，由 Fortiche 制作，以赵信为主角。日期为大致时间。" },
+      "x-twilight": { place: "在成都全球总决赛上公布", notes: "Fortiche 今年制作的四部 CG（Welcome to Noxus、A Dark Gambit、Beginning of the End、Twilight's End）中的最后一部，讲述乐芙兰、弗拉基米尔和赵信。" },
       "s1": { notes: "首个主题赛季：诺克萨斯风格的峡谷、全新史诗野怪阿塔坎、力量壮举。版本号先为 25.S1.x，之后从 25.04 开始。" },
       "s1a2": { notes: "诺克萨斯主题的斗魂竞技场与海克斯科技宝箱回归。" },
       "s2": { notes: "艾欧尼亚主题赛季。" },
@@ -282,6 +291,16 @@ window.LOL_I18N.zh = {
       "i-enc": { place: "沙特阿拉伯利雅得", notes: "首届赛事，由国家队参赛，从 2026 年 11 月推迟至 2027 年 11 月。具体日期尚未公布。", t: "2027 电竞国家杯", s: "电竞国家杯" }
     },
     2026: {
+      "x-salvation": { notes: "第一赛季“For Demacia”CG，与 Unit Image 和 Ben Hibon 合作，配有 Forts 参与的原创歌曲。" },
+      "x-bloom": { notes: "Lunar Revel 2026 CG，亚索、卡特琳娜和莉莉娅身着 Petals of Spring 皮肤登场。日期为大致时间。" },
+      "x-immersive": { t: "Immersive Arcane：上海首演", place: "中国上海（Shanghai Hotel 附楼）", notes: "《双城之战》首次改编为舞台作品：与 Punchdrunk 剧团联合制作的 120 分钟沉浸式音乐剧，以中文演出。1 月 22 日起预演，3 月 10 日首演。" },
+      "x-brink": { notes: "2D 动画短片，在英雄上线两周前介绍 Locke 与被附身的薇恩对峙。日期为大致时间。" },
+      "x-ambessa-pb": { t: "Ambessa: Chosen of the Wolf（平装本）", s: "安蓓萨（平装本）", place: "Orbit", notes: "C. L. Clark 小说的英国平装版（448 页）。" },
+      "x-tempo": { place: "Louis Vuitton", notes: "路易威登 Travel Book 系列中以 K/DA 为主题的插画书：阿狸、阿卡丽、伊芙琳和卡莎的 24 小时。提供英文、法文和中文版。" },
+      "x-firestarter": { notes: "Fortiche 为 K/DA 时隔六年回归制作的动画音乐视频。比原计划提前一天发布；EP《FIRESTARTER》于 10 月 21 日推出。" },
+      "x-netflix": { t: "Netflix 上的英雄联盟音乐视频", s: "Netflix 上的 LoL 音乐视频", place: "Netflix（美国）", notes: "K/DA、HEARTSTEEL 和 True Damage 的十支音乐视频加入 Netflix 美国片库。" },
+      "x-chronicles": { t: "CHRONICLES: Celebration of League of Legends Music", place: "波兰卡托维兹（Spodek）", notes: "由 Necrit 主持、Jørn Lande 和 Wønder 参演的管弦乐音乐会。欧洲巡演首站；亚洲和美国场次计划于 2027 年举行。" },
+      "x-headliners": { place: "Insight Editions", notes: "介绍 Riot 虚拟乐队（K/DA、HEARTSTEEL、True Damage、Pentakill）的 148 页图书，附赠收藏品。原定 12 月 8 日出版，部分书店标注为 11 月 24 日。" },
       "s1": { t: "第一赛季：For Demacia", s: "第一赛季 · For Demacia", name: "For Demacia", notes: "德玛西亚主题：德玛西亚风格的召唤师峡谷、位置任务、更快的对局节奏、扩展的 ARAM: Mayhem。排位赛奖励Victorious 布隆皮肤。" },
       "s1a1": { t: "第一赛季 · 第一幕", s: "第一幕", notes: "For Demacia 通行证，1 月 8 日至 3 月 3 日。" },
       "s1a2": { t: "第一赛季 · 第二幕", s: "第二幕", notes: "第二幕通行证与更暗黑的德玛西亚皮肤、希瓦娜重做、Brawl 模式回归，以及动态漫画《Requiem》。" },

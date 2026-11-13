@@ -180,6 +180,9 @@ window.LOL_I18N.ko = {
       "i-w-final": { place: "대한민국 서울 (Gocheok Sky Dome)" }
     },
     2024: {
+      "x-stillhere": { notes: "Forts, 2WEI, Tiffany Aris의 오리지널 곡이 함께한 2024 시즌 시네마틱. 날짜는 대략적입니다." },
+      "x-arcane2": { t: "아케인 시즌 2", s: "아케인 S2", place: "넷플릭스", notes: "Riot Games와 포티셰가 만든 시리즈의 두 번째이자 마지막 시즌: 3막 9화, 11월 9일, 16일, 23일 공개." },
+      "x-artbook": { place: "Insight Editions", notes: "아케인 두 시즌의 제작 과정을 담은 아트북, Elisabeth Vincentelli 저(224쪽). 12월 31일 출간 예정으로 발표됐으나 대부분의 서점은 12월 3일로 표기." },
       "sp1": { notes: "14.1 패치와 함께 시작된 올해 첫 랭크 스플릿: 새롭게 바뀐 협곡, 새로운 공허 몬스터, 대거 개편된 아이템." },
       "sp2": { notes: "14.10 패치와 함께 5월 15일 서버 시간 정오에 시작." },
       "sp3": { notes: "14.19 패치와 함께 9월 25일 시작, 2025년 1월 8일 종료." },
@@ -223,6 +226,12 @@ window.LOL_I18N.ko = {
       "lfl-su": { notes: "BDS 아카데미의 첫 LFL 우승. 날짜는 대략적입니다." }
     },
     2025: {
+      "x-noxus": { notes: "포티셰와 함께 만든 2025 시즌 1 시네마틱, TEYA의 'Bite Marks'에 맞춰 제작. 아케인 결말 이후의 멜 메다르다가 등장." },
+      "x-expo-mtp": { t: "전시: 아케인 비하인드 스토리", s: "아케인 전시", place: "프랑스 몽펠리에 (시청)", notes: "포티셰 스튜디오와 함께한 아케인 두 시즌 제작 과정 무료 전시. 방문객 약 1만 5천 명." },
+      "x-ambessa": { place: "Orbit", notes: "아케인 10년 전을 배경으로 암베사 메다르다를 그린 C. L. Clark의 소설. 미국과 영국에서 출간, 이후 다른 국가에서도 출간." },
+      "x-chronicles": { t: "CHRONICLES: 월드 프리미어", place: "체코 프라하 (Forum Karlín)", notes: "커뮤니티의 제안으로 시작된 리그 오브 레전드 음악 교향악·영상 콘서트. 매진, 관객 4,000명 이상." },
+      "x-beginning": { notes: "포티셰가 제작한 시즌 3 'Trials of Twilight' 시네마틱, 신 짜오 중심. 날짜는 대략적입니다." },
+      "x-twilight": { place: "청두 월즈에서 공개", notes: "포티셰가 제작한 올해 시네마틱 네 편(Welcome to Noxus, A Dark Gambit, Beginning of the End, Twilight's End) 중 마지막 편, 르블랑, 블라디미르, 신 짜오의 이야기." },
       "s1": { notes: "첫 테마 시즌: 녹서스풍 협곡, 새 에픽 몬스터 아타칸, 힘의 위업. 패치 이름은 25.S1.x, 이후 25.04부터." },
       "s1a2": { notes: "녹서스 테마 아레나와 마법공학 상자 귀환." },
       "s2": { notes: "아이오니아 테마 시즌." },
@@ -282,6 +291,16 @@ window.LOL_I18N.ko = {
       "i-enc": { place: "사우디아라비아 리야드", notes: "국가대표팀이 참가하는 첫 대회, 2026년 11월에서 2027년 11월로 연기. 정확한 날짜 미발표.", t: "2027 e스포츠 네이션스컵", s: "e스포츠 네이션스컵" }
     },
     2026: {
+      "x-salvation": { notes: "Unit Image, Ben Hibon과 함께 만든 시즌 1 'For Demacia' 시네마틱, Forts가 참여한 오리지널 곡." },
+      "x-bloom": { notes: "Petals of Spring 스킨을 입은 야스오, 카타리나, 릴리아가 등장하는 2026 설날 시네마틱. 날짜는 대략적입니다." },
+      "x-immersive": { t: "Immersive Arcane: 상하이 초연", place: "중국 상하이 (Shanghai Hotel 별관)", notes: "아케인의 첫 무대 각색: 공연 단체 Punchdrunk와 공동 제작한 120분짜리 이머시브 뮤지컬, 중국어 공연. 1월 22일부터 프리뷰, 3월 10일 초연." },
+      "x-brink": { notes: "챔피언 출시 2주 전, 빙의된 베인과 맞서는 로크를 소개한 2D 애니메이션 단편. 날짜는 대략적입니다." },
+      "x-ambessa-pb": { t: "Ambessa: Chosen of the Wolf (페이퍼백)", s: "암베사 (페이퍼백)", place: "Orbit", notes: "C. L. Clark 소설의 영국판 페이퍼백(448쪽)." },
+      "x-tempo": { place: "Louis Vuitton", notes: "K/DA를 다룬 루이 비통 Travel Book 컬렉션의 일러스트북: 아리, 아칼리, 이블린, 카이사의 24시간. 영어, 프랑스어, 중국어." },
+      "x-firestarter": { notes: "6년 만에 돌아온 K/DA를 위해 포티셰가 제작한 애니메이션 뮤직비디오. 예정보다 하루 일찍 공개됐으며 EP 'FIRESTARTER'는 10월 21일 발매." },
+      "x-netflix": { t: "넷플릭스의 리그 오브 레전드 뮤직비디오", s: "넷플릭스 LoL 뮤직비디오", place: "넷플릭스 (미국)", notes: "K/DA, 하트스틸, True Damage 뮤직비디오 10편이 미국 넷플릭스에 추가." },
+      "x-chronicles": { t: "CHRONICLES: Celebration of League of Legends Music", place: "폴란드 카토비체 (Spodek)", notes: "Necrit이 진행하고 Jørn Lande, Wønder가 참여한 오케스트라 콘서트. 유럽 투어의 첫 공연이며 아시아와 미국 공연은 2027년 예정." },
+      "x-headliners": { place: "Insight Editions", notes: "Riot의 가상 밴드(K/DA, 하트스틸, True Damage, 펜타킬)를 다룬 148쪽 책, 소장품과 함께 판매. 12월 8일 출간 예정으로 발표됐으나 일부 서점은 11월 24일로 표기." },
       "s1": { t: "시즌 1: For Demacia", s: "시즌 1 · For Demacia", name: "For Demacia", notes: "데마시아 테마: 데마시아풍 소환사의 협곡, 포지션 퀘스트, 더 빨라진 게임, 확장된 ARAM: Mayhem. 랭크 게임 보상으로 승리의 브라움 스킨." },
       "s1a1": { t: "시즌 1 · 액트 1", s: "액트 1", notes: "For Demacia 패스, 1월 8일부터 3월 3일까지." },
       "s1a2": { t: "시즌 1 · 액트 2", s: "액트 2", notes: "어두운 데마시아 스킨이 담긴 액트 2 패스, 쉬바나 리워크, Brawl 모드 귀환, 애니메이션 코믹 「Requiem」." },
