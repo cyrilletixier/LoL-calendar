@@ -68,7 +68,7 @@ window.LOL_I18N.zh = {
     LCS: { label: "LCS", sub: "北美" }, CBLOL: { label: "CBLOL", sub: "巴西" }, LCP: { label: "LCP", sub: "亚太" }, LFL: { label: "LFL", sub: "法国" },
     LTA_N: { label: "LTA 北区", short: "LTA N", sub: "北美" }, LTA_S: { label: "LTA 南区", short: "LTA S", sub: "南美" }, PCS: { label: "PCS", sub: "太平洋" }
   },
-  teams: { KOR: "韩国", TPE: "中华台北" },
+  teams: { KOR: "韩国", TWN: "台湾" },
   /* Phases des ligues (modèle « lane » des fichiers data) */
   splits: { "Spring": "春季赛", "Summer": "夏季赛", "Winter": "冬季赛", "Season Finals": "赛季总决赛", "Regional Finals": "区域决赛", "Finals": "总决赛", "Split 1": "第一赛段", "Split 2": "第二赛段", "Split 3": "第三赛段" },
   items: {

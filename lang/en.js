@@ -141,7 +141,7 @@ window.LOL_I18N.en = {
     ["2009–2023 · alviran.net: release dates of every champion", "https://alviran.net/blog/lol-champions-release-order-every-champion-2026/"]
   ],
 
-  teams: { KOR: "South Korea", TPE: "Chinese Taipei" },
+  teams: { KOR: "South Korea", TWN: "Taiwan" },
 
   items: {
     2009: {

@@ -73,7 +73,7 @@ window.LOL_I18N = window.LOL_I18N || {};
       LCS: { label: "LCS", sub: "Ameryka Północna" }, CBLOL: { label: "CBLOL", sub: "Brazylia" }, LCP: { label: "LCP", sub: "Azja i Pacyfik" }, LFL: { label: "LFL", sub: "Francja" },
       LTA_N: { label: "LTA Północ", short: "LTA N", sub: "Ameryka Północna" }, LTA_S: { label: "LTA Południe", short: "LTA S", sub: "Ameryka Południowa" }, PCS: { label: "PCS", sub: "Pacyfik" }
     },
-    teams: { KOR: "Korea Południowa", TPE: "Chińskie Tajpej" },
+    teams: { KOR: "Korea Południowa", TWN: "Tajwan" },
     items: {
       2009: {
         "e-launch": { t: "Premiera League of Legends", s: "Premiera", notes: "Oficjalna premiera w Ameryce Północnej i Europie, z 40 bohaterami." }

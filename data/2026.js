@@ -92,7 +92,7 @@
       { id: "i-ewc",      lane: "intl", kind: "intl", d0: "07-15", d1: "07-19",
         links: [["ewc", "https://esportsworldcup.com/en/press-releases/dplus-kia-win-lol-at-ewc26"]], r: { w: "DK", l: "KC", s: "3-0" } },
       { id: "i-holc",     lane: "intl", kind: "intl", d0: "08-18", links: [NEWS_HOL] },
-      { id: "i-asian",    lane: "intl", kind: "intl", d0: "09-29", d1: "10-02", r: { w: "KOR", l: "TPE", s: "3-0" } },
+      { id: "i-asian",    lane: "intl", kind: "intl", d0: "09-29", d1: "10-02", r: { w: "KOR", l: "TWN", s: "3-0" } },
       { id: "i-w-playin", lane: "intl", kind: "intl", d0: "10-15", d1: "10-18", links: [WORLDS, NEWS_INTL] },
       { id: "i-w-swiss",  lane: "intl", kind: "intl", d0: "10-23", d1: "10-31", links: [WORLDS, NEWS_INTL] },
       { id: "i-w-ko",     lane: "intl", kind: "intl", d0: "11-03", d1: "11-08", links: [WORLDS, NEWS_INTL], r: { m: [["sf", "GEN", "IG", "3-0"], ["sf", "BLG", "T1", "3-1"], ["qf", "T1", "KC", "3-1"], ["qf", "GEN", "LYON", "3-0"], ["qf", "BLG", "DK", "3-0"]] } },

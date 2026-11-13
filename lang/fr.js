@@ -148,7 +148,7 @@ window.LOL_I18N.fr = {
   /* Textes des éléments, par année puis par identifiant (voir data/<année>.js).
      t : titre, s : libellé court sur la frise, name : nom de la saison,
      place : lieu, res : résultat ou affiche, notes : précisions. */
-  teams: { KOR: "Corée du Sud", TPE: "Taipei chinois" },
+  teams: { KOR: "Corée du Sud", TWN: "Taïwan" },
   items: {
     2009: {
       "e-launch": { t: "Sortie de League of Legends", s: "Sortie du jeu", notes: "Sortie officielle en Amérique du Nord et en Europe, avec 40 champions." }

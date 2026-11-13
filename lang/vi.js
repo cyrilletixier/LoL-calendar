@@ -67,7 +67,7 @@ window.LOL_I18N.vi = {
     LCS: { label: "LCS", sub: "Bắc Mỹ" }, CBLOL: { label: "CBLOL", sub: "Brazil" }, LCP: { label: "LCP", sub: "Châu Á - Thái Bình Dương" }, LFL: { label: "LFL", sub: "Pháp" },
     LTA_N: { label: "LTA Bắc", short: "LTA N", sub: "Bắc Mỹ" }, LTA_S: { label: "LTA Nam", short: "LTA S", sub: "Nam Mỹ" }, PCS: { label: "PCS", sub: "Thái Bình Dương" }
   },
-  teams: { KOR: "Hàn Quốc", TPE: "Đài Bắc Trung Hoa" },
+  teams: { KOR: "Hàn Quốc", TWN: "Đài Loan" },
   items: {
     2009: {
       "e-launch": { t: "Ra mắt Liên Minh Huyền Thoại", s: "Ra mắt", notes: "Phát hành chính thức tại Bắc Mỹ và châu Âu với 40 tướng." }

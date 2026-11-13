@@ -67,7 +67,7 @@ window.LOL_I18N.tr = {
     LCS: { label: "LCS", sub: "Kuzey Amerika" }, CBLOL: { label: "CBLOL", sub: "Brezilya" }, LCP: { label: "LCP", sub: "Asya-Pasifik" }, LFL: { label: "LFL", sub: "Fransa" },
     LTA_N: { label: "LTA Kuzey", short: "LTA N", sub: "Kuzey Amerika" }, LTA_S: { label: "LTA Güney", short: "LTA S", sub: "Güney Amerika" }, PCS: { label: "PCS", sub: "Pasifik" }
   },
-  teams: { KOR: "Güney Kore", TPE: "Çin Taipei" },
+  teams: { KOR: "Güney Kore", TWN: "Tayvan" },
   items: {
     2009: {
       "e-launch": { t: "League of Legends'ın çıkışı", s: "Çıkış", notes: "Kuzey Amerika ve Avrupa'da 40 şampiyonla resmî çıkış." }

@@ -68,7 +68,7 @@ window.LOL_I18N.ko = {
     LCS: { label: "LCS", sub: "북미" }, CBLOL: { label: "CBLOL", sub: "브라질" }, LCP: { label: "LCP", sub: "아시아·태평양" }, LFL: { label: "LFL", sub: "프랑스" },
     LTA_N: { label: "LTA 북부", short: "LTA N", sub: "북미" }, LTA_S: { label: "LTA 남부", short: "LTA S", sub: "남미" }, PCS: { label: "PCS", sub: "태평양" }
   },
-  teams: { KOR: "대한민국", TPE: "차이니스 타이베이" },
+  teams: { KOR: "대한민국", TWN: "대만" },
   /* Phases des ligues (modèle « lane » des fichiers data) */
   splits: { "Spring": "스프링", "Summer": "서머", "Winter": "윈터", "Season Finals": "시즌 파이널", "Regional Finals": "지역 결승", "Finals": "결승", "Split 1": "스플릿 1", "Split 2": "스플릿 2", "Split 3": "스플릿 3" },
   items: {

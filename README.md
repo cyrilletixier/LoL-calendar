@@ -133,6 +133,8 @@ Les sigles renvoient à `data/teams.js`. Une équipe s'affiche par défaut comme
 
 Si l'image ne se charge pas, la pastille revient automatiquement au sigle. Les logos appartiennent à leurs équipes : la politique de Riot pour les projets de fans ne les couvre pas.
 
+**Règle du projet, sans exception : Taïwan s'appelle Taïwan.** Jamais « Taipei chinois » ni « Chinese Taipei », quel que soit le nom employé par l'organisateur (Jeux asiatiques, etc.). Le sigle est `TWN`, jamais `TPE`. Les noms dans les langues : Taïwan, Taiwan (en, pt, de), Taiwán, Tajwan, Tayvan, 대만, 台湾, Đài Loan. La ville de Taipei et les noms d'équipes comme Taipei Assassins restent inchangés.
+
 ## Images de champions
 
 Le champ `champ` d'un élément (`champ: "Locke"`) affiche la vignette du champion dans la frise et son illustration dans la fiche. Ces images viennent de Data Dragon (`ddragon.leagueoflegends.com`). La clé est le nom du champion sans espace ni apostrophe (`Belveth` pour Bel'Veth). Hors ligne, la vignette est remplacée par un losange.

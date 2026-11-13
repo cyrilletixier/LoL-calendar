@@ -144,5 +144,5 @@ window.LOL_TEAMS = {
   "GW":   { n: "GameWard",              c: "#00897B" },
   /* Sélections nationales */
   "KOR":  { n: "South Korea",           c: "#CD2E3A" },
-  "TPE":  { n: "Chinese Taipei",        c: "#2F6FD0" }
+  "TWN":  { n: "Taiwan",                c: "#2F6FD0" }
 };

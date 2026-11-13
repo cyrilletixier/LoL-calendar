@@ -67,7 +67,7 @@ window.LOL_I18N.es = {
     LCS: { label: "LCS", sub: "Norteamérica" }, CBLOL: { label: "CBLOL", sub: "Brasil" }, LCP: { label: "LCP", sub: "Asia-Pacífico" }, LFL: { label: "LFL", sub: "Francia" },
     LTA_N: { label: "LTA Norte", short: "LTA N", sub: "Norteamérica" }, LTA_S: { label: "LTA Sur", short: "LTA S", sub: "Sudamérica" }, PCS: { label: "PCS", sub: "Pacífico" }
   },
-  teams: { KOR: "Corea del Sur", TPE: "Taipéi Chino" },
+  teams: { KOR: "Corea del Sur", TWN: "Taiwán" },
   items: {
     2009: {
       "e-launch": { t: "Lanzamiento de League of Legends", s: "Lanzamiento", notes: "Lanzamiento oficial en Norteamérica y Europa, con 40 campeones." }
