@@ -8,7 +8,7 @@ window.LOL_I18N.ko = {
   sameMonth: function (d1, d2, m) { return (m + 1) + "월 " + d1 + "일 → " + d2 + "일"; },
   monthTitle: function (m, y) { return y + "년 " + (m + 1) + "월"; },
 
-  ui: { universe: "부록 · 세계관", universeAria: "부록: 세계관 애니메이션, 도서, 행사", universeNote: "룬테라를 배경으로 한 애니메이션 시리즈와 단편, 도서, 전시와 공연입니다. 타임라인에는 표시되지 않습니다.", universeJump: "세계관", linksPlain: "링크",
+  ui: { linksPlain: "링크",
     title: "lol calendar",
     tagline: "리그 오브 레전드의 시즌, 패치, 게임 내 이벤트, 프로 대회를 한 페이지에서 확인하세요.",
     yearNav: "연도", langNav: "언어", yearNotReady: "아직 입력되지 않은 연도",
@@ -18,7 +18,7 @@ window.LOL_I18N.ko = {
     swipeHint: "타임라인을 밀어 월을 바꾸고, 막대를 눌러 상세 정보를 확인하세요. 점선 테두리: 대략적인 날짜.",
     footer: "팬이 만든 비공식 달력으로 Riot Games와 관련이 없습니다. 2026년 11월 13일 기준 정보이며 향후 일정은 바뀔 수 있습니다.",
     show: "표시", all: "전체", gameOnly: "게임만", proOnly: "e스포츠만",
-    groupGame: "게임", groupPro: "e스포츠",
+    groupGame: "게임", groupPro: "e스포츠", groupUniverse: "세계관", universeOnly: "세계관만",
     yearUpcoming: "다가오는 연도", yearDone: "종료된 연도",
     yearSummary: function (a, p, c, ch) { return [a ? "액트 " + a + "개" : "", p ? "패치 " + p + "개" : "", ch ? "신규 챔피언 " + ch + "명" : "", c ? "프로 대회 " + c + "개" : ""].filter(Boolean).join(", ") + "."; },
     currentSeason: "현재 시즌",
@@ -61,6 +61,7 @@ window.LOL_I18N.ko = {
     ewc: "e스포츠 월드컵 공식 사이트", lpl: "LPL 공식 사이트"
   },
   lanes: {
+    anim: { label: "애니메이션", short: "애니" }, book: { label: "도서", short: "도서" }, live: { label: "전시·공연", short: "공연" },
     season: { label: "시즌·액트", short: "시즌" }, patch: { label: "패치", short: "패치" },
     champ: { label: "챔피언", short: "챔피언" }, event: { label: "게임 내 이벤트", short: "이벤트" },
     intl: { label: "국제 대회", short: "국제", sub: "퍼스트 스탠드, MSI, 월즈…" },

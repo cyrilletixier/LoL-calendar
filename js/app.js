@@ -25,9 +25,14 @@
     { id: "LCS",   cat: "var(--c-league)" },
     { id: "CBLOL", cat: "var(--c-league)" },
     { id: "LCP",   cat: "var(--c-league)" },
-    { id: "LFL",   cat: "var(--c-league)" }
+    { id: "LFL",   cat: "var(--c-league)" },
+    { group: "groupUniverse" },
+    { id: "anim",  cat: "var(--c-anim)" },
+    { id: "book",  cat: "var(--c-book)" },
+    { id: "live",  cat: "var(--c-live)" }
   ];
   var GAME_LANES = ["season", "patch", "champ", "event"];
+  var UNIVERSE_LANES = ["anim", "book", "live"];   // sorties de Runeterra hors jeu et hors esport
   var DAY = 86400000;
 
   /* ============ Stockage local (facultatif) ============ */
@@ -271,10 +276,10 @@
   var hidden = new Set(store.get("lolcal-hidden", []));
   var selId = null;
   var ITEMS = [];
-  var EXTRAS = [];                   // annexe « Univers » : animation, livres, événements (hors frise)
   function findItem(id) {
-    return ITEMS.concat(EXTRAS).filter(function (i) { return i.id === id; })[0];
+    return ITEMS.filter(function (i) { return i.id === id; })[0];
   }
+  function isProLane(id) { return GAME_LANES.indexOf(id) < 0 && UNIVERSE_LANES.indexOf(id) < 0; }
 
   function prepare() {
     var y0 = new Date(year, 0, 1), y1 = new Date(year, 11, 31);
@@ -305,9 +310,6 @@
       return it;
     };
     ITEMS = DATA.years[year].items.map(prep).sort(byDate);
-    EXTRAS = (DATA.years[year].extras || []).map(function (raw) {
-      var it = prep(raw); it.extra = true; it.lane = "universe"; return it;
-    }).sort(byDate);
   }
 
   /* ============ Textes fixes de la page ============ */
@@ -439,13 +441,16 @@
   function renderFilters() {
     var el = document.getElementById("filters");
     var lanes = LANES.filter(function (l) { return l.id && laneInYear(l.id); });
-    var hasPro = lanes.some(function (l) { return GAME_LANES.indexOf(l.id) < 0; });
+    var hasPro = lanes.some(function (l) { return isProLane(l.id); });
+    var hasUni = lanes.some(function (l) { return UNIVERSE_LANES.indexOf(l.id) >= 0; });
+    var only = function (keep) { return new Set(LANES.filter(function (l) { return l.id && keep.indexOf(l.id) < 0; }).map(function (l) { return l.id; })); };
     el.innerHTML = '<span class="lbl">' + esc(ui("show")) + "</span>" + lanes.map(function (l) {
       return '<button type="button" class="chip" style="--cat:' + l.cat + '" aria-pressed="' + !hidden.has(l.id) + '" data-lane="' + l.id + '">' + esc(laneText(l.id, "label")) + "</button>";
     }).join("") +
       '<button type="button" class="chip mini" id="fAll">' + esc(ui("all")) + "</button>" +
       (hasPro ? '<button type="button" class="chip mini" id="fGame">' + esc(ui("gameOnly")) + "</button>" +
-      '<button type="button" class="chip mini" id="fPro">' + esc(ui("proOnly")) + "</button>" : "");
+      '<button type="button" class="chip mini" id="fPro">' + esc(ui("proOnly")) + "</button>" : "") +
+      (hasUni ? '<button type="button" class="chip mini" id="fUni">' + esc(ui("universeOnly")) + "</button>" : "");
     el.querySelectorAll("[data-lane]").forEach(function (b) {
       b.addEventListener("click", function () {
         var id = b.dataset.lane;
@@ -455,9 +460,10 @@
     });
     document.getElementById("fAll").onclick = function () { hidden = new Set(); saveHidden(); renderAll(false); };
     if (hasPro) {
-      document.getElementById("fGame").onclick = function () { hidden = new Set(LANES.filter(function (l) { return l.id && GAME_LANES.indexOf(l.id) < 0; }).map(function (l) { return l.id; })); saveHidden(); renderAll(false); };
-      document.getElementById("fPro").onclick = function () { hidden = new Set(GAME_LANES); saveHidden(); renderAll(false); };
+      document.getElementById("fGame").onclick = function () { hidden = only(GAME_LANES); saveHidden(); renderAll(false); };
+      document.getElementById("fPro").onclick = function () { hidden = only(LANES.filter(function (l) { return l.id && isProLane(l.id); }).map(function (l) { return l.id; })); saveHidden(); renderAll(false); };
     }
+    if (hasUni) document.getElementById("fUni").onclick = function () { hidden = only(UNIVERSE_LANES); saveHidden(); renderAll(false); };
   }
   function saveHidden() { store.set("lolcal-hidden", Array.from(hidden)); }
 
@@ -585,7 +591,7 @@
     };
     var html = '<nav class="jump" aria-label="' + esc(ui("monthJumpAria")) + '">' + M.map(function (n, mi) {
       return '<button type="button" data-m="' + mi + '"' + (byMonth[mi].length ? "" : " disabled") + ' class="btn' + (mi === curM ? " cur" : "") + '">' + esc(n) + "</button>";
-    }).join("") + (EXTRAS.length ? '<button type="button" data-uni="1" class="btn uni">' + esc(ui("universeJump")) + "</button>" : "") + "</nav>";
+    }).join("") + "</nav>";
     if (!vis.length) html += "<p>" + esc(ui("noLanes")) + "</p>";
     byMonth.forEach(function (list, mi) {
       if (!list.length) return;
@@ -593,11 +599,6 @@
       html += '<section id="mois-' + (mi + 1) + '"><h3>' + esc(monthTitle(mi, year)) + "<small>" + esc(ui("entries", list.length)) + (pro ? " · " + esc(ui("competitions", pro)) : "") + '</small></h3><div class="ag-list">';
       html += list.map(row).join("") + "</div></section>";
     });
-    /* Annexe « Univers » : indépendante des filtres de couloirs */
-    if (EXTRAS.length) {
-      html += '<section id="univers" class="universe" aria-label="' + esc(ui("universeAria")) + '"><h3>' + esc(ui("universe")) + "<small>" + esc(ui("entries", EXTRAS.length)) + "</small></h3>" +
-        '<p class="uni-note">' + esc(ui("universeNote")) + '</p><div class="ag-list">' + EXTRAS.map(row).join("") + "</div></section>";
-    }
     el.innerHTML = html;
     el.querySelectorAll(".ag").forEach(function (b) { b.addEventListener("click", function () { select(b.dataset.id, true); }); });
     bindImageFallbacks(el);
@@ -606,10 +607,6 @@
         var s = document.getElementById("mois-" + (Number(b.dataset.m) + 1));
         if (s) s.scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth", block: "start" });
       });
-    });
-    var uni = el.querySelector(".jump button[data-uni]");
-    if (uni) uni.addEventListener("click", function () {
-      document.getElementById("univers").scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth", block: "start" });
     });
   }
 
@@ -641,7 +638,7 @@
     } else if (it.res) dl += "<div><dt>" + esc(st === "postponed" ? ui("statusTitle") : st === "done" ? ui("result") : ui("matchup")) + '</dt><dd class="res">' + esc(it.res) + "</dd></div>";
     if (it.notes) dl += "<div><dt>" + esc(ui("notes")) + "</dt><dd>" + esc(it.notes) + "</dd></div>";
     var lk = linksOf(it);
-    if (lk.length) dl += "<div><dt>" + esc(ui(it.extra ? "linksPlain" : "links")) + '</dt><dd><ul class="links">' + lk.map(function (l) {
+    if (lk.length) dl += "<div><dt>" + esc(ui(UNIVERSE_LANES.indexOf(it.lane) >= 0 ? "linksPlain" : "links")) + '</dt><dd><ul class="links">' + lk.map(function (l) {
       return '<li><a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + ' <span aria-hidden="true">↗</span></a></li>';
     }).join("") + "</ul></dd></div>";
     if (it.range) {

@@ -7,7 +7,7 @@ window.LOL_I18N.vi = {
   date: function (d, m, y) { return d + " thg " + (m + 1) + (y ? ", " + y : ""); },
   sameMonth: function (d1, d2, m) { return d1 + " → " + d2 + " thg " + (m + 1); },
 
-  ui: { universe: "Phụ lục · Vũ trụ", universeAria: "Phụ lục: hoạt hình, sách và sự kiện của vũ trụ", universeNote: "Phim và phim ngắn hoạt hình, sách, triển lãm và hòa nhạc lấy bối cảnh Runeterra. Các mục này không hiển thị trên dòng thời gian.", universeJump: "Vũ trụ", linksPlain: "Liên kết",
+  ui: { linksPlain: "Liên kết",
     title: "lol calendar",
     tagline: "Liên Minh Huyền Thoại: mùa giải, bản cập nhật, sự kiện trong game và giải đấu chuyên nghiệp trên một trang.",
     yearNav: "Năm", langNav: "Ngôn ngữ", yearNotReady: "Năm này chưa có dữ liệu",
@@ -17,7 +17,7 @@ window.LOL_I18N.vi = {
     swipeHint: "Vuốt dòng thời gian để đổi tháng, chạm vào một thanh để xem chi tiết. Viền nét đứt: ngày dự kiến.",
     footer: "Lịch do người hâm mộ thực hiện, không liên quan đến Riot Games. Dữ liệu tính đến ngày 13/11/2026; các mốc trong tương lai có thể thay đổi.",
     show: "Hiển thị", all: "Tất cả", gameOnly: "Chỉ trong game", proOnly: "Chỉ esports",
-    groupGame: "Trong game", groupPro: "Esports",
+    groupGame: "Trong game", groupPro: "Esports", groupUniverse: "Vũ trụ", universeOnly: "Chỉ vũ trụ",
     yearUpcoming: "Năm sắp tới", yearDone: "Năm đã kết thúc",
     yearSummary: function (a, p, c, ch) { return [a ? a + " màn" : "", p ? p + " bản cập nhật" : "", ch ? ch + " tướng mới" : "", c ? c + " giải đấu chuyên nghiệp" : ""].filter(Boolean).join(", ") + "."; },
     currentSeason: "Mùa hiện tại",
@@ -60,6 +60,7 @@ window.LOL_I18N.vi = {
     ewc: "Esports World Cup (trang chính thức)", lpl: "Trang chính thức LPL"
   },
   lanes: {
+    anim: { label: "Hoạt hình", short: "HH" }, book: { label: "Sách", short: "Sách" }, live: { label: "Triển lãm & hòa nhạc", short: "Live" },
     season: { label: "Mùa và màn", short: "Mùa" }, patch: { label: "Bản cập nhật", short: "Bản" },
     champ: { label: "Tướng", short: "Tướng" }, event: { label: "Sự kiện trong game", short: "Sự kiện" },
     intl: { label: "Quốc tế", short: "Q.tế", sub: "First Stand, MSI, CKTG…" },

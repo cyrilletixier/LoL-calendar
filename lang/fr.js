@@ -9,7 +9,7 @@ window.LOL_I18N.fr = {
   date: function (d, m, y) { return d + (d === 1 ? "er" : "") + " " + this.months[m] + (y ? " " + y : ""); },
   sameMonth: function (d1, d2, m) { return d1 + (d1 === 1 ? "er" : "") + " → " + d2 + " " + this.months[m]; },
 
-  ui: { universe: "Annexe · Univers", universeAria: "Annexe : animation, livres et événements de l'univers", universeNote: "Séries et courts métrages d'animation, livres, expositions et concerts liés à Runeterra. Ces sorties ne figurent pas sur la frise.", universeJump: "Univers", linksPlain: "Liens",
+  ui: { linksPlain: "Liens",
     title: "lol calendar",
     tagline: "League of Legends : saisons, patchs, événements en jeu et compétitions pro, sur une seule page.",
     yearNav: "Année",
@@ -27,7 +27,7 @@ window.LOL_I18N.fr = {
     gameOnly: "En jeu seulement",
     proOnly: "Esport seulement",
     groupGame: "En jeu",
-    groupPro: "Esport",
+    groupPro: "Esport", groupUniverse: "Univers", universeOnly: "Univers seulement",
     yearUpcoming: "Année à venir",
     yearDone: "Année terminée",
     yearSummary: function (a, p, c, ch) { var pl = function (n, one, many) { return n + " " + (n > 1 ? many : one); }; return [a ? pl(a, "acte", "actes") : "", p ? pl(p, "patch", "patchs") : "", ch ? pl(ch, "nouveau champion", "nouveaux champions") : "", c ? pl(c, "compétition pro", "compétitions pro") : ""].filter(Boolean).join(", ") + "."; },
@@ -95,6 +95,7 @@ window.LOL_I18N.fr = {
   },
 
   lanes: {
+    anim: { label: "Animation", short: "Anim." }, book: { label: "Livres", short: "Livres" }, live: { label: "Expos & concerts", short: "Live" },
     season: { label: "Saisons & actes", short: "Saisons" },
     patch:  { label: "Patchs", short: "Patchs" },
     champ:  { label: "Champions", short: "Champ." },

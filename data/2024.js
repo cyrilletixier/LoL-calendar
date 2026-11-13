@@ -94,14 +94,12 @@
 
       /* LFL */
       { id: "lfl-sp", lane: "LFL", kind: "league", tpl: "lane", sp: "Spring", d0: "01-17", d1: "04-05", r: { w: "KCB", l: "BDSA", s: "3-1" } },
-      { id: "lfl-su", lane: "LFL", kind: "league", tpl: "lane", sp: "Summer", d0: "05-29", d1: "08-02", approx: true, r: { w: "BDSA", l: "KCB", s: "3-1" } }
-    ],
-    /* Annexe « Univers » (format décrit dans data/2026.js) */
-    extras: [
-      { id: "x-stillhere", kind: "anim", t: "Still Here", d0: "01-10", approx: true },
-      { id: "x-arcane2",   kind: "anim", t: "Arcane · Season 2", s: "Arcane S2", d0: "11-09", d1: "11-23",
+      { id: "lfl-su", lane: "LFL", kind: "league", tpl: "lane", sp: "Summer", d0: "05-29", d1: "08-02", approx: true, r: { w: "BDSA", l: "KCB", s: "3-1" } },
+      /* Univers : animation (anim), livres (book), événements (live) */
+      { id: "x-stillhere", lane: "anim", kind: "anim", t: "Still Here", d0: "01-10", approx: true },
+      { id: "x-arcane2",   lane: "anim", kind: "anim", t: "Arcane · Season 2", s: "Arcane S2", d0: "11-09", d1: "11-23",
         links: [["netflix", "https://www.netflix.com/title/81435684"]] },
-      { id: "x-artbook",   kind: "book", t: "The Art and Making of Arcane", d0: "12-03", approx: true,
+      { id: "x-artbook",   lane: "book", kind: "book", t: "The Art and Making of Arcane", d0: "12-03", approx: true,
         links: [["press", "https://hypebeast.com/2024/7/the-art-and-making-of-arcane-book-riot-games-fortiche-insight-editions-release-info"]] }
     ]
   };
