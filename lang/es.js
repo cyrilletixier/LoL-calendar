@@ -36,7 +36,11 @@ window.LOL_I18N.es = {
     duration: "Duración", days: function (n) { return n + (n > 1 ? " días" : " día"); }, approx: "(aproximado)",
     patch: "Parche", leagueKind: function (l) { return "Liga regional · " + l; },
     status: { done: "Terminado", live: "En curso", next: "Próximamente", planned: "Anunciado", postponed: "Aplazado" },
-    close: "Cerrar ficha", links: "Enlaces oficiales"
+    close: "Cerrar ficha", links: "Enlaces oficiales",
+    winner: "Ganador", runnerUp: "Subcampeón", mvp: "MVP de la final", vs: "contra",
+    honours: function (y) { return "Campeones " + y; }, honoursAria: "Ganadores del año",
+    stage: { sf: "Semifinal", qf: "Cuartos de final" },
+    legal: "lol calendar se creó bajo la política «Legal Jibber Jabber» de Riot Games con recursos propiedad de Riot Games. Riot Games no respalda ni patrocina este proyecto."
   },
   kinds: { season: "Temporada", act: "Acto", patch: "Parche", champ: "Campeón", event: "Evento del juego", intl: "Competición internacional", league: "Liga regional" },
   tags: { season: "Juego", act: "Juego", patch: "Parche", champ: "Campeón", event: "Evento", intl: "Competición" },
@@ -52,6 +56,7 @@ window.LOL_I18N.es = {
     LEC: { label: "LEC", sub: "Europa" }, LCK: { label: "LCK", sub: "Corea" }, LPL: { label: "LPL", sub: "China" },
     LCS: { label: "LCS", sub: "Norteamérica" }, CBLOL: { label: "CBLOL", sub: "Brasil" }, LCP: { label: "LCP", sub: "Asia-Pacífico" }, LFL: { label: "LFL", sub: "Francia" }
   },
+  teams: { KOR: "Corea del Sur", TPE: "Taipéi Chino" },
   items: {
     2026: {
       "s1": { t: "Temporada 1: For Demacia", s: "Temporada 1 · For Demacia", name: "For Demacia", notes: "Tema Demacia: Grieta del Invocador al estilo de Demacia, misiones de rol, partidas más rápidas y ARAM: Mayhem ampliado. Aspecto Braum Victorioso en clasificatoria." },

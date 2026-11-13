@@ -37,7 +37,11 @@ window.LOL_I18N.ko = {
     duration: "기간", days: function (n) { return n + "일"; }, approx: "(대략)",
     patch: "패치", leagueKind: function (l) { return "지역 리그 · " + l; },
     status: { done: "종료", live: "진행 중", next: "예정", planned: "발표됨", postponed: "연기" },
-    close: "상세 정보 닫기", links: "공식 링크"
+    close: "상세 정보 닫기", links: "공식 링크",
+    winner: "우승", runnerUp: "준우승", mvp: "결승 MVP", vs: "vs",
+    honours: function (y) { return y + " 우승팀"; }, honoursAria: "올해의 우승팀",
+    stage: { sf: "4강", qf: "8강" },
+    legal: "lol calendar는 Riot Games의 「Legal Jibber Jabber」 정책에 따라 Riot Games 소유의 자산을 사용해 만들어졌습니다. Riot Games는 이 프로젝트를 보증하거나 후원하지 않습니다."
   },
   kinds: { season: "시즌", act: "액트", patch: "패치", champ: "챔피언", event: "게임 내 이벤트", intl: "국제 대회", league: "지역 리그" },
   tags: { season: "게임", act: "게임", patch: "패치", champ: "챔피언", event: "이벤트", intl: "대회" },
@@ -53,6 +57,7 @@ window.LOL_I18N.ko = {
     LEC: { label: "LEC", sub: "유럽" }, LCK: { label: "LCK", sub: "한국" }, LPL: { label: "LPL", sub: "중국" },
     LCS: { label: "LCS", sub: "북미" }, CBLOL: { label: "CBLOL", sub: "브라질" }, LCP: { label: "LCP", sub: "아시아·태평양" }, LFL: { label: "LFL", sub: "프랑스" }
   },
+  teams: { KOR: "대한민국", TPE: "차이니스 타이베이" },
   items: {
     2026: {
       "s1": { t: "시즌 1: For Demacia", s: "시즌 1 · For Demacia", name: "For Demacia", notes: "데마시아 테마: 데마시아풍 소환사의 협곡, 포지션 퀘스트, 더 빨라진 게임, 확장된 ARAM: Mayhem. 랭크 게임 보상으로 승리의 브라움 스킨." },

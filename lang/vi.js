@@ -36,7 +36,11 @@ window.LOL_I18N.vi = {
     duration: "Thời lượng", days: function (n) { return n + " ngày"; }, approx: "(dự kiến)",
     patch: "Bản", leagueKind: function (l) { return "Giải khu vực · " + l; },
     status: { done: "Đã kết thúc", live: "Đang diễn ra", next: "Sắp diễn ra", planned: "Đã công bố", postponed: "Đã hoãn" },
-    close: "Đóng chi tiết", links: "Liên kết chính thức"
+    close: "Đóng chi tiết", links: "Liên kết chính thức",
+    winner: "Vô địch", runnerUp: "Á quân", mvp: "MVP chung kết", vs: "gặp",
+    honours: function (y) { return "Nhà vô địch " + y; }, honoursAria: "Các nhà vô địch trong năm",
+    stage: { sf: "Bán kết", qf: "Tứ kết" },
+    legal: "lol calendar được thực hiện theo chính sách «Legal Jibber Jabber» của Riot Games, sử dụng tài sản thuộc sở hữu của Riot Games. Riot Games không bảo trợ hay tài trợ cho dự án này."
   },
   kinds: { season: "Mùa", act: "Màn", patch: "Bản cập nhật", champ: "Tướng", event: "Sự kiện trong game", intl: "Giải quốc tế", league: "Giải khu vực" },
   tags: { season: "Game", act: "Game", patch: "Bản", champ: "Tướng", event: "Sự kiện", intl: "Giải đấu" },
@@ -52,6 +56,7 @@ window.LOL_I18N.vi = {
     LEC: { label: "LEC", sub: "Châu Âu" }, LCK: { label: "LCK", sub: "Hàn Quốc" }, LPL: { label: "LPL", sub: "Trung Quốc" },
     LCS: { label: "LCS", sub: "Bắc Mỹ" }, CBLOL: { label: "CBLOL", sub: "Brazil" }, LCP: { label: "LCP", sub: "Châu Á - Thái Bình Dương" }, LFL: { label: "LFL", sub: "Pháp" }
   },
+  teams: { KOR: "Hàn Quốc", TPE: "Đài Bắc Trung Hoa" },
   items: {
     2026: {
       "s1": { t: "Mùa 1: For Demacia", s: "Mùa 1 · For Demacia", name: "For Demacia", notes: "Chủ đề Demacia: Summoner's Rift mang phong cách Demacia, nhiệm vụ vai trò, trận đấu nhanh hơn và ARAM: Mayhem mở rộng. Trang phục Braum Chiến Thắng cho xếp hạng." },

@@ -42,7 +42,11 @@ window.LOL_I18N = window.LOL_I18N || {};
       duration: "Czas trwania", days: function (n) { return n + (n === 1 ? " dzień" : " dni"); }, approx: "(w przybliżeniu)",
       patch: "Patch", leagueKind: function (l) { return "Liga regionalna · " + l; },
       status: { done: "Zakończone", live: "Trwa", next: "Wkrótce", planned: "Zapowiedziane", postponed: "Przełożone" },
-      close: "Zamknij szczegóły", links: "Oficjalne linki"
+      close: "Zamknij szczegóły", links: "Oficjalne linki",
+      winner: "Zwycięzca", runnerUp: "Finalista", mvp: "MVP finału", vs: "vs",
+      honours: function (y) { return "Mistrzowie " + y; }, honoursAria: "Zwycięzcy roku",
+      stage: { sf: "Półfinał", qf: "Ćwierćfinał" },
+      legal: "lol calendar powstał zgodnie z zasadami „Legal Jibber Jabber” Riot Games z użyciem materiałów należących do Riot Games. Riot Games nie wspiera ani nie sponsoruje tego projektu."
     },
     kinds: { season: "Sezon", act: "Akt", patch: "Patch", champ: "Bohater", event: "Wydarzenie w grze", intl: "Turniej międzynarodowy", league: "Liga regionalna" },
     tags: { season: "Gra", act: "Gra", patch: "Patch", champ: "Bohater", event: "Wydarzenie", intl: "Turniej" },
@@ -58,6 +62,7 @@ window.LOL_I18N = window.LOL_I18N || {};
       LEC: { label: "LEC", sub: "Europa" }, LCK: { label: "LCK", sub: "Korea" }, LPL: { label: "LPL", sub: "Chiny" },
       LCS: { label: "LCS", sub: "Ameryka Północna" }, CBLOL: { label: "CBLOL", sub: "Brazylia" }, LCP: { label: "LCP", sub: "Azja i Pacyfik" }, LFL: { label: "LFL", sub: "Francja" }
     },
+    teams: { KOR: "Korea Południowa", TPE: "Chińskie Tajpej" },
     items: {
       2026: {
         "s1": { t: "Sezon 1: For Demacia", s: "Sezon 1 · For Demacia", name: "For Demacia", notes: "Motyw Demacii: Rozpadlina Przywoływaczy w stylu Demacii, zadania ról, szybsze mecze i rozszerzony ARAM: Mayhem. Skórka Zwycięski Braum za grę rankingową." },

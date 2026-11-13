@@ -37,7 +37,11 @@ window.LOL_I18N.zh = {
     duration: "时长", days: function (n) { return n + " 天"; }, approx: "（大致）",
     patch: "版本", leagueKind: function (l) { return "赛区联赛 · " + l; },
     status: { done: "已结束", live: "进行中", next: "即将开始", planned: "已公布", postponed: "已延期" },
-    close: "关闭详情", links: "官方链接"
+    close: "关闭详情", links: "官方链接",
+    winner: "冠军", runnerUp: "亚军", mvp: "决赛 MVP", vs: "对阵",
+    honours: function (y) { return y + " 年冠军"; }, honoursAria: "年度冠军",
+    stage: { sf: "半决赛", qf: "八强赛" },
+    legal: "lol calendar 依据 Riot Games 的“Legal Jibber Jabber”政策，使用 Riot Games 拥有的素材制作。Riot Games 不为本项目背书或赞助。"
   },
   kinds: { season: "赛季", act: "幕", patch: "版本", champ: "英雄", event: "游戏内活动", intl: "国际赛事", league: "赛区联赛" },
   tags: { season: "游戏", act: "游戏", patch: "版本", champ: "英雄", event: "活动", intl: "赛事" },
@@ -53,6 +57,7 @@ window.LOL_I18N.zh = {
     LEC: { label: "LEC", sub: "欧洲" }, LCK: { label: "LCK", sub: "韩国" }, LPL: { label: "LPL", sub: "中国" },
     LCS: { label: "LCS", sub: "北美" }, CBLOL: { label: "CBLOL", sub: "巴西" }, LCP: { label: "LCP", sub: "亚太" }, LFL: { label: "LFL", sub: "法国" }
   },
+  teams: { KOR: "韩国", TPE: "中华台北" },
   items: {
     2026: {
       "s1": { t: "第一赛季：For Demacia", s: "第一赛季 · For Demacia", name: "For Demacia", notes: "德玛西亚主题：德玛西亚风格的召唤师峡谷、位置任务、更快的对局节奏、扩展的 ARAM: Mayhem。排位赛奖励Victorious 布隆皮肤。" },

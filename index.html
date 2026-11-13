@@ -209,6 +209,37 @@ button.tile:hover{border-color:var(--gold-4)}
 .ag.off .t{text-decoration:line-through;text-decoration-color:var(--red)}
 .tag{font:600 12px var(--font-cond);letter-spacing:.06em;color:var(--cat);text-transform:uppercase;margin-right:6px}
 
+/* Pastilles d'équipes */
+.tm{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:16px;padding:0 4px;border-radius:2px;background:var(--tc);color:var(--tt);
+  font:700 10.5px/1 var(--font-cond);letter-spacing:.03em;flex:none;vertical-align:-3px;text-decoration:none}
+.tm.lg{height:22px;min-width:34px;font-size:12.5px;padding:0 6px;vertical-align:-5px}
+.tm img{display:none;height:100%;width:auto;max-width:44px;object-fit:contain}
+.tm.has-logo{background:transparent;padding:0}
+.tm.has-logo img{display:block}
+.tm.has-logo .tm-txt{display:none}
+.item .fill .tm,.item .out .tm{margin-left:5px;vertical-align:0}
+/* Champions : vignette dans la frise, illustration dans la fiche */
+.avw{position:relative;display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;flex:none}
+.avw .av{display:none;width:24px;height:24px;border-radius:50%;object-fit:cover;object-position:50% 14%;box-shadow:0 0 0 2px var(--c-champ),0 0 10px color-mix(in srgb,var(--c-champ) 50%,transparent)}
+.avw.has-img .av{display:block}
+.avw.has-img .dia{display:none}
+.detail .art{margin:-18px -18px 0;height:150px;overflow:hidden;border-bottom:1px solid var(--frame);background:var(--blue-6)}
+.detail .art img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block}
+.detail .score{display:inline-block;margin-left:6px;font-variant-numeric:tabular-nums;color:var(--gold-2)}
+.detail ul.matches{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:6px}
+/* Palmarès */
+.honours{display:grid;gap:10px}
+.honours[hidden]{display:none}
+.honours h2{margin:0;font-family:var(--font-display);font-size:17px;letter-spacing:.08em;color:var(--gold-2);padding-bottom:6px;border-bottom:1px solid var(--frame)}
+.hon-list{display:flex;flex-wrap:wrap;gap:8px}
+.hon{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--frame);background:var(--surface);padding:6px 10px 6px 8px;border-radius:2px;cursor:pointer;color:var(--ink);text-align:left;min-height:40px;flex:none}
+.hon:hover{border-color:var(--gold-4)}
+.hon.sel{border-color:var(--gold-2)}
+.hon.up{border-style:dashed}
+.hon .tm+.tm{margin-left:-4px}
+.hon-t{display:block;font-weight:600;font-size:13.5px;line-height:1.2}
+.hon small{display:block;color:var(--muted);font-size:12px;line-height:1.2}
+
 footer{color:var(--muted);font-size:14px;display:grid;gap:8px;border-top:1px solid var(--frame);padding-top:16px}
 footer ul{margin:0;padding-left:18px;display:grid;gap:3px}
 footer p{margin:0;max-width:75ch}
@@ -262,6 +293,9 @@ footer p{margin:0;max-width:75ch}
   .ag .d{font-size:13px;color:var(--gold-2)}
   .ag.patch{padding-top:7px;padding-bottom:7px}
   .detail h2{font-size:19px}
+  .detail .art{margin-top:-22px}
+  .hon-list{flex-wrap:nowrap;overflow-x:auto;margin:0 -14px;padding:0 14px 4px;scrollbar-width:none}
+  .hon-list::-webkit-scrollbar{display:none}
 }
 @media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style>
@@ -293,6 +327,8 @@ footer p{margin:0;max-width:75ch}
     <p class="tl-note touch" data-i18n="swipeHint"></p>
   </section>
 
+  <section class="honours" id="honours" data-i18n-aria="honoursAria"></section>
+
   <section class="below">
     <div class="agenda" id="agenda" data-i18n-aria="agendaAria"></div>
     <aside class="detail" id="detail" aria-live="polite"></aside>
@@ -300,12 +336,14 @@ footer p{margin:0;max-width:75ch}
 
   <footer>
     <p data-i18n="footer"></p>
+    <p data-i18n="legal"></p>
     <ul id="sources"></ul>
   </footer>
 </div>
 <button type="button" class="scrim" id="scrim" tabindex="-1" aria-hidden="true"></button>
 
 <!-- Données (sans texte), puis un fichier par langue, puis l'application -->
+<script src="data/teams.js"></script>
 <script src="data/2026.js"></script>
 <script src="lang/fr.js"></script>
 <script src="lang/en.js"></script>

@@ -4,6 +4,8 @@
 
   /* ============ Configuration (sans texte) ============ */
   var DATA = window.LOL_DATA || { years: {} };
+  var TEAMS = window.LOL_TEAMS || {};
+  var DDRAGON = "https://ddragon.leagueoflegends.com/cdn/img/champion/";
   var I18N = window.LOL_I18N || {};
   var REF = "fr";                    // langue de référence pour les clés manquantes
   var FALLBACK = "en";               // seconde langue de secours pour les autres langues
@@ -106,6 +108,53 @@
     }
     return pre + fmt(a, cross) + " → " + fmt(b, cross);
   }
+  /* Équipes : pastille (logo si fourni, sinon sigle sur la couleur de l'équipe) */
+  function teamName(code) {
+    var v = pick(function (x) { return x.teams && x.teams[code]; }).v;
+    return v || (TEAMS[code] && TEAMS[code].n) || code;
+  }
+  function textOn(hex) {
+    var h = String(hex || "#888").replace("#", "");
+    if (h.length === 3) h = h.replace(/./g, "$&$&");
+    var r = parseInt(h.substr(0, 2), 16) / 255, g = parseInt(h.substr(2, 2), 16) / 255, b = parseInt(h.substr(4, 2), 16) / 255;
+    var lin = function (c) { return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); };
+    return (0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b)) > 0.4 ? "#010A13" : "#FFFFFF";
+  }
+  function badge(code, big) {
+    var t = TEAMS[code] || { c: "#5B5A56" };
+    var cls = "tm" + (big ? " lg" : "") + (t.logo ? " has-logo" : "");
+    return '<span class="' + cls + '" style="--tc:' + t.c + ";--tt:" + textOn(t.c) + '" title="' + esc(teamName(code)) + '">' +
+      (t.logo ? '<img src="' + esc(t.logo) + '" alt="" loading="lazy" decoding="async" data-fb="tm">' : "") +
+      '<span class="tm-txt">' + esc(code) + "</span></span>";
+  }
+  function stageLabel(k) { return pick(function (x) { return x.ui && x.ui.stage && x.ui.stage[k]; }).v || k; }
+  /* Résultat compact (agenda, palmarès) */
+  function resultLine(r) {
+    if (!r) return "";
+    if (r.m) {
+      return r.m.filter(function (m) { return m[0] === "sf"; }).map(function (m) {
+        return badge(m[1]) + " " + esc(m[1]) + " " + esc(m[3] || "–") + " " + esc(m[2]) + " " + badge(m[2]);
+      }).join(" · ");
+    }
+    if (!r.w) return "";
+    var mid = r.up ? " " + esc(ui("vs")) + " " : " " + esc(r.s || "–") + " ";
+    return badge(r.w) + " <b>" + esc(teamName(r.w)) + "</b>" + mid + esc(teamName(r.l || "")) + (r.l ? " " + badge(r.l) : "");
+  }
+  /* Repli quand une image ne charge pas (hors ligne, page Claude, fichier absent) */
+  function bindImageFallbacks(root) {
+    (root || document).querySelectorAll("img[data-fb]").forEach(function (img) {
+      if (img.dataset.bound) return; img.dataset.bound = "1";
+      var fail = function () {
+        var kind = img.dataset.fb, p = img.parentNode;
+        if (kind === "tm" && p) p.classList.remove("has-logo");
+        if (kind === "av" && p) p.classList.remove("has-img");
+        if (kind === "art") { var f = img.closest(".art"); if (f) f.remove(); return; }
+        img.remove();
+      };
+      if (img.complete && img.naturalWidth === 0 && img.src) fail(); else img.addEventListener("error", fail);
+    });
+  }
+
   /* Liens officiels, adaptés à la langue */
   function patchUrl(p) {
     var n = parseInt(String(p).split(".")[1], 10);
@@ -312,13 +361,16 @@
       var isPatch = it.kind === "patch";
       var label = it.s + (it.cont ? " ›" : "");
       var lw = Math.ceil(measure(label, isPatch)) + 4;
+      it.win = (it.r && it.r.w && !it.r.up) ? it.r.w : null;
+      if (it.win) lw += Math.ceil(measure(it.win, false)) + 16;
       var w = 0, left, right;
       it.flip = false; it.inside = false;
+      var mk = it.champ ? 24 : 15, half = Math.round(mk / 2);
       if (isPatch) {
         left = x - 1; right = left + 2 + 4 + lw;
       } else if (!it.range) {
-        left = x - 8; right = left + 15 + 4 + lw;
-        if (right > trackW) { it.flip = true; right = x + 8; left = right - 15 - 4 - lw; }
+        left = x - half; right = left + mk + 4 + lw;
+        if (right > trackW) { it.flip = true; right = x + half; left = right - mk - 4 - lw; }
       } else {
         w = Math.max(it.days * ppd - 1.5, 4);
         it.inside = lw + 14 <= w;
@@ -367,8 +419,15 @@
         var aria = esc(it.t + ", " + fmtRange(it) + (it.res ? ", " + it.res : "") + (it.postponed ? ", " + statusLabel("postponed") : ""));
         var inner;
         if (it.kind === "patch") inner = '<span class="tick"></span><span class="out">' + esc(it.label) + "</span>";
-        else if (!it.range) inner = '<span class="dia"></span><span class="out">' + esc(it.label) + "</span>";
-        else inner = '<span class="fill" style="width:' + it.w + 'px">' + (it.inside ? esc(it.label) : "") + "</span>" + (it.inside ? "" : '<span class="out">' + esc(it.label) + "</span>");
+        else if (!it.range) {
+          var mark = it.champ
+            ? '<span class="avw has-img"><img class="av" src="' + DDRAGON + "loading/" + encodeURIComponent(it.champ) + '_0.jpg" alt="" loading="lazy" decoding="async" data-fb="av"><span class="dia"></span></span>'
+            : '<span class="dia"></span>';
+          inner = mark + '<span class="out">' + esc(it.label) + "</span>";
+        } else {
+          var lab = esc(it.label) + (it.win ? " " + badge(it.win) : "");
+          inner = '<span class="fill" style="width:' + it.w + 'px">' + (it.inside ? lab : "") + "</span>" + (it.inside ? "" : '<span class="out">' + lab + "</span>");
+        }
         html += '<button type="button" class="' + cls + '" style="--cat:' + it.cat + ";left:" + it.left + "px;top:" + top + 'px" data-id="' + it.id + '" aria-label="' + aria + '" title="' + aria + '">' + inner + "</button>";
       });
       html += "</div></div>";
@@ -386,6 +445,7 @@
     html += "</div>";
     tl.innerHTML = html;
     tl.querySelectorAll(".item").forEach(function (b) { b.addEventListener("click", function () { select(b.dataset.id, false); }); });
+    bindImageFallbacks(tl);
   }
 
   /* ============ Agenda ============ */
@@ -409,7 +469,7 @@
         var st = status(i);
         var meta;
         if (i.kind === "patch") meta = i.notes ? esc(i.notes) : "";
-        else meta = [i.place ? esc(i.place) : null, i.res ? "<b>" + esc(i.res) + "</b>" : null].filter(Boolean).join(" · ");
+        else meta = [i.place ? esc(i.place) : null, i.r ? resultLine(i.r) : (i.res ? "<b>" + esc(i.res) + "</b>" : null)].filter(Boolean).join(" · ");
         var tag = i.kind === "league" ? i.lane : tagLabel(i.kind);
         html += '<button type="button" class="ag ' + (i.kind === "patch" ? "patch " : "") + (i.postponed ? "off " : "") + (i.id === selId ? "sel" : "") + '" style="--cat:' + i.cat + '" data-id="' + i.id + '">' +
           '<span class="d">' + esc(fmtRange(i)) + "</span>" +
@@ -420,6 +480,7 @@
     });
     el.innerHTML = html;
     el.querySelectorAll(".ag").forEach(function (b) { b.addEventListener("click", function () { select(b.dataset.id, true); }); });
+    bindImageFallbacks(el);
     el.querySelectorAll(".jump button[data-m]").forEach(function (b) {
       b.addEventListener("click", function () {
         var s = document.getElementById("mois-" + (Number(b.dataset.m) + 1));
@@ -439,7 +500,21 @@
     var kind = it.kind === "league" ? ui("leagueKind", laneText(it.lane, "label")) : kindLabel(it.kind);
     var dl = "";
     if (it.place) dl += "<div><dt>" + esc(ui("place")) + "</dt><dd>" + esc(it.place) + "</dd></div>";
-    if (it.res) dl += "<div><dt>" + esc(st === "postponed" ? ui("statusTitle") : st === "done" ? ui("result") : ui("matchup")) + '</dt><dd class="res">' + esc(it.res) + "</dd></div>";
+    if (it.r && it.r.m) {
+      ["sf", "qf"].forEach(function (k) {
+        var ms = it.r.m.filter(function (m) { return m[0] === k; });
+        if (!ms.length) return;
+        dl += "<div><dt>" + esc(stageLabel(k)) + '</dt><dd><ul class="matches">' + ms.map(function (m) {
+          return "<li>" + badge(m[1]) + " <b>" + esc(teamName(m[1])) + "</b> " + esc(m[3] || "–") + " " + esc(teamName(m[2])) + " " + badge(m[2]) + "</li>";
+        }).join("") + "</ul></dd></div>";
+      });
+    } else if (it.r && it.r.w && it.r.up) {
+      dl += "<div><dt>" + esc(ui("matchup")) + '</dt><dd class="res">' + badge(it.r.w, true) + " " + esc(teamName(it.r.w)) + " " + esc(ui("vs")) + " " + esc(teamName(it.r.l)) + " " + badge(it.r.l, true) + "</dd></div>";
+    } else if (it.r && it.r.w) {
+      dl += "<div><dt>" + esc(ui("winner")) + '</dt><dd class="res">' + badge(it.r.w, true) + " " + esc(teamName(it.r.w)) + (it.r.s ? ' <span class="score">' + esc(it.r.s) + "</span>" : "") + "</dd></div>";
+      if (it.r.l) dl += "<div><dt>" + esc(ui("runnerUp")) + "</dt><dd>" + badge(it.r.l) + " " + esc(teamName(it.r.l)) + "</dd></div>";
+      if (it.r.mvp) dl += "<div><dt>" + esc(ui("mvp")) + "</dt><dd>" + esc(it.r.mvp) + "</dd></div>";
+    } else if (it.res) dl += "<div><dt>" + esc(st === "postponed" ? ui("statusTitle") : st === "done" ? ui("result") : ui("matchup")) + '</dt><dd class="res">' + esc(it.res) + "</dd></div>";
     if (it.notes) dl += "<div><dt>" + esc(ui("notes")) + "</dt><dd>" + esc(it.notes) + "</dd></div>";
     var lk = linksOf(it);
     if (lk.length) dl += "<div><dt>" + esc(ui("links")) + '</dt><dd><ul class="links">' + lk.map(function (l) {
@@ -449,11 +524,13 @@
       var n = Math.round((it.end - it.start) / DAY) + 1;
       dl += "<div><dt>" + esc(ui("duration")) + "</dt><dd>" + esc(ui("days", n)) + (it.approx ? " " + esc(ui("approx")) : "") + "</dd></div>";
     }
-    el.innerHTML = closeBtn + '<span class="kind"><i aria-hidden="true"></i>' + esc(kind) + "</span>" +
+    var art = it.champ ? '<figure class="art"><img src="' + DDRAGON + "splash/" + encodeURIComponent(it.champ) + '_0.jpg" alt="' + esc(it.s) + '" loading="lazy" decoding="async" data-fb="art"></figure>' : "";
+    el.innerHTML = closeBtn + art + '<span class="kind"><i aria-hidden="true"></i>' + esc(kind) + "</span>" +
       "<h2>" + esc(it.t) + "</h2>" +
       '<div class="when"><span>' + esc(fmtRange(it)) + '</span><span class="pill ' + pillClass(st) + '">' + esc(statusLabel(st)) + "</span></div>" +
       (dl ? "<dl>" + dl + "</dl>" : "");
     bindClose();
+    bindImageFallbacks(el);
   }
   function bindClose() {
     var b = document.getElementById("detailClose");
@@ -477,7 +554,7 @@
   /* ============ Sélection ============ */
   function select(id, scrollTl) {
     selId = id;
-    document.querySelectorAll(".item.sel,.ag.sel").forEach(function (e) { e.classList.remove("sel"); });
+    document.querySelectorAll(".item.sel,.ag.sel,.hon.sel").forEach(function (e) { e.classList.remove("sel"); });
     document.querySelectorAll('[data-id="' + CSS.escape(id) + '"]').forEach(function (e) { e.classList.add("sel"); });
     renderDetail();
     openSheet();
@@ -498,11 +575,29 @@
     return (live || nxt || ITEMS.filter(function (i) { return i.id === "i-w-final"; })[0] || ITEMS[0]).id;
   }
 
+  /* ============ Palmarès ============ */
+  function renderHonours() {
+    var el = document.getElementById("honours");
+    var list = ITEMS.filter(function (i) { return i.r && i.r.w && !hidden.has(i.lane); })
+      .sort(function (a, b) { return a.end - b.end; });
+    if (!list.length) { el.innerHTML = ""; el.hidden = true; return; }
+    el.hidden = false;
+    el.innerHTML = "<h2>" + esc(ui("honours", year)) + '</h2><div class="hon-list">' + list.map(function (i) {
+      var name = i.kind === "league" ? i.t : i.s;
+      var who = i.r.up ? badge(i.r.w) + badge(i.r.l) : badge(i.r.w);
+      var sub = i.r.up ? fmt(i.start) : teamName(i.r.w);
+      return '<button type="button" class="hon' + (i.r.up ? " up" : "") + (i.id === selId ? " sel" : "") + '" data-id="' + i.id + '">' + who +
+        '<span><span class="hon-t">' + esc(name) + '</span><small>' + esc(sub) + "</small></span></button>";
+    }).join("") + "</div>";
+    el.querySelectorAll(".hon").forEach(function (b) { b.addEventListener("click", function () { select(b.dataset.id, true); }); });
+    bindImageFallbacks(el);
+  }
+
   /* ============ Assemblage ============ */
   function renderAll(resetSel) {
     prepare();
     if (resetSel !== false && !selId) selId = defaultSel();
-    applyStatic(); renderLangs(); renderYears(); renderNow(); renderFilters(); renderTimeline(); renderAgenda(); renderDetail();
+    applyStatic(); renderLangs(); renderYears(); renderNow(); renderFilters(); renderTimeline(); renderHonours(); renderAgenda(); renderDetail();
   }
 
   document.getElementById("scrim").addEventListener("click", closeSheet);

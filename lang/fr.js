@@ -58,6 +58,10 @@ window.LOL_I18N.fr = {
     status: { done: "Terminé", live: "En cours", next: "À venir", planned: "Annoncé", postponed: "Reporté" },
     close: "Fermer la fiche",
     links: "Liens officiels",
+    winner: "Vainqueur", runnerUp: "Finaliste", mvp: "MVP de la finale", vs: "contre",
+    honours: function (y) { return "Palmarès " + y; }, honoursAria: "Vainqueurs de l'année",
+    stage: { sf: "Demi-finale", qf: "Quart de finale" },
+    legal: "lol calendar a été créé dans le cadre de la politique « Legal Jibber Jabber » de Riot Games, avec des contenus appartenant à Riot Games. Riot Games ne soutient ni ne sponsorise ce projet.",
     swipeHint: "Faites glisser la frise pour changer de mois et touchez une barre pour ouvrir sa fiche. Contour pointillé : dates approximatives."
   },
 
@@ -108,6 +112,7 @@ window.LOL_I18N.fr = {
   /* Textes des éléments, par année puis par identifiant (voir data/<année>.js).
      t : titre, s : libellé court sur la frise, name : nom de la saison,
      place : lieu, res : résultat ou affiche, notes : précisions. */
+  teams: { KOR: "Corée du Sud", TPE: "Taipei chinois" },
   items: {
     2026: {
       "s1":   { t: "Saison 1 : For Demacia", s: "Saison 1 · For Demacia", name: "For Demacia",

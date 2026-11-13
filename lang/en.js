@@ -58,6 +58,10 @@ window.LOL_I18N.en = {
     status: { done: "Finished", live: "Ongoing", next: "Upcoming", planned: "Announced", postponed: "Postponed" },
     close: "Close details",
     links: "Official links",
+    winner: "Winner", runnerUp: "Runner-up", mvp: "Finals MVP", vs: "vs",
+    honours: function (y) { return y + " champions"; }, honoursAria: "Winners of the year",
+    stage: { sf: "Semifinal", qf: "Quarterfinal" },
+    legal: "lol calendar was created under Riot Games' “Legal Jibber Jabber” policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.",
     swipeHint: "Swipe the timeline to change months and tap a bar to open its details. Dashed outline: approximate dates."
   },
 
@@ -102,6 +106,8 @@ window.LOL_I18N.en = {
     ["Inven Global: Gen.G win the 2026 LCK", "https://www.invenglobal.com/articles/25926/geng-defeats-hanwha-life-esports-to-win-back-to-back-lck-titles"],
     ["Esports World Cup: Dplus KIA win LoL at EWC 26", "https://esportsworldcup.com/en/press-releases/dplus-kia-win-lol-at-ewc26"]
   ],
+
+  teams: { KOR: "South Korea", TPE: "Chinese Taipei" },
 
   items: {
     2026: {

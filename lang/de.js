@@ -36,7 +36,11 @@ window.LOL_I18N.de = {
     duration: "Dauer", days: function (n) { return n + (n > 1 ? " Tage" : " Tag"); }, approx: "(ungefähr)",
     patch: "Patch", leagueKind: function (l) { return "Regionale Liga · " + l; },
     status: { done: "Beendet", live: "Läuft", next: "Demnächst", planned: "Angekündigt", postponed: "Verschoben" },
-    close: "Details schließen", links: "Offizielle Links"
+    close: "Details schließen", links: "Offizielle Links",
+    winner: "Sieger", runnerUp: "Finalist", mvp: "Finals-MVP", vs: "gegen",
+    honours: function (y) { return "Titelträger " + y; }, honoursAria: "Sieger des Jahres",
+    stage: { sf: "Halbfinale", qf: "Viertelfinale" },
+    legal: "lol calendar wurde unter der „Legal Jibber Jabber“-Richtlinie von Riot Games mit Inhalten erstellt, die Riot Games gehören. Riot Games unterstützt oder sponsert dieses Projekt nicht."
   },
   kinds: { season: "Saison", act: "Akt", patch: "Patch", champ: "Champion", event: "Ingame-Event", intl: "Internationaler Wettbewerb", league: "Regionale Liga" },
   tags: { season: "Spiel", act: "Spiel", patch: "Patch", champ: "Champion", event: "Event", intl: "Wettbewerb" },
@@ -52,6 +56,7 @@ window.LOL_I18N.de = {
     LEC: { label: "LEC", sub: "Europa" }, LCK: { label: "LCK", sub: "Korea" }, LPL: { label: "LPL", sub: "China" },
     LCS: { label: "LCS", sub: "Nordamerika" }, CBLOL: { label: "CBLOL", sub: "Brasilien" }, LCP: { label: "LCP", sub: "Asien-Pazifik" }, LFL: { label: "LFL", sub: "Frankreich" }
   },
+  teams: { KOR: "Südkorea", TPE: "Chinese Taipei" },
   items: {
     2026: {
       "s1": { t: "Saison 1: For Demacia", s: "Saison 1 · For Demacia", name: "For Demacia", notes: "Demacia-Thema: Kluft der Beschwörer im Demacia-Stil, Rollenquests, schnellere Spiele und erweitertes ARAM: Mayhem. Siegreicher Braum als Ranglisten-Belohnung." },

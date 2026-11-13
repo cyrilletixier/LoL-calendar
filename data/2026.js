@@ -5,7 +5,11 @@
    postponed : reporté ou annulé (barre barrée, ignoré dans « prochain rendez-vous »).
    links : liens officiels [type, adresse]. Le type donne le libellé (lang/<code>.js, linkLabels).
      Dans l'adresse, {le} = langue LoL Esports, {lol} = langue leagueoflegends.com, {sup} = langue support Riot.
-     ["patch", "26.06"] : notes de patch officielles, affichées seulement une fois le patch sorti. */
+     ["patch", "26.06"] : notes de patch officielles, affichées seulement une fois le patch sorti.
+   r : résultat. w = vainqueur, l = finaliste (sigles de data/teams.js), s = score, mvp = MVP de la finale,
+     up: true = finale à venir (w et l sont alors l'affiche), m = matchs [phase, équipe A, équipe B, score]
+     avec phase "sf" (demi-finale) ou "qf" (quart de finale).
+   champ : clé du champion sur Data Dragon (images officielles Riot). */
 (function () {
   var HB = "https://lolesports.com/{le}/season/115547545029543948/handbook";
   var SPLIT1 = ["handbook", HB + "/115547545030002701"];
@@ -62,9 +66,9 @@
       { id: "p24", lane: "patch", kind: "patch", s: "26.24", d0: "12-09" },
 
       /* Champions : nouveaux champions et refontes */
-      { id: "c-shyvana", lane: "champ", kind: "champ", d0: "03-18", links: [["patch", "26.06"]] },
-      { id: "c-locke",   lane: "champ", kind: "champ", d0: "06-24", key: true, links: [["patch", "26.13"]] },
-      { id: "c-belveth", lane: "champ", kind: "champ", d0: "07-29", links: [["patch", "26.15"]] },
+      { id: "c-shyvana", lane: "champ", kind: "champ", d0: "03-18", links: [["patch", "26.06"]], champ: "Shyvana" },
+      { id: "c-locke",   lane: "champ", kind: "champ", d0: "06-24", key: true, links: [["patch", "26.13"]], champ: "Locke" },
+      { id: "c-belveth", lane: "champ", kind: "champ", d0: "07-29", links: [["patch", "26.15"]], champ: "Belveth" },
 
       /* Événements en jeu */
       { id: "e-lunar",      lane: "event", kind: "event", d0: "01-22", d1: "03-03", approx: true, links: [["patch", "26.02"], ["patch", "26.04"]] },
@@ -79,57 +83,57 @@
       { id: "e-winterrift", lane: "event", kind: "event", d0: "11-18", d1: "12-31", approx: true, planned: true, links: [["patch", "26.23"]] },
 
       /* International */
-      { id: "i-americas", lane: "intl", kind: "intl", d0: "03-11", d1: "03-15", approx: true, links: [FST] },
-      { id: "i-fst",      lane: "intl", kind: "intl", d0: "03-16", d1: "03-22", links: [FST, NEWS_START] },
-      { id: "i-msi",      lane: "intl", kind: "intl", d0: "06-28", d1: "07-12", links: [MSI, NEWS_INTL] },
+      { id: "i-americas", lane: "intl", kind: "intl", d0: "03-11", d1: "03-15", approx: true, links: [FST], r: { w: "FUR", l: "C9", s: "3-0" } },
+      { id: "i-fst",      lane: "intl", kind: "intl", d0: "03-16", d1: "03-22", links: [FST, NEWS_START], r: { w: "BLG", l: "G2", s: "3-1", mvp: "Bin" } },
+      { id: "i-msi",      lane: "intl", kind: "intl", d0: "06-28", d1: "07-12", links: [MSI, NEWS_INTL], r: { w: "HLE", l: "BLG", s: "3-2", mvp: "Zeus" } },
       { id: "i-ewc",      lane: "intl", kind: "intl", d0: "07-15", d1: "07-19",
-        links: [["ewc", "https://esportsworldcup.com/en/press-releases/dplus-kia-win-lol-at-ewc26"]] },
+        links: [["ewc", "https://esportsworldcup.com/en/press-releases/dplus-kia-win-lol-at-ewc26"]], r: { w: "DK", l: "KC", s: "3-0" } },
       { id: "i-holc",     lane: "intl", kind: "intl", d0: "08-18", links: [NEWS_HOL] },
-      { id: "i-asian",    lane: "intl", kind: "intl", d0: "09-29", d1: "10-02" },
+      { id: "i-asian",    lane: "intl", kind: "intl", d0: "09-29", d1: "10-02", r: { w: "KOR", l: "TPE", s: "3-0" } },
       { id: "i-w-playin", lane: "intl", kind: "intl", d0: "10-15", d1: "10-18", links: [WORLDS, NEWS_INTL] },
       { id: "i-w-swiss",  lane: "intl", kind: "intl", d0: "10-23", d1: "10-31", links: [WORLDS, NEWS_INTL] },
-      { id: "i-w-ko",     lane: "intl", kind: "intl", d0: "11-03", d1: "11-08", links: [WORLDS, NEWS_INTL] },
-      { id: "i-w-final",  lane: "intl", kind: "intl", d0: "11-14", links: [WORLDS, NEWS_INTL] },
+      { id: "i-w-ko",     lane: "intl", kind: "intl", d0: "11-03", d1: "11-08", links: [WORLDS, NEWS_INTL], r: { m: [["sf", "GEN", "IG", "3-0"], ["sf", "BLG", "T1", "3-1"], ["qf", "T1", "KC", "3-1"], ["qf", "GEN", "LYON", "3-0"], ["qf", "BLG", "DK", "3-0"]] } },
+      { id: "i-w-final",  lane: "intl", kind: "intl", d0: "11-14", links: [WORLDS, NEWS_INTL], r: { w: "GEN", l: "BLG", up: true } },
 
       /* LEC */
-      { id: "lec-v",  lane: "LEC", kind: "league", d0: "01-17", d1: "03-01", links: [SPLIT1, ["news", "https://lolesports.com/{le}/news/lec-2026-format-update"]] },
-      { id: "lec-sp", lane: "LEC", kind: "league", d0: "03-28", d1: "06-07", links: [SPLIT2, ["news", "https://lolesports.com/{le}/news/2026-lec-spring-primer"]] },
-      { id: "lec-su", lane: "LEC", kind: "league", d0: "07-24", d1: "09-20", links: [SPLIT3, ["news", "https://lolesports.com/{le}/news/lec-summer-finals-2026-nice"]] },
+      { id: "lec-v",  lane: "LEC", kind: "league", d0: "01-17", d1: "03-01", links: [SPLIT1, ["news", "https://lolesports.com/{le}/news/lec-2026-format-update"]], r: { w: "G2", l: "KC", mvp: "Caps" } },
+      { id: "lec-sp", lane: "LEC", kind: "league", d0: "03-28", d1: "06-07", links: [SPLIT2, ["news", "https://lolesports.com/{le}/news/2026-lec-spring-primer"]], r: { w: "G2", l: "KC", s: "3-2", mvp: "SkewMond" } },
+      { id: "lec-su", lane: "LEC", kind: "league", d0: "07-24", d1: "09-20", links: [SPLIT3, ["news", "https://lolesports.com/{le}/news/lec-summer-finals-2026-nice"]], r: { w: "G2", l: "MKOI", s: "3-0" } },
 
       /* LCK */
-      { id: "lck-cup", lane: "LCK", kind: "league", d0: "01-14", d1: "03-01", links: [SPLIT1] },
+      { id: "lck-cup", lane: "LCK", kind: "league", d0: "01-14", d1: "03-01", links: [SPLIT1], r: { w: "GEN", l: "BFX", s: "3-0" } },
       { id: "lck-r12", lane: "LCK", kind: "league", d0: "04-01", d1: "05-31", approx: true, links: [SPLIT2] },
       { id: "lck-rtm", lane: "LCK", kind: "league", d0: "06-12", d1: "06-14", links: [SPLIT2] },
       { id: "lck-r34", lane: "LCK", kind: "league", d0: "07-29", d1: "08-23", approx: true, links: [SPLIT3] },
-      { id: "lck-po",  lane: "LCK", kind: "league", d0: "08-29", d1: "09-13", links: [SPLIT3] },
+      { id: "lck-po",  lane: "LCK", kind: "league", d0: "08-29", d1: "09-13", links: [SPLIT3], r: { w: "GEN", l: "HLE", s: "3-1", mvp: "Ruler" } },
 
       /* LPL */
-      { id: "lpl-1",  lane: "LPL", kind: "league", d0: "01-14", d1: "03-08", links: [SPLIT1, LPL_SITE] },
-      { id: "lpl-2",  lane: "LPL", kind: "league", d0: "04-04", d1: "06-14", links: [SPLIT2, LPL_SITE] },
+      { id: "lpl-1",  lane: "LPL", kind: "league", d0: "01-14", d1: "03-08", links: [SPLIT1, LPL_SITE], r: { w: "BLG", l: "JDG" } },
+      { id: "lpl-2",  lane: "LPL", kind: "league", d0: "04-04", d1: "06-14", links: [SPLIT2, LPL_SITE], r: { w: "BLG", l: "TES", s: "3-0", mvp: "Knight" } },
       { id: "lpl-3",  lane: "LPL", kind: "league", d0: "07-22", d1: "09-13",
-        links: [SPLIT3, ["results", "https://lolesports.com/{le}/tournament/115616254668930796/overview"], LPL_SITE] },
+        links: [SPLIT3, ["results", "https://lolesports.com/{le}/tournament/115616254668930796/overview"], LPL_SITE], r: { w: "AL", l: "BLG", s: "3-1" } },
       { id: "lpl-rf", lane: "LPL", kind: "league", d0: "09-17", d1: "09-19", links: [SPLIT3, LPL_SITE] },
 
       /* LCS */
-      { id: "lcs-li", lane: "LCS", kind: "league", d0: "01-24", d1: "03-01", links: [SPLIT1] },
-      { id: "lcs-sp", lane: "LCS", kind: "league", d0: "04-04", d1: "06-14", links: [SPLIT2] },
-      { id: "lcs-su", lane: "LCS", kind: "league", d0: "07-25", d1: "10-04", links: [SPLIT3] },
+      { id: "lcs-li", lane: "LCS", kind: "league", d0: "01-24", d1: "03-01", links: [SPLIT1], r: { w: "LYON", l: "C9", s: "3-1" } },
+      { id: "lcs-sp", lane: "LCS", kind: "league", d0: "04-04", d1: "06-14", links: [SPLIT2], r: { w: "LYON", l: "TL", s: "3-0" } },
+      { id: "lcs-su", lane: "LCS", kind: "league", d0: "07-25", d1: "10-04", links: [SPLIT3], r: { w: "TL", l: "LYON", s: "3-1" } },
 
       /* CBLOL */
-      { id: "cb-cup", lane: "CBLOL", kind: "league", d0: "01-17", d1: "03-01", links: [SPLIT1] },
+      { id: "cb-cup", lane: "CBLOL", kind: "league", d0: "01-17", d1: "03-01", links: [SPLIT1], r: { w: "LOUD", l: "RED", s: "3-0" } },
       { id: "cb-1",   lane: "CBLOL", kind: "league", d0: "03-28", d1: "06-06", approx: true, links: [SPLIT2] },
       { id: "cb-2",   lane: "CBLOL", kind: "league", d0: "07-25", d1: "10-10", approx: true, links: [SPLIT3] },
 
       /* LCP */
       { id: "lcp-1", lane: "LCP", kind: "league", d0: "01-16", d1: "03-01", links: [SPLIT1] },
       { id: "lcp-2", lane: "LCP", kind: "league", d0: "04-04", d1: "06-07", links: [SPLIT2] },
-      { id: "lcp-3", lane: "LCP", kind: "league", d0: "07-25", d1: "08-30", links: [SPLIT3] },
+      { id: "lcp-3", lane: "LCP", kind: "league", d0: "07-25", d1: "08-30", links: [SPLIT3], r: { w: "TSW", l: "CFO", s: "3-0" } },
 
       /* LFL */
       { id: "lfl-sp", lane: "LFL", kind: "league", d0: "05-06", d1: "06-03",
-        links: [["results", "https://lolesports.com/{le}/results/116289311182357180/stage/116289379850489924"]] },
+        links: [["results", "https://lolesports.com/{le}/results/116289311182357180/stage/116289379850489924"]], r: { w: "SLY", l: "GL" } },
       { id: "lfl-su", lane: "LFL", kind: "league", d0: "07-21", d1: "09-02", approx: true,
-        links: [["results", "https://lolesports.com/{le}/results/116912368898351701/stage/116912368899269206"]] }
+        links: [["results", "https://lolesports.com/{le}/results/116912368898351701/stage/116912368899269206"]], r: { w: "GL", l: "TLNP", s: "3-1" } }
     ]
   };
 })();

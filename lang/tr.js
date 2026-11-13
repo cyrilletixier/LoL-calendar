@@ -36,7 +36,11 @@ window.LOL_I18N.tr = {
     duration: "Süre", days: function (n) { return n + " gün"; }, approx: "(yaklaşık)",
     patch: "Yama", leagueKind: function (l) { return "Bölgesel lig · " + l; },
     status: { done: "Bitti", live: "Devam ediyor", next: "Yakında", planned: "Duyuruldu", postponed: "Ertelendi" },
-    close: "Ayrıntıları kapat", links: "Resmî bağlantılar"
+    close: "Ayrıntıları kapat", links: "Resmî bağlantılar",
+    winner: "Kazanan", runnerUp: "Finalist", mvp: "Final MVP'si", vs: "–",
+    honours: function (y) { return y + " şampiyonları"; }, honoursAria: "Yılın kazananları",
+    stage: { sf: "Yarı final", qf: "Çeyrek final" },
+    legal: "lol calendar, Riot Games'in “Legal Jibber Jabber” politikası kapsamında Riot Games'e ait içerikler kullanılarak hazırlanmıştır. Riot Games bu projeyi desteklemez veya sponsorluğunu yapmaz."
   },
   kinds: { season: "Sezon", act: "Perde", patch: "Yama", champ: "Şampiyon", event: "Oyun içi etkinlik", intl: "Uluslararası turnuva", league: "Bölgesel lig" },
   tags: { season: "Oyun", act: "Oyun", patch: "Yama", champ: "Şampiyon", event: "Etkinlik", intl: "Turnuva" },
@@ -52,6 +56,7 @@ window.LOL_I18N.tr = {
     LEC: { label: "LEC", sub: "Avrupa" }, LCK: { label: "LCK", sub: "Kore" }, LPL: { label: "LPL", sub: "Çin" },
     LCS: { label: "LCS", sub: "Kuzey Amerika" }, CBLOL: { label: "CBLOL", sub: "Brezilya" }, LCP: { label: "LCP", sub: "Asya-Pasifik" }, LFL: { label: "LFL", sub: "Fransa" }
   },
+  teams: { KOR: "Güney Kore", TPE: "Çin Taipei" },
   items: {
     2026: {
       "s1": { t: "1. Sezon: For Demacia", s: "1. Sezon · For Demacia", name: "For Demacia", notes: "Demacia teması: Demacia tarzı Sihirdar Vadisi, rol görevleri, daha hızlı maçlar ve genişletilmiş ARAM: Mayhem. Dereceli oyunla kazanılan Muzaffer Braum kostümü." },
