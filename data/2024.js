@@ -11,7 +11,8 @@
     patchUrl: "https://www.leagueoflegends.com/{lol}/news/game-updates/patch-{y}-{n}-notes/",
     lanes: { LCP: "PCS" },
     items: [
-      /* Splits classés */
+      /* Splits classés (le split 2 de 2023 se termine le 9 janvier 2024) */
+      { id: "sp2-23", lane: "season", kind: "season", tpl: "split", n: 2, color: "s2", d0: "2023-07-19", d1: "01-09" },
       { id: "sp1", lane: "season", kind: "season", tpl: "split", n: 1, color: "s1", d0: "01-10", d1: "05-14", links: [["patch", "14.1"]] },
       { id: "sp2", lane: "season", kind: "season", tpl: "split", n: 2, color: "s2", d0: "05-15", d1: "09-24", links: [["patch", "14.10"]] },
       { id: "sp3", lane: "season", kind: "season", tpl: "split", n: 3, color: "s3", d0: "09-25", d1: "2025-01-08", links: [["patch", "14.19"]] },

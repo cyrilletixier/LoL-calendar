@@ -30,7 +30,7 @@ window.LOL_I18N.en = {
     groupPro: "Esports",
     yearUpcoming: "Upcoming year",
     yearDone: "Year completed",
-    yearSummary: function (a, p, c) { return [a ? a + " acts" : "", p ? p + " patches" : "", c + " pro competitions"].filter(Boolean).join(", ") + "."; },
+    yearSummary: function (a, p, c, ch) { var pl = function (n, one, many) { return n + " " + (n > 1 ? many : one); }; return [a ? pl(a, "act", "acts") : "", p ? pl(p, "patch", "patches") : "", ch ? pl(ch, "new champion", "new champions") : "", c ? pl(c, "pro competition", "pro competitions") : ""].filter(Boolean).join(", ") + "."; },
     currentSeason: "Current season",
     until: function (d) { return "until " + d; },
     currentPatch: "Current patch",
@@ -59,6 +59,10 @@ window.LOL_I18N.en = {
     tplSplit: function (n) { return "Ranked Split " + n; }, tplSplitShort: function (n) { return "Split " + n; },
     tplChampNew: function (c) { return c + " releases"; }, tplRework: function (c) { return c + " rework"; }, tplReworkShort: function (c) { return c + " (rework)"; },
     tplWorldsFinal: function (y) { return "Worlds " + y + " Final"; }, tplWorldsFinalShort: "Worlds Final",
+    yearPrev: "Previous year", yearNext: "Next year", yearToday: "Today", yearLive: "current", yearFuture: "upcoming",
+    tplRank: function (n, y) { return y ? "Season " + y + " (Season " + n + ")" : "Season " + n; }, tplRankShort: function (n, y) { return "Season " + (y || n); },
+    tplPre: function (n, y) { return "Preseason " + (y || n); }, tplPreShort: "Preseason",
+    tplChampBatch: function (n) { return "The first " + n + " champions (alpha)"; }, tplChampBatchShort: function (n) { return n + " champions"; },
     leagueKind: function (l) { return "Regional league · " + l; },
     status: { done: "Finished", live: "Ongoing", next: "Upcoming", planned: "Announced", postponed: "Postponed" },
     close: "Close details",
@@ -81,6 +85,7 @@ window.LOL_I18N.en = {
     news: "Official LoL Esports announcement",
     results: "Results on LoL Esports",
     patch: function (p) { return "Patch " + p + " notes"; },
+    wiki: function (p) { return "Patch " + p + " on the LoL Wiki"; },
     riot: "Event page (Riot Games)",
     ewc: "Esports World Cup (official site)",
     lpl: "Official LPL website"
@@ -99,7 +104,9 @@ window.LOL_I18N.en = {
     CBLOL:  { label: "CBLOL", sub: "Brazil" },
     LCP:    { label: "LCP", sub: "Asia-Pacific" },
     LFL:    { label: "LFL", sub: "France" },
-    LTA_N: { label: "LTA North", short: "LTA N", sub: "North America" }, LTA_S: { label: "LTA South", short: "LTA S", sub: "South America" }, PCS: { label: "PCS", sub: "Pacific" }
+    LTA_N: { label: "LTA North", short: "LTA N", sub: "North America" }, LTA_S: { label: "LTA South", short: "LTA S", sub: "South America" }, PCS: { label: "PCS", sub: "Pacific" },
+    /* Années 2012 à 2019 */
+    EULCS: { label: "EU LCS" }, NALCS: { label: "NA LCS" }, OGN: { label: "OGN Champions", short: "OGN" }, LMS: { label: "LMS" }
   },
 
   sources: [
@@ -128,12 +135,122 @@ window.LOL_I18N.en = {
     ["Universe · China Daily: Immersive Arcane in Shanghai", "https://global.chinadaily.com.cn/a/202604/17/WS69e161dda310d6866eb43e14.html"],
     ["Universe · Spodek Katowice: CHRONICLES concert", "https://www.spodekkatowice.pl/en/events/chronicles-celebration-of-league-of-legends-music,4058.html"],
     ["Universe · Inven Global: K/DA returns with FIRESTARTER", "https://www.invenglobal.com/articles/27340/kda-returns-after-6-years-unveils-new-song-firestarter"],
-    ["Universe · Orbit, Insight Editions and Louis Vuitton: books", "https://www.simonandschuster.com/books/Headliners/Insight-Editions/9798337407425"]
+    ["Universe · Orbit, Insight Editions and Louis Vuitton: books", "https://www.simonandschuster.com/books/Headliners/Insight-Editions/9798337407425"],
+    ["2009–2023 · League of Legends Wiki: patches and seasons, year by year", "https://wiki.leagueoflegends.com/en-us/Patch/Season_2019"],
+    ["2009–2023 · Liquipedia: Worlds, MSI and regional league winners", "https://liquipedia.net/leagueoflegends/World_Championships"],
+    ["2009–2023 · alviran.net: release dates of every champion", "https://alviran.net/blog/lol-champions-release-order-every-champion-2026/"]
   ],
 
   teams: { KOR: "South Korea", TPE: "Chinese Taipei" },
 
   items: {
+    2009: {
+      "e-launch": { t: "League of Legends launch", s: "Game launch", notes: "Official release in North America and Europe, with 40 champions." }
+    },
+    2010: {
+      "e-harrowing": { notes: "Halloween event: spooky skins and icons." },
+      "e-snowdown": { notes: "Holiday event: winter skins and icons." }
+    },
+    2011: {
+      "e-coop": { notes: "New mode: team up against bots." },
+      "e-harrowing": { notes: "Halloween event: spooky skins and icons." },
+      "e-snowdown": { notes: "Holiday event: winter skins and icons." },
+      "i-w-final": { place: "Jönköping, Sweden (DreamHack Summer)" }
+    },
+    2012: {
+      "e-spectator": { t: "Spectator mode", s: "Spectator mode", notes: "Live games can now be watched from the client." },
+      "e-snowdown": { notes: "Holiday event: winter skins and icons." },
+      "i-worlds": { place: "Los Angeles, United States" },
+      "i-w-final": { place: "Los Angeles, United States (Galen Center)" }
+    },
+    2013: {
+      "e-leagues": { t: "New ranked league system", s: "Ranked leagues", notes: "Bronze to Diamond leagues replace the visible Elo rating as Season 3 starts." },
+      "e-harrowing": { notes: "Halloween event: spooky skins and icons." },
+      "e-snowdown": { notes: "Holiday event: winter skins and icons." },
+      "i-worlds": { place: "Los Angeles, United States" },
+      "i-w-final": { place: "Los Angeles, United States (Staples Center)" }
+    },
+    2014: {
+      "e-lunar": { notes: "Lunar New Year: themed skins and icons." },
+      "e-teambuilder": { notes: "Queue where you pick your role and champion before finding a team." },
+      "e-harrowing": { notes: "Halloween event: spooky skins and icons." },
+      "e-srupdate": { t: "Summoner's Rift update", s: "Rift update", notes: "Full visual overhaul of the main map, first in beta." },
+      "e-snowdown": { notes: "Holiday event: winter skins and icons." },
+      "i-worlds": { place: "Taipei, Singapore, Busan and Seoul" },
+      "i-w-final": { place: "Seoul, South Korea" }
+    },
+    2015: {
+      "e-urf": { notes: "April Fools mode: very short cooldowns and no mana costs." },
+      "e-mastery": { t: "Champion Mastery", s: "Mastery", notes: "Per-champion progression, with mastery levels and emotes." },
+      "e-bilgewater": { notes: "Bilgewater event: Gangplank update and the Black Market Brawlers ARAM mode." },
+      "e-harrowing": { notes: "Halloween event: spooky skins and icons." },
+      "i-msi": { place: "Tallahassee, Florida, United States" },
+      "i-worlds": { place: "Paris, London, Brussels and Berlin" },
+      "i-w-final": { place: "Berlin, Germany (Mercedes-Benz Arena)" }
+    },
+    2016: {
+      "e-hextech": { notes: "Chests, keys and shards: skins and champions can now be crafted." },
+      "e-siege": { notes: "Limited-time mode: attack and defend the Nexus." },
+      "e-doom": { notes: "PvE mode against overpowered bots, alongside the Harrowing 2016 skins." },
+      "i-msi": { place: "Shanghai, China" },
+      "i-worlds": { place: "San Francisco, Chicago, New York and Los Angeles" },
+      "i-w-final": { place: "Los Angeles, United States (Staples Center)" }
+    },
+    2017: {
+      "e-practice": { notes: "Solo sandbox to practise combos and builds, released alongside the Hunt of the Blood Moon mode." },
+      "e-honor": { t: "New Honor system", s: "Honor", notes: "Players honor each other after games, with levels and rewards." },
+      "e-invasion": { notes: "Co-op PvE mode with a Star Guardian theme." },
+      "e-runes": { notes: "New runes replace the old runes and masteries, free for everyone." },
+      "i-msi": { place: "São Paulo and Rio de Janeiro, Brazil" },
+      "i-worlds": { place: "Wuhan, Guangzhou, Shanghai and Beijing" },
+      "i-w-final": { place: "Beijing, China" }
+    },
+    2018: {
+      "e-blitz": { notes: "Fast, chaotic mode with random events, first as a test." },
+      "e-odyssey": { notes: "Co-op PvE mode in the Odyssey universe." },
+      "e-kda": { notes: "The virtual group K/DA performs \"POP/STARS\" at the Worlds final ceremony; K/DA skins in game." },
+      "i-msi": { place: "Berlin and Paris" },
+      "i-worlds": { place: "Seoul, Busan, Gwangju and Incheon" },
+      "i-w-final": { place: "Incheon, South Korea" }
+    },
+    2019: {
+      "e-tft": { notes: "Auto-battler mode that later became a game of its own." },
+      "e-10y": { t: "League of Legends 10th anniversary", s: "10th anniversary", notes: "Celebrations across several patches, and new games announced on October 15." },
+      "e-elements": { notes: "Preseason 2020: elemental drakes reshape the Rift." },
+      "i-msi": { place: "Ho Chi Minh City, Hanoi and Taipei" },
+      "i-worlds": { place: "Berlin, Madrid and Paris" },
+      "i-w-final": { place: "Paris, France (AccorHotels Arena)" }
+    },
+    2020: {
+      "e-spirit": { notes: "Spirit Blossom event, with the release of Lillia and Yone." },
+      "e-kda2": { notes: "K/DA returns with the ALL OUT EP and the release of Seraphine." },
+      "e-items": { t: "Item overhaul (Mythic items)", s: "Mythic items", notes: "Preseason 2021: new shop, Mythic and Legendary items." },
+      "i-msc": { place: "Shanghai and Seoul (remote)" },
+      "i-worlds": { place: "Shanghai, China" },
+      "i-w-final": { place: "Shanghai, China" }
+    },
+    2021: {
+      "e-spellbook": { notes: "Limited-time mode: everyone also gets another champion's ultimate." },
+      "e-arcane": { notes: "The animated series Arcane premieres on Netflix, with tie-in skins in game." },
+      "i-msi": { place: "Reykjavík, Iceland" },
+      "i-worlds": { place: "Reykjavík, Iceland" },
+      "i-w-final": { place: "Reykjavík, Iceland (Laugardalshöll)" }
+    },
+    2022: {
+      "e-durability": { t: "Champion durability update", s: "Durability update", notes: "More health and resistances for every champion, to make fights last longer." },
+      "e-sg": { notes: "Star Guardian returns, alongside the release of Nilah." },
+      "e-jungle": { t: "Preseason 2023: jungle update", s: "Jungle update", notes: "Jungle rework with jungle pets, plus new Mythic items." },
+      "i-msi": { place: "Busan, South Korea" },
+      "i-worlds": { place: "Mexico City, New York, Atlanta and San Francisco" },
+      "i-w-final": { place: "San Francisco, United States (Chase Center)" }
+    },
+    2023: {
+      "e-arena": { notes: "New 2v2v2v2 arena mode, released alongside Naafiri and Split 2." },
+      "e-quickplay": { notes: "Quickplay replaces Blind Pick worldwide." },
+      "i-msi": { place: "London, United Kingdom" },
+      "i-worlds": { place: "Seoul and Busan, South Korea" },
+      "i-w-final": { place: "Seoul, South Korea (Gocheok Sky Dome)" }
+    },
     2026: {
       "x-salvation": { notes: "Cinematic for Season 1, For Demacia, made with Unit Image and Ben Hibon, with an original song featuring Forts." },
       "x-bloom": { notes: "Lunar Revel 2026 cinematic, with Yasuo, Katarina and Lillia in their Petals of Spring skins. Approximate date." },

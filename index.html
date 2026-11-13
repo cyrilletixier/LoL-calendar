@@ -90,8 +90,19 @@ header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-be
   background:linear-gradient(180deg,var(--gold-1) 20%,var(--gold-2) 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .brand p{margin:8px 0 0;color:var(--muted)}
 .ctrls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.years{display:flex;gap:6px;align-items:center}
-.years .btn{font-variant-numeric:tabular-nums}
+/* Année : flèches précédente / suivante autour d'une liste déroulante (2009 → 2027), puis retour à l'année en cours */
+.years{display:flex;gap:6px;align-items:stretch}
+.yr-step{min-width:40px;padding:0 10px;font-size:20px;line-height:1}
+.yr-pick{display:flex;position:relative}
+.yr-pick select{appearance:none;-webkit-appearance:none;min-height:36px;padding:4px 34px 4px 14px;border:1px solid var(--gold-2);border-radius:2px;cursor:pointer;
+  background:linear-gradient(180deg,#1E2328,#0A1428);box-shadow:inset 0 0 0 1px var(--gold-5),0 0 10px rgba(200,170,110,.18);
+  color:var(--gold-1);font:700 18px/1 var(--font-display);letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.yr-pick::after{content:"";position:absolute;right:13px;top:50%;width:7px;height:7px;margin-top:-6px;border:solid var(--gold-2);border-width:0 2px 2px 0;transform:rotate(45deg);pointer-events:none}
+.yr-pick select:hover{border-color:var(--gold-1)}
+.yr-pick select optgroup,.yr-pick select option{background:var(--blue-7);color:var(--gold-1);font:500 15px var(--font-body);letter-spacing:0}
+.yr-pick select option:disabled{color:var(--grey-1)}
+.yr-today{font-weight:500;color:var(--muted);font-size:14px}
+.yr-today[hidden]{display:none}
 /* Sélecteur de langue : discret, en haut à droite */
 .lang-pick{position:absolute;top:10px;right:clamp(16px,3vw,40px);display:flex;align-items:center;gap:6px;z-index:10}
 .lang-pick select{appearance:none;-webkit-appearance:none;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23785A28'/%3E%3C/svg%3E") no-repeat right 8px center;
@@ -271,6 +282,10 @@ footer p{margin:0;max-width:75ch}
   header{align-items:flex-start}
   .brand p{font-size:14px}
   .ctrls{width:100%}
+  .years{width:100%}
+  .yr-pick{flex:1}
+  .yr-pick select{width:100%;min-height:42px}
+  .yr-step{min-width:46px}
   .lang-pick{top:8px;right:14px}
   /* cartes « en ce moment » : carrousel horizontal */
   .now{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin:0 -14px;padding:0 14px 4px;scrollbar-width:none}
@@ -320,7 +335,12 @@ footer p{margin:0;max-width:75ch}
       <p data-i18n="tagline"></p>
     </div>
     <div class="ctrls">
-      <nav class="years" id="years" data-i18n-aria="yearNav"></nav>
+      <div class="years" id="years" role="group" data-i18n-aria="yearNav">
+        <button type="button" class="btn yr-step" id="yearPrev"><span aria-hidden="true">‹</span></button>
+        <span class="yr-pick"><select id="yearSel"></select></span>
+        <button type="button" class="btn yr-step" id="yearNext"><span aria-hidden="true">›</span></button>
+        <button type="button" class="btn yr-today" id="yearToday" hidden></button>
+      </div>
     </div>
   </header>
   <div class="rule" aria-hidden="true"></div>
@@ -352,6 +372,21 @@ footer p{margin:0;max-width:75ch}
 
 <!-- Données (sans texte), puis un fichier par langue, puis l'application -->
 <script src="data/teams.js"></script>
+<script src="data/2009.js"></script>
+<script src="data/2010.js"></script>
+<script src="data/2011.js"></script>
+<script src="data/2012.js"></script>
+<script src="data/2013.js"></script>
+<script src="data/2014.js"></script>
+<script src="data/2015.js"></script>
+<script src="data/2016.js"></script>
+<script src="data/2017.js"></script>
+<script src="data/2018.js"></script>
+<script src="data/2019.js"></script>
+<script src="data/2020.js"></script>
+<script src="data/2021.js"></script>
+<script src="data/2022.js"></script>
+<script src="data/2023.js"></script>
 <script src="data/2024.js"></script>
 <script src="data/2025.js"></script>
 <script src="data/2026.js"></script>
