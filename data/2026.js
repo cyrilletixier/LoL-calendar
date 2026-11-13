@@ -137,6 +137,31 @@
         links: [["results", "https://lolesports.com/{le}/results/116289311182357180/stage/116289379850489924"]], r: { w: "SLY", l: "GL" } },
       { id: "lfl-su", lane: "LFL", kind: "league", d0: "07-21", d1: "09-02", approx: true,
         links: [["results", "https://lolesports.com/{le}/results/116912368898351701/stage/116912368899269206"]], r: { w: "GL", l: "TLNP", s: "3-1" } }
+    ],
+    /* Annexe « Univers » : séries et courts métrages d'animation (anim), livres (book), expositions, concerts et
+       spectacles (live). Affichée sous l'agenda, hors frise. Même format que items, sans lane ;
+       t = titre d'origine quand il est identique dans toutes les langues, sinon lang/<code>.js. */
+    extras: [
+      { id: "x-salvation",   kind: "anim", t: "Salvation", d0: "01-07",
+        links: [["press", "https://www.invenglobal.com/articles/20055/riot-games-reveals-2026-league-of-legends-for-demacia-season-cinematic-salvation"]] },
+      { id: "x-bloom",       kind: "anim", t: "Old Friends, New Bloom", d0: "02-05", approx: true,
+        links: [["press", "https://gamespace.com/all-articles/news/league-of-legends-lunar-revel-2026-cinematic-old-friends-new-bloom/"]] },
+      { id: "x-immersive",   kind: "live", t: "Immersive Arcane", d0: "03-10",
+        links: [["press", "https://global.chinadaily.com.cn/a/202604/17/WS69e161dda310d6866eb43e14.html"]] },
+      { id: "x-brink",       kind: "anim", t: "Back from the Brink", d0: "06-09", approx: true,
+        links: [["press", "https://www.invenglobal.com/articles/22626/new-champion-locke-trailer-revealed-a-demon-hunter-following-in-vaynes-footsteps"]] },
+      { id: "x-ambessa-pb",  kind: "book", t: "Ambessa: Chosen of the Wolf", d0: "07-07",
+        links: [["publisher", "https://store.orbit-books.co.uk/catalogue/book/9780356519852"]] },
+      { id: "x-tempo",       kind: "book", t: "Tempo Point", d0: "10-16",
+        links: [["press", "https://www.invenglobal.com/articles/27252/riot-games-and-louis-vuitton-publish-kda-travel-book-tempo-point"]] },
+      { id: "x-firestarter", kind: "anim", t: "K/DA · FIRESTARTER", s: "FIRESTARTER", d0: "10-19",
+        links: [["press", "https://www.invenglobal.com/articles/27340/kda-returns-after-6-years-unveils-new-song-firestarter"]] },
+      { id: "x-netflix",     kind: "anim", d0: "11-12",
+        links: [["press", "https://www.whats-on-netflix.com/news/league-of-legends-music-collection-netflix-release-date/"]] },
+      { id: "x-chronicles",  kind: "live", t: "CHRONICLES", d0: "11-21",
+        links: [["venue", "https://www.spodekkatowice.pl/en/events/chronicles-celebration-of-league-of-legends-music,4058.html"]] },
+      { id: "x-headliners",  kind: "book", t: "Headliners: The Music of League of Legends", s: "Headliners", d0: "12-08",
+        links: [["publisher", "https://www.simonandschuster.com/books/Headliners/Insight-Editions/9798337407425"]] }
     ]
   };
 })();

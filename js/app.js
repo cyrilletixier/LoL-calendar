@@ -241,6 +241,9 @@
     if (it.kind === "champ") return "var(--c-champ)";
     if (it.kind === "event") return "var(--c-event)";
     if (it.kind === "intl") return "var(--c-intl)";
+    if (it.kind === "anim") return "var(--c-anim)";
+    if (it.kind === "book") return "var(--c-book)";
+    if (it.kind === "live") return "var(--c-live)";
     return "var(--c-league)";
   }
   function reduceMotion() { return window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches; }
@@ -255,10 +258,15 @@
   var hidden = new Set(store.get("lolcal-hidden", []));
   var selId = null;
   var ITEMS = [];
+  var EXTRAS = [];                   // annexe « Univers » : animation, livres, événements (hors frise)
+  function findItem(id) {
+    return ITEMS.concat(EXTRAS).filter(function (i) { return i.id === id; })[0];
+  }
 
   function prepare() {
     var y0 = new Date(year, 0, 1), y1 = new Date(year, 11, 31);
-    ITEMS = DATA.years[year].items.map(function (raw) {
+    var byDate = function (a, b) { return (a.start - b.start) || (b.days - a.days); };
+    var prep = function (raw) {
       var it = Object.assign({}, raw);
       it.start = parseD(raw.d0, year);
       it.range = !!raw.d1;
@@ -282,7 +290,11 @@
       it.res = itemText(raw.id, "res") || autoRes(raw.r);
       it.notes = itemText(raw.id, "notes");
       return it;
-    }).sort(function (a, b) { return (a.start - b.start) || (b.days - a.days); });
+    };
+    ITEMS = DATA.years[year].items.map(prep).sort(byDate);
+    EXTRAS = (DATA.years[year].extras || []).map(function (raw) {
+      var it = prep(raw); it.extra = true; it.lane = "universe"; return it;
+    }).sort(byDate);
   }
 
   /* ============ Textes fixes de la page ============ */
@@ -497,32 +509,37 @@
   function renderAgenda() {
     var el = document.getElementById("agenda");
     var vis = ITEMS.filter(function (i) { return !hidden.has(i.lane); });
-    if (!vis.length) { el.innerHTML = "<p>" + esc(ui("noLanes")) + "</p>"; return; }
     var byMonth = [];
     for (var m = 0; m < 12; m++) byMonth.push([]);
     vis.forEach(function (i) { byMonth[i.start.getFullYear() < year ? 0 : i.start.getMonth()].push(i); });
     var tNow = today0(), curM = tNow.getFullYear() === year ? tNow.getMonth() : -1;
     var M = months(), ML = monthsLong();
+    var row = function (i) {
+      var st = status(i);
+      var meta;
+      if (i.kind === "patch") meta = i.notes ? esc(i.notes) : "";
+      else meta = [i.place ? esc(i.place) : null, i.r ? resultLine(i.r) : (i.res ? "<b>" + esc(i.res) + "</b>" : null)].filter(Boolean).join(" · ");
+      var tag = i.kind === "league" ? (laneText(i.lane, "short") || laneText(i.lane, "label")) : tagLabel(i.kind);
+      return '<button type="button" class="ag ' + (i.kind === "patch" ? "patch " : "") + (i.postponed ? "off " : "") + (i.id === selId ? "sel" : "") + '" style="--cat:' + i.cat + '" data-id="' + i.id + '">' +
+        '<span class="d">' + esc(fmtRange(i)) + "</span>" +
+        '<span class="body"><span class="t"><span class="tag">' + esc(tag) + "</span>" + esc(i.t) + "</span>" + (meta ? '<br><span class="m">' + meta + "</span>" : "") + "</span>" +
+        '<span class="pill ' + pillClass(st) + (i.approx ? " approx" : "") + '">' + esc(statusLabel(st)) + "</span></button>";
+    };
     var html = '<nav class="jump" aria-label="' + esc(ui("monthJumpAria")) + '">' + M.map(function (n, mi) {
       return '<button type="button" data-m="' + mi + '"' + (byMonth[mi].length ? "" : " disabled") + ' class="btn' + (mi === curM ? " cur" : "") + '">' + esc(n) + "</button>";
-    }).join("") + "</nav>";
+    }).join("") + (EXTRAS.length ? '<button type="button" data-uni="1" class="btn uni">' + esc(ui("universeJump")) + "</button>" : "") + "</nav>";
+    if (!vis.length) html += "<p>" + esc(ui("noLanes")) + "</p>";
     byMonth.forEach(function (list, mi) {
       if (!list.length) return;
       var pro = list.filter(function (i) { return i.kind === "intl" || i.kind === "league"; }).length;
       html += '<section id="mois-' + (mi + 1) + '"><h3>' + esc(monthTitle(mi, year)) + "<small>" + esc(ui("entries", list.length)) + (pro ? " · " + esc(ui("competitions", pro)) : "") + '</small></h3><div class="ag-list">';
-      list.forEach(function (i) {
-        var st = status(i);
-        var meta;
-        if (i.kind === "patch") meta = i.notes ? esc(i.notes) : "";
-        else meta = [i.place ? esc(i.place) : null, i.r ? resultLine(i.r) : (i.res ? "<b>" + esc(i.res) + "</b>" : null)].filter(Boolean).join(" · ");
-        var tag = i.kind === "league" ? (laneText(i.lane, "short") || laneText(i.lane, "label")) : tagLabel(i.kind);
-        html += '<button type="button" class="ag ' + (i.kind === "patch" ? "patch " : "") + (i.postponed ? "off " : "") + (i.id === selId ? "sel" : "") + '" style="--cat:' + i.cat + '" data-id="' + i.id + '">' +
-          '<span class="d">' + esc(fmtRange(i)) + "</span>" +
-          '<span class="body"><span class="t"><span class="tag">' + esc(tag) + "</span>" + esc(i.t) + "</span>" + (meta ? '<br><span class="m">' + meta + "</span>" : "") + "</span>" +
-          '<span class="pill ' + pillClass(st) + (i.approx ? " approx" : "") + '">' + esc(statusLabel(st)) + "</span></button>";
-      });
-      html += "</div></section>";
+      html += list.map(row).join("") + "</div></section>";
     });
+    /* Annexe « Univers » : indépendante des filtres de couloirs */
+    if (EXTRAS.length) {
+      html += '<section id="univers" class="universe" aria-label="' + esc(ui("universeAria")) + '"><h3>' + esc(ui("universe")) + "<small>" + esc(ui("entries", EXTRAS.length)) + "</small></h3>" +
+        '<p class="uni-note">' + esc(ui("universeNote")) + '</p><div class="ag-list">' + EXTRAS.map(row).join("") + "</div></section>";
+    }
     el.innerHTML = html;
     el.querySelectorAll(".ag").forEach(function (b) { b.addEventListener("click", function () { select(b.dataset.id, true); }); });
     bindImageFallbacks(el);
@@ -532,12 +549,16 @@
         if (s) s.scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth", block: "start" });
       });
     });
+    var uni = el.querySelector(".jump button[data-uni]");
+    if (uni) uni.addEventListener("click", function () {
+      document.getElementById("univers").scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth", block: "start" });
+    });
   }
 
   /* ============ Fiche détail ============ */
   function renderDetail() {
     var el = document.getElementById("detail");
-    var it = ITEMS.filter(function (i) { return i.id === selId; })[0];
+    var it = findItem(selId);
     var closeBtn = '<span class="grab" aria-hidden="true"></span><button type="button" class="close" id="detailClose" aria-label="' + esc(ui("close")) + '">×</button>';
     if (!it) { el.innerHTML = closeBtn + "<p>" + esc(ui("pickItem")) + "</p>"; bindClose(); return; }
     var st = status(it);
@@ -562,7 +583,7 @@
     } else if (it.res) dl += "<div><dt>" + esc(st === "postponed" ? ui("statusTitle") : st === "done" ? ui("result") : ui("matchup")) + '</dt><dd class="res">' + esc(it.res) + "</dd></div>";
     if (it.notes) dl += "<div><dt>" + esc(ui("notes")) + "</dt><dd>" + esc(it.notes) + "</dd></div>";
     var lk = linksOf(it);
-    if (lk.length) dl += "<div><dt>" + esc(ui("links")) + '</dt><dd><ul class="links">' + lk.map(function (l) {
+    if (lk.length) dl += "<div><dt>" + esc(ui(it.extra ? "linksPlain" : "links")) + '</dt><dd><ul class="links">' + lk.map(function (l) {
       return '<li><a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + ' <span aria-hidden="true">↗</span></a></li>';
     }).join("") + "</ul></dd></div>";
     if (it.range) {

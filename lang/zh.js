@@ -8,7 +8,7 @@ window.LOL_I18N.zh = {
   sameMonth: function (d1, d2, m) { return (m + 1) + "月" + d1 + "日 → " + d2 + "日"; },
   monthTitle: function (m, y) { return y + "年" + (m + 1) + "月"; },
 
-  ui: {
+  ui: { universe: "附录 · 宇宙", universeAria: "附录：宇宙相关的动画、书籍和活动", universeNote: "以符文之地为背景的动画剧集与短片、书籍、展览和音乐会。这些内容不显示在时间轴上。", universeJump: "宇宙", linksPlain: "链接",
     title: "lol calendar",
     tagline: "英雄联盟：赛季、版本、游戏内活动与职业赛事，一页尽览。",
     yearNav: "年份", langNav: "语言", yearNotReady: "该年份尚未录入",
@@ -48,9 +48,9 @@ window.LOL_I18N.zh = {
     stage: { sf: "半决赛", qf: "八强赛" },
     legal: "lol calendar 依据 Riot Games 的“Legal Jibber Jabber”政策，使用 Riot Games 拥有的素材制作。Riot Games 不为本项目背书或赞助。"
   },
-  kinds: { season: "赛季", act: "幕", patch: "版本", champ: "英雄", event: "游戏内活动", intl: "国际赛事", league: "赛区联赛" },
-  tags: { season: "游戏", act: "游戏", patch: "版本", champ: "英雄", event: "活动", intl: "赛事" },
-  linkLabels: {
+  kinds: { anim: "动画", book: "书籍", live: "展览、音乐会或演出", season: "赛季", act: "幕", patch: "版本", champ: "英雄", event: "游戏内活动", intl: "国际赛事", league: "赛区联赛" },
+  tags: { anim: "动画", book: "书籍", live: "活动", season: "游戏", act: "游戏", patch: "版本", champ: "英雄", event: "活动", intl: "赛事" },
+  linkLabels: { netflix: "在 Netflix 观看", fortiche: "Fortiche 工作室文章", venue: "场馆页面", publisher: "出版社页面", press: "媒体报道",
     handbook: "LoL Esports 官方赛事手册", news: "LoL Esports 官方公告", results: "LoL Esports 赛果",
     patch: function (p) { return p + " 版本更新说明"; }, riot: "活动页面（Riot Games）",
     ewc: "电竞世界杯官网", lpl: "LPL 官网"

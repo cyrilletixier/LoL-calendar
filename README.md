@@ -6,6 +6,7 @@ Calendrier League of Legends sur une seule page : saisons et actes, patchs, év�
 
 - **En jeu** : les saisons et leurs actes (2025 : Noxus, Spirit Blossom Beyond, Trials of Twilight ; 2026 : For Demacia, Pandemonium, Classic), les splits classés de 2024, les patchs, les sorties et refontes de champions (Smolder, Aurora, Ambessa, Mel, Yunara, Zaahen, Locke…), les événements en jeu (Swarm, Doom Bots, League Classic, Hall of Legends…).
 - **Esport** : les compétitions internationales (First Stand, MSI, Esports World Cup, Worlds…) et les ligues LEC, LCK, LPL, LCS, CBLOL, LCP et LFL, avec les vainqueurs connus. Les couloirs prennent le nom de l'année : LTA Nord et LTA Sud en 2025, PCS en 2024.
+- **Annexe « Univers »** : sous l'agenda, les sorties liées à Runeterra en dehors du jeu et de l'esport. Animation (Arcane, cinématiques de saison, clips), livres (romans, livres d'art) et événements (expositions, concerts, spectacles), de 2024 à 2026. Ces entrées n'apparaissent pas sur la frise et ne dépendent pas des filtres.
 - **2027** : ce qui est déjà annoncé (lieux du First Stand, du MSI et des Worlds, dates provisoires des Worlds, Esports Nations Cup reportée à novembre 2027), affiché comme « Annoncé » avec des dates approximatives.
 - **Résultats** : vainqueur, finaliste, score et MVP des finales, matchs des phases finales des Worlds, et un palmarès de l'année. Chaque équipe a une pastille à ses couleurs.
 - **Images** : vignettes et illustrations officielles des champions, chargées depuis Data Dragon, le serveur d'images de Riot Games.
@@ -43,7 +44,7 @@ Chaque fichier de langue contient :
 - `kinds`, `tags`, `lanes` : libellés des types d'éléments et des couloirs ;
 - `linkLabels` : libellés des liens officiels ;
 - `sources` : liens vers les sources, avec leur libellé ;
-- `items[année][id]` : textes de chaque élément (`t` titre, `s` libellé court, `name` nom de saison, `place` lieu, `res` résultat ou affiche, `notes` précisions) ;
+- `items[année][id]` : textes de chaque élément, y compris ceux de l'annexe « Univers » (`t` titre, `s` libellé court, `name` nom de saison, `place` lieu, `res` résultat ou affiche, `notes` précisions) ;
 - `ui.tplSeason`, `tplAct`, `tplSplit`, `tplChampNew`, `tplRework`, `tplWorldsFinal`… : modèles de titres, qui évitent de traduire chaque saison ou chaque champion.
 
 Une clé absente d'une langue est reprise de l'anglais, puis du français. Les noms propres identiques partout (par exemple « LEC Spring ») n'ont donc pas besoin d'être recopiés.
@@ -93,6 +94,23 @@ Format d'un élément dans `data/<année>.js` :
 - Le résultat affiché en texte est déduit de `r` quand aucune langue ne le rédige.
 - `links` : liens officiels `[type, adresse]`. Dans l'adresse, `{le}`, `{lol}` et `{sup}` sont remplacés par la langue du visiteur. `["patch", "26.06"]` crée le lien vers les notes de patch, affiché seulement une fois le patch sorti.
 
+## Annexe « Univers »
+
+`extras`, à côté de `items` dans `data/<année>.js`, liste les sorties de l'univers hors jeu et hors esport :
+
+```js
+extras: [
+  { id: "x-arcane2", kind: "anim", t: "Arcane · Season 2", s: "Arcane S2", d0: "11-09", d1: "11-23",
+    links: [["netflix", "https://www.netflix.com/title/81435684"]] }
+]
+```
+
+- `kind` : `anim` (séries, cinématiques, clips), `book` (romans, livres d'art) ou `live` (expositions, concerts, spectacles). Libellés dans `kinds` et `tags` de chaque langue, couleurs `--c-anim`, `--c-book` et `--c-live` dans `index.html`.
+- Pas de `lane` : ces entrées s'affichent dans la section « Annexe · Univers », sous l'agenda, avec la même fiche détail. `d0`, `d1`, `approx`, `planned` et `links` fonctionnent comme pour `items`.
+- `t` porte le titre d'origine quand il est le même partout ; lieux et précisions vont dans `items[année][id]` de `lang/fr.js` et `lang/en.js`. Les autres langues reprennent l'anglais.
+- Types de liens : `netflix`, `fortiche`, `venue`, `publisher`, `press` (libellés dans `linkLabels`).
+- Une année sans `extras` n'affiche pas la section.
+
 ## Résultats et équipes
 
 Dans `data/<année>.js`, le champ `r` décrit un résultat :
@@ -117,7 +135,7 @@ Le champ `champ` d'un élément (`champ: "Locke"`) affiche la vignette du champi
 
 ## Sources des données
 
-Calendriers officiels des patchs de Riot Games, notes de patch, pages d'événements Riot, LoL Esports, Sheep Esports, lolnow.gg, Wikipédia et la presse esport (Inven Global, GosuGamers, Dot Esports, esports.gg…). Pour 2027 : annonces de Riot sur les lieux, dates provisoires de la KeSPA pour les Worlds, report de l'Esports Nations Cup. Données arrêtées au 13 novembre 2026. La liste détaillée figure en bas de page.
+Calendriers officiels des patchs de Riot Games, notes de patch, pages d'événements Riot, LoL Esports, Sheep Esports, lolnow.gg, Wikipédia et la presse esport (Inven Global, GosuGamers, Dot Esports, esports.gg…). Pour l'annexe « Univers » : Fortiche, éditeurs (Orbit, Insight Editions, Louis Vuitton), salles de concert et presse. Pour 2027 : annonces de Riot sur les lieux, dates provisoires de la KeSPA pour les Worlds, report de l'Esports Nations Cup. Données arrêtées au 13 novembre 2026. La liste détaillée figure en bas de page.
 
 ## Avertissement
 

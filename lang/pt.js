@@ -7,7 +7,7 @@ window.LOL_I18N.pt = {
   date: function (d, m, y) { return d + " " + this.months[m] + (y ? " " + y : ""); },
   sameMonth: function (d1, d2, m) { return d1 + " → " + d2 + " " + this.months[m]; },
 
-  ui: {
+  ui: { universe: "Anexo · Universo", universeAria: "Anexo: animação, livros e eventos do universo", universeNote: "Séries e curtas de animação, livros, exposições e shows ambientados em Runeterra. Esses lançamentos não aparecem na linha do tempo.", universeJump: "Universo", linksPlain: "Links",
     title: "lol calendar",
     tagline: "League of Legends: temporadas, patches, eventos do jogo e competições profissionais em uma única página.",
     yearNav: "Ano", langNav: "Idioma", yearNotReady: "Ano ainda não preenchido",
@@ -47,9 +47,9 @@ window.LOL_I18N.pt = {
     stage: { sf: "Semifinal", qf: "Quartas de final" },
     legal: "lol calendar foi criado sob a política «Legal Jibber Jabber» da Riot Games, usando recursos de propriedade da Riot Games. A Riot Games não endossa nem patrocina este projeto."
   },
-  kinds: { season: "Temporada", act: "Ato", patch: "Patch", champ: "Campeão", event: "Evento do jogo", intl: "Competição internacional", league: "Liga regional" },
-  tags: { season: "Jogo", act: "Jogo", patch: "Patch", champ: "Campeão", event: "Evento", intl: "Competição" },
-  linkLabels: {
+  kinds: { anim: "Animação", book: "Livro", live: "Exposição, show ou espetáculo", season: "Temporada", act: "Ato", patch: "Patch", champ: "Campeão", event: "Evento do jogo", intl: "Competição internacional", league: "Liga regional" },
+  tags: { anim: "Animação", book: "Livro", live: "Evento", season: "Jogo", act: "Jogo", patch: "Patch", champ: "Campeão", event: "Evento", intl: "Competição" },
+  linkLabels: { netflix: "Assistir na Netflix", fortiche: "Artigo do estúdio Fortiche", venue: "Página do local", publisher: "Página da editora", press: "Matéria da imprensa",
     handbook: "Guia oficial do LoL Esports", news: "Anúncio oficial do LoL Esports", results: "Resultados no LoL Esports",
     patch: function (p) { return "Notas do patch " + p; }, riot: "Página do evento (Riot Games)",
     ewc: "Esports World Cup (site oficial)", lpl: "Site oficial da LPL"

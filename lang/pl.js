@@ -13,7 +13,7 @@ window.LOL_I18N = window.LOL_I18N || {};
     date: function (d, m, y) { return d + " " + this.months[m] + (y ? " " + y : ""); },
     sameMonth: function (d1, d2, m) { return d1 + " → " + d2 + " " + this.months[m]; },
 
-    ui: {
+    ui: { universe: "Dodatek · Uniwersum", universeAria: "Dodatek: animacja, książki i wydarzenia z uniwersum", universeNote: "Seriale i krótkie filmy animowane, książki, wystawy i koncerty związane z Runeterrą. Tych premier nie ma na osi czasu.", universeJump: "Uniwersum", linksPlain: "Linki",
       title: "lol calendar",
       tagline: "League of Legends: sezony, patche, wydarzenia w grze i rozgrywki profesjonalne na jednej stronie.",
       yearNav: "Rok", langNav: "Język", yearNotReady: "Rok jeszcze nieuzupełniony",
@@ -53,9 +53,9 @@ window.LOL_I18N = window.LOL_I18N || {};
       stage: { sf: "Półfinał", qf: "Ćwierćfinał" },
       legal: "lol calendar powstał zgodnie z zasadami „Legal Jibber Jabber” Riot Games z użyciem materiałów należących do Riot Games. Riot Games nie wspiera ani nie sponsoruje tego projektu."
     },
-    kinds: { season: "Sezon", act: "Akt", patch: "Patch", champ: "Bohater", event: "Wydarzenie w grze", intl: "Turniej międzynarodowy", league: "Liga regionalna" },
-    tags: { season: "Gra", act: "Gra", patch: "Patch", champ: "Bohater", event: "Wydarzenie", intl: "Turniej" },
-    linkLabels: {
+    kinds: { anim: "Animacja", book: "Książka", live: "Wystawa, koncert lub spektakl", season: "Sezon", act: "Akt", patch: "Patch", champ: "Bohater", event: "Wydarzenie w grze", intl: "Turniej międzynarodowy", league: "Liga regionalna" },
+    tags: { anim: "Animacja", book: "Książka", live: "Wydarzenie", season: "Gra", act: "Gra", patch: "Patch", champ: "Bohater", event: "Wydarzenie", intl: "Turniej" },
+    linkLabels: { netflix: "Obejrzyj w Netflixie", fortiche: "Artykuł studia Fortiche", venue: "Strona obiektu", publisher: "Strona wydawcy", press: "Artykuł prasowy",
       handbook: "Oficjalny przewodnik LoL Esports", news: "Oficjalne ogłoszenie LoL Esports", results: "Wyniki w LoL Esports",
       patch: function (p) { return "Opis patcha " + p; }, riot: "Strona wydarzenia (Riot Games)",
       ewc: "Esports World Cup (oficjalna strona)", lpl: "Oficjalna strona LPL"

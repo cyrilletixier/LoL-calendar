@@ -9,7 +9,7 @@ window.LOL_I18N.fr = {
   date: function (d, m, y) { return d + (d === 1 ? "er" : "") + " " + this.months[m] + (y ? " " + y : ""); },
   sameMonth: function (d1, d2, m) { return d1 + (d1 === 1 ? "er" : "") + " → " + d2 + " " + this.months[m]; },
 
-  ui: {
+  ui: { universe: "Annexe · Univers", universeAria: "Annexe : animation, livres et événements de l'univers", universeNote: "Séries et courts métrages d'animation, livres, expositions et concerts liés à Runeterra. Ces sorties ne figurent pas sur la frise.", universeJump: "Univers", linksPlain: "Liens",
     title: "lol calendar",
     tagline: "League of Legends : saisons, patchs, événements en jeu et compétitions pro, sur une seule page.",
     yearNav: "Année",
@@ -71,15 +71,15 @@ window.LOL_I18N.fr = {
     swipeHint: "Faites glisser la frise pour changer de mois et touchez une barre pour ouvrir sa fiche. Contour pointillé : dates approximatives."
   },
 
-  kinds: {
+  kinds: { anim: "Animation", book: "Livre", live: "Exposition, concert ou spectacle",
     season: "Saison", act: "Acte", patch: "Patch", champ: "Champion", event: "Événement en jeu",
     intl: "Compétition internationale", league: "Ligue régionale"
   },
   /* Étiquette courte devant chaque ligne de l'agenda (les ligues affichent leur sigle) */
-  tags: { season: "Jeu", act: "Jeu", patch: "Patch", champ: "Champion", event: "Événement", intl: "Compétition" },
+  tags: { anim: "Animation", book: "Livre", live: "Événement", season: "Jeu", act: "Jeu", patch: "Patch", champ: "Champion", event: "Événement", intl: "Compétition" },
 
   /* Libellés des liens officiels (types utilisés dans data/<année>.js) */
-  linkLabels: {
+  linkLabels: { netflix: "Voir sur Netflix", fortiche: "Article du studio Fortiche", venue: "Page de la salle", publisher: "Page de l'éditeur", press: "Article de presse",
     handbook: "Guide officiel LoL Esports",
     news: "Annonce officielle LoL Esports",
     results: "Résultats sur LoL Esports",
@@ -126,7 +126,13 @@ window.LOL_I18N.fr = {
     ["2025 · Wikipédia (en) : saisons LTA et LPL 2025", "https://en.wikipedia.org/wiki/2025_LTA_season"],
     ["2024 · Gameleap : calendrier des patchs 2024", "https://www.gameleap.com/articles/lol-2024-patch-schedule-all-dates-for-season-14"],
     ["2024 · LoL Esports : présentation des Worlds 2024", "https://lolesports.com/en-US/news/worlds-2024-primer"],
-    ["2024 · Wikipédia (en) : saisons LCS et LPL 2024", "https://en.wikipedia.org/wiki/2024_LCS_season"]
+    ["2024 · Wikipédia (en) : saisons LCS et LPL 2024", "https://en.wikipedia.org/wiki/2024_LCS_season"],
+    ["Univers · Fortiche : l'exposition Arcane de Montpellier", "https://forticheprod.com/blog/highlights/arcane-took-over-montpellierwith-a-one-of-a-kind-fortiche-exhibition/"],
+    ["Univers · Fortiche : Twilight's End et les cinématiques de 2025", "https://forticheprod.com/blog/fortiche-league-of-legends-twilight-end-finale/"],
+    ["Univers · China Daily : Immersive Arcane à Shanghai", "https://global.chinadaily.com.cn/a/202604/17/WS69e161dda310d6866eb43e14.html"],
+    ["Univers · Spodek Katowice : concert CHRONICLES", "https://www.spodekkatowice.pl/en/events/chronicles-celebration-of-league-of-legends-music,4058.html"],
+    ["Univers · Inven Global : retour de K/DA avec FIRESTARTER", "https://www.invenglobal.com/articles/27340/kda-returns-after-6-years-unveils-new-song-firestarter"],
+    ["Univers · Orbit, Insight Editions et Louis Vuitton : livres", "https://www.simonandschuster.com/books/Headliners/Insight-Editions/9798337407425"]
   ],
 
   /* Textes des éléments, par année puis par identifiant (voir data/<année>.js).
@@ -135,6 +141,22 @@ window.LOL_I18N.fr = {
   teams: { KOR: "Corée du Sud", TPE: "Taipei chinois" },
   items: {
     2026: {
+      "x-salvation": { notes: "Cinématique de la Saison 1 « For Demacia », réalisée avec Unit Image et Ben Hibon, sur un titre original avec Forts." },
+      "x-bloom": { notes: "Cinématique du Lunar Revel 2026, avec Yasuo, Katarina et Lillia en skins Petals of Spring. Date approximative." },
+      "x-immersive": { t: "Immersive Arcane : première à Shanghai", place: "Shanghai, Chine (annexe du Shanghai Hotel)",
+                       notes: "Première adaptation scénique d'Arcane : une comédie musicale immersive de 120 minutes, coproduite avec la compagnie Punchdrunk, jouée en chinois. Avant-premières à partir du 22 janvier, première le 10 mars." },
+      "x-brink": { notes: "Court métrage en animation 2D qui présente Locke face à une Vayne possédée, deux semaines avant la sortie du champion. Date approximative." },
+      "x-ambessa-pb": { t: "Ambessa: Chosen of the Wolf (édition de poche)", s: "Ambessa (poche)", place: "Orbit",
+                        notes: "Édition de poche britannique du roman de C. L. Clark (448 pages)." },
+      "x-tempo": { place: "Louis Vuitton",
+                   notes: "Livre illustré de la collection Travel Book de Louis Vuitton, consacré à K/DA : 24 heures dans la vie d'Ahri, Akali, Evelynn et Kai'Sa. En anglais, français et chinois." },
+      "x-firestarter": { notes: "Clip animé par Fortiche pour le retour de K/DA après six ans. Sorti un jour plus tôt que prévu ; l'EP FIRESTARTER a suivi le 21 octobre." },
+      "x-netflix": { t: "Clips musicaux de League of Legends sur Netflix", s: "Clips LoL sur Netflix", place: "Netflix (États-Unis)",
+                     notes: "Dix clips de K/DA, HEARTSTEEL et True Damage ajoutés au catalogue américain de Netflix." },
+      "x-chronicles": { t: "CHRONICLES: Celebration of League of Legends Music", place: "Katowice, Pologne (Spodek)",
+                        notes: "Concert avec orchestre présenté par Necrit, avec Jørn Lande et Wønder. Première date d'une tournée européenne ; l'Asie et les États-Unis sont prévus en 2027." },
+      "x-headliners": { place: "Insight Editions",
+                        notes: "Livre de 148 pages sur les groupes virtuels de Riot (K/DA, HEARTSTEEL, True Damage, Pentakill), vendu avec des objets de collection. Sortie annoncée le 8 décembre ; certains libraires indiquent le 24 novembre." },
       "s1":   { t: "Saison 1 : For Demacia", s: "Saison 1 · For Demacia", name: "For Demacia",
                 notes: "Thème Demacia : Faille de l'invocateur aux couleurs de Demacia, quêtes de rôle, rythme de partie accéléré, ARAM: Mayhem prolongé. Skin Victorious Braum à gagner en classé." },
       "s1a1": { t: "Saison 1 · Acte 1", s: "Acte 1", notes: "Pass de combat For Demacia, du 8 janvier au 3 mars." },
@@ -247,6 +269,11 @@ window.LOL_I18N.fr = {
       "lfl-su": { t: "LFL Summer", s: "Summer", res: "Galions 3-1 TLN Pirates", notes: "Playoffs du 12 août au 2 septembre. Date de début approximative." }
     },
     2024: {
+      "x-stillhere": { notes: "Cinématique de la saison 2024, avec un titre original de Forts, 2WEI et Tiffany Aris. Date approximative." },
+      "x-arcane2": { t: "Arcane · Saison 2", s: "Arcane S2", place: "Netflix",
+                     notes: "Deuxième et dernière saison de la série de Riot Games et Fortiche : neuf épisodes en trois actes, les 9, 16 et 23 novembre." },
+      "x-artbook": { place: "Insight Editions",
+                     notes: "Livre d'art sur la création des deux saisons d'Arcane, écrit par Elisabeth Vincentelli (224 pages). Sortie annoncée pour le 31 décembre, datée du 3 décembre chez la plupart des libraires. Édition française chez Mana Books." },
       "sp1": { notes: "Premier split classé de l'année, lancé avec le patch 14.1 : Faille remodelée, nouveau monstre du Néant et nombreux objets refondus." },
       "sp2": { notes: "Début le 15 mai à midi (heure du serveur) avec le patch 14.10." },
       "sp3": { notes: "Début le 25 septembre avec le patch 14.19, fin le 8 janvier 2025." },
@@ -290,6 +317,16 @@ window.LOL_I18N.fr = {
       "lfl-su": { notes: "Premier titre LFL de BDS Academy. Dates approximatives." }
     },
     2025: {
+      "x-noxus": { notes: "Cinématique de la Saison 1 de 2025, réalisée avec Fortiche sur le titre « Bite Marks » de TEYA. Mel Medarda y apparaît après la fin d'Arcane." },
+      "x-expo-mtp": { t: "Exposition « Dans les coulisses de la série Arcane »", s: "Expo Arcane", place: "Montpellier, France (Hôtel de Ville)",
+                      notes: "Exposition gratuite sur la fabrication des deux saisons d'Arcane, avec le studio Fortiche. Environ 15 000 visiteurs." },
+      "x-ambessa": { place: "Orbit",
+                     notes: "Roman de C. L. Clark sur Ambessa Medarda, situé dix ans avant Arcane. Sortie aux États-Unis et au Royaume-Uni ; d'autres pays ont suivi." },
+      "x-chronicles": { t: "CHRONICLES : première mondiale", place: "Prague, Tchéquie (Forum Karlín)",
+                        notes: "Concert symphonique et visuel consacré aux musiques de League of Legends, né d'une initiative de la communauté. Complet, plus de 4 000 spectateurs." },
+      "x-beginning": { notes: "Cinématique de la Saison 3 « Trials of Twilight », réalisée par Fortiche et centrée sur Xin Zhao. Date approximative." },
+      "x-twilight": { place: "Dévoilée aux Worlds, à Chengdu",
+                      notes: "Dernière des quatre cinématiques de l'année réalisées par Fortiche (Welcome to Noxus, A Dark Gambit, Beginning of the End, Twilight's End), autour de LeBlanc, Vladimir et Xin Zhao." },
       "s1": { notes: "Première saison à thème : Faille aux couleurs de Noxus, nouveau monstre épique Atakhan, Feats of Strength. Les patchs s'appellent 25.S1.x, puis 25.04 et suivants." },
       "s1a2": { notes: "Retour d'Arena aux couleurs de Noxus et des coffres Hextech." },
       "s2": { notes: "Saison sur le thème d'Ionie." },

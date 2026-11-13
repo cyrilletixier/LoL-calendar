@@ -112,6 +112,21 @@
       { id: "lfl-fi", lane: "LFL", kind: "league", t: "LFL Flash In", s: "Flash In", d0: "01-15", d1: "02-27", approx: true, r: { w: "KCB", l: "IJC", s: "3-1" } },
       { id: "lfl-sp", lane: "LFL", kind: "league", tpl: "lane", sp: "Spring", d0: "04-02", d1: "05-29", approx: true, r: { w: "BKR", l: "KCB" } },
       { id: "lfl-su", lane: "LFL", kind: "league", tpl: "lane", sp: "Summer", d0: "07-02", d1: "09-12", approx: true, r: { w: "KCB", l: "GL", s: "3-0" } }
+    ],
+    /* Annexe « Univers » (format décrit dans data/2026.js) */
+    extras: [
+      { id: "x-noxus",      kind: "anim", t: "Welcome to Noxus", d0: "01-07",
+        links: [["press", "https://www.techradar.com/streaming/netflix/a-new-league-of-legends-video-might-have-set-up-arcanes-sequel-series-and-now-im-even-more-desperate-to-see-the-hit-netflix-shows-first-follow-up"]] },
+      { id: "x-expo-mtp",   kind: "live", d0: "01-27", d1: "02-21",
+        links: [["fortiche", "https://forticheprod.com/blog/highlights/arcane-took-over-montpellierwith-a-one-of-a-kind-fortiche-exhibition/"]] },
+      { id: "x-ambessa",    kind: "book", t: "Ambessa: Chosen of the Wolf", d0: "02-18",
+        links: [["press", "https://digitalchumps.com/2025/03/04/ambessa-chosen-of-the-wolf-novel-now-available-in-the-us-and-uk"]] },
+      { id: "x-chronicles", kind: "live", t: "CHRONICLES", d0: "04-04",
+        links: [["venue", "https://forumkarlin.cz/en/event/1773"]] },
+      { id: "x-beginning",  kind: "anim", t: "Beginning of the End", d0: "08-25", approx: true,
+        links: [["press", "https://www.altchar.com/game-news/league-of-legends-season-3-cinematic-beginning-of-the-end-drops-a-glimpse-into-trials-of-twilight-2025-alnZJ9x0rCdn"]] },
+      { id: "x-twilight",   kind: "anim", t: "Twilight's End", d0: "11-07",
+        links: [["fortiche", "https://forticheprod.com/blog/fortiche-league-of-legends-twilight-end-finale/"], ["press", "https://awn.com/news/fortiche-riot-games-deliver-twilights-end-league-legends-cinematic"]] }
     ]
   };
 })();

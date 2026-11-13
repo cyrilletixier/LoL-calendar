@@ -7,7 +7,7 @@ window.LOL_I18N.tr = {
   date: function (d, m, y) { return d + " " + this.months[m] + (y ? " " + y : ""); },
   sameMonth: function (d1, d2, m) { return d1 + " → " + d2 + " " + this.months[m]; },
 
-  ui: {
+  ui: { universe: "Ek · Evren", universeAria: "Ek: evrenden animasyonlar, kitaplar ve etkinlikler", universeNote: "Runeterra evreninde geçen animasyon dizileri ve kısa filmler, kitaplar, sergiler ve konserler. Bu yapımlar zaman çizelgesinde yer almaz.", universeJump: "Evren", linksPlain: "Bağlantılar",
     title: "lol calendar",
     tagline: "League of Legends: sezonlar, yamalar, oyun içi etkinlikler ve profesyonel turnuvalar tek sayfada.",
     yearNav: "Yıl", langNav: "Dil", yearNotReady: "Bu yıl henüz eklenmedi",
@@ -47,9 +47,9 @@ window.LOL_I18N.tr = {
     stage: { sf: "Yarı final", qf: "Çeyrek final" },
     legal: "lol calendar, Riot Games'in “Legal Jibber Jabber” politikası kapsamında Riot Games'e ait içerikler kullanılarak hazırlanmıştır. Riot Games bu projeyi desteklemez veya sponsorluğunu yapmaz."
   },
-  kinds: { season: "Sezon", act: "Perde", patch: "Yama", champ: "Şampiyon", event: "Oyun içi etkinlik", intl: "Uluslararası turnuva", league: "Bölgesel lig" },
-  tags: { season: "Oyun", act: "Oyun", patch: "Yama", champ: "Şampiyon", event: "Etkinlik", intl: "Turnuva" },
-  linkLabels: {
+  kinds: { anim: "Animasyon", book: "Kitap", live: "Sergi, konser veya gösteri", season: "Sezon", act: "Perde", patch: "Yama", champ: "Şampiyon", event: "Oyun içi etkinlik", intl: "Uluslararası turnuva", league: "Bölgesel lig" },
+  tags: { anim: "Animasyon", book: "Kitap", live: "Etkinlik", season: "Oyun", act: "Oyun", patch: "Yama", champ: "Şampiyon", event: "Etkinlik", intl: "Turnuva" },
+  linkLabels: { netflix: "Netflix'te izle", fortiche: "Fortiche stüdyosunun yazısı", venue: "Mekân sayfası", publisher: "Yayınevi sayfası", press: "Basın haberi",
     handbook: "Resmî LoL Espor rehberi", news: "Resmî LoL Espor duyurusu", results: "LoL Espor'da sonuçlar",
     patch: function (p) { return p + " yama notları"; }, riot: "Etkinlik sayfası (Riot Games)",
     ewc: "Esports World Cup (resmî site)", lpl: "LPL resmî sitesi"

@@ -7,7 +7,7 @@ window.LOL_I18N.vi = {
   date: function (d, m, y) { return d + " thg " + (m + 1) + (y ? ", " + y : ""); },
   sameMonth: function (d1, d2, m) { return d1 + " → " + d2 + " thg " + (m + 1); },
 
-  ui: {
+  ui: { universe: "Phụ lục · Vũ trụ", universeAria: "Phụ lục: hoạt hình, sách và sự kiện của vũ trụ", universeNote: "Phim và phim ngắn hoạt hình, sách, triển lãm và hòa nhạc lấy bối cảnh Runeterra. Các mục này không hiển thị trên dòng thời gian.", universeJump: "Vũ trụ", linksPlain: "Liên kết",
     title: "lol calendar",
     tagline: "Liên Minh Huyền Thoại: mùa giải, bản cập nhật, sự kiện trong game và giải đấu chuyên nghiệp trên một trang.",
     yearNav: "Năm", langNav: "Ngôn ngữ", yearNotReady: "Năm này chưa có dữ liệu",
@@ -47,9 +47,9 @@ window.LOL_I18N.vi = {
     stage: { sf: "Bán kết", qf: "Tứ kết" },
     legal: "lol calendar được thực hiện theo chính sách «Legal Jibber Jabber» của Riot Games, sử dụng tài sản thuộc sở hữu của Riot Games. Riot Games không bảo trợ hay tài trợ cho dự án này."
   },
-  kinds: { season: "Mùa", act: "Màn", patch: "Bản cập nhật", champ: "Tướng", event: "Sự kiện trong game", intl: "Giải quốc tế", league: "Giải khu vực" },
-  tags: { season: "Game", act: "Game", patch: "Bản", champ: "Tướng", event: "Sự kiện", intl: "Giải đấu" },
-  linkLabels: {
+  kinds: { anim: "Hoạt hình", book: "Sách", live: "Triển lãm, hòa nhạc hoặc buổi diễn", season: "Mùa", act: "Màn", patch: "Bản cập nhật", champ: "Tướng", event: "Sự kiện trong game", intl: "Giải quốc tế", league: "Giải khu vực" },
+  tags: { anim: "Hoạt hình", book: "Sách", live: "Sự kiện", season: "Game", act: "Game", patch: "Bản", champ: "Tướng", event: "Sự kiện", intl: "Giải đấu" },
+  linkLabels: { netflix: "Xem trên Netflix", fortiche: "Bài viết của studio Fortiche", venue: "Trang của địa điểm", publisher: "Trang của nhà xuất bản", press: "Bài báo",
     handbook: "Cẩm nang chính thức LoL Esports", news: "Thông báo chính thức LoL Esports", results: "Kết quả trên LoL Esports",
     patch: function (p) { return "Ghi chú bản cập nhật " + p; }, riot: "Trang sự kiện (Riot Games)",
     ewc: "Esports World Cup (trang chính thức)", lpl: "Trang chính thức LPL"

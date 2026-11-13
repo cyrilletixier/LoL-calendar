@@ -8,7 +8,7 @@ window.LOL_I18N.ko = {
   sameMonth: function (d1, d2, m) { return (m + 1) + "월 " + d1 + "일 → " + d2 + "일"; },
   monthTitle: function (m, y) { return y + "년 " + (m + 1) + "월"; },
 
-  ui: {
+  ui: { universe: "부록 · 세계관", universeAria: "부록: 세계관 애니메이션, 도서, 행사", universeNote: "룬테라를 배경으로 한 애니메이션 시리즈와 단편, 도서, 전시와 공연입니다. 타임라인에는 표시되지 않습니다.", universeJump: "세계관", linksPlain: "링크",
     title: "lol calendar",
     tagline: "리그 오브 레전드의 시즌, 패치, 게임 내 이벤트, 프로 대회를 한 페이지에서 확인하세요.",
     yearNav: "연도", langNav: "언어", yearNotReady: "아직 입력되지 않은 연도",
@@ -48,9 +48,9 @@ window.LOL_I18N.ko = {
     stage: { sf: "4강", qf: "8강" },
     legal: "lol calendar는 Riot Games의 「Legal Jibber Jabber」 정책에 따라 Riot Games 소유의 자산을 사용해 만들어졌습니다. Riot Games는 이 프로젝트를 보증하거나 후원하지 않습니다."
   },
-  kinds: { season: "시즌", act: "액트", patch: "패치", champ: "챔피언", event: "게임 내 이벤트", intl: "국제 대회", league: "지역 리그" },
-  tags: { season: "게임", act: "게임", patch: "패치", champ: "챔피언", event: "이벤트", intl: "대회" },
-  linkLabels: {
+  kinds: { anim: "애니메이션", book: "도서", live: "전시·공연", season: "시즌", act: "액트", patch: "패치", champ: "챔피언", event: "게임 내 이벤트", intl: "국제 대회", league: "지역 리그" },
+  tags: { anim: "애니메이션", book: "도서", live: "행사", season: "게임", act: "게임", patch: "패치", champ: "챔피언", event: "이벤트", intl: "대회" },
+  linkLabels: { netflix: "넷플릭스에서 보기", fortiche: "포티셰 스튜디오 글", venue: "공연장 페이지", publisher: "출판사 페이지", press: "언론 기사",
     handbook: "LoL e스포츠 공식 안내", news: "LoL e스포츠 공식 발표", results: "LoL e스포츠 결과",
     patch: function (p) { return p + " 패치 노트"; }, riot: "이벤트 페이지 (Riot Games)",
     ewc: "e스포츠 월드컵 공식 사이트", lpl: "LPL 공식 사이트"
