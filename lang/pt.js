@@ -7,7 +7,7 @@ window.LOL_I18N.pt = {
   date: function (d, m, y) { return d + " " + this.months[m] + (y ? " " + y : ""); },
   sameMonth: function (d1, d2, m) { return d1 + " → " + d2 + " " + this.months[m]; },
 
-  ui: { universe: "Anexo · Universo", universeAria: "Anexo: animação, livros e eventos do universo", universeNote: "Séries e curtas de animação, livros, exposições e shows ambientados em Runeterra. Esses lançamentos não aparecem na linha do tempo.", universeJump: "Universo", linksPlain: "Links",
+  ui: { linksPlain: "Links",
     title: "lol calendar",
     tagline: "League of Legends: temporadas, patches, eventos do jogo e competições profissionais em uma única página.",
     yearNav: "Ano", langNav: "Idioma", yearNotReady: "Ano ainda não preenchido",
@@ -17,7 +17,7 @@ window.LOL_I18N.pt = {
     swipeHint: "Deslize a linha do tempo para mudar de mês e toque em uma barra para ver os detalhes. Contorno tracejado: datas aproximadas.",
     footer: "Calendário feito por fãs, sem vínculo com a Riot Games. Dados de 13 de novembro de 2026: as datas futuras ainda podem mudar.",
     show: "Mostrar", all: "Tudo", gameOnly: "Só o jogo", proOnly: "Só esports",
-    groupGame: "No jogo", groupPro: "Esports",
+    groupGame: "No jogo", groupPro: "Esports", groupUniverse: "Universo", universeOnly: "Só o universo",
     yearUpcoming: "Ano por vir", yearDone: "Ano encerrado",
     yearSummary: function (a, p, c, ch) { var pl = function (n, one, many) { return n + " " + (n > 1 ? many : one); }; return [a ? pl(a, "ato", "atos") : "", p ? pl(p, "patch", "patches") : "", ch ? pl(ch, "campeão novo", "campeões novos") : "", c ? pl(c, "competição profissional", "competições profissionais") : ""].filter(Boolean).join(", ") + "."; },
     currentSeason: "Temporada atual",
@@ -60,6 +60,7 @@ window.LOL_I18N.pt = {
     ewc: "Esports World Cup (site oficial)", lpl: "Site oficial da LPL"
   },
   lanes: {
+    anim: { label: "Animação", short: "Anim." }, book: { label: "Livros", short: "Livros" }, live: { label: "Exposições e shows", short: "Live" },
     season: { label: "Temporadas e atos", short: "Temp." }, patch: { label: "Patches", short: "Patches" },
     champ: { label: "Campeões", short: "Camp." }, event: { label: "Eventos do jogo", short: "Eventos" },
     intl: { label: "Internacional", short: "Intl", sub: "First Stand, MSI, Worlds…" },

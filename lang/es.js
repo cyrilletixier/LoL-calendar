@@ -7,7 +7,7 @@ window.LOL_I18N.es = {
   date: function (d, m, y) { return d + " " + this.months[m] + (y ? " " + y : ""); },
   sameMonth: function (d1, d2, m) { return d1 + " → " + d2 + " " + this.months[m]; },
 
-  ui: { universe: "Anexo · Universo", universeAria: "Anexo: animación, libros y eventos del universo", universeNote: "Series y cortos de animación, libros, exposiciones y conciertos ambientados en Runaterra. Estos lanzamientos no aparecen en la línea de tiempo.", universeJump: "Universo", linksPlain: "Enlaces",
+  ui: { linksPlain: "Enlaces",
     title: "lol calendar",
     tagline: "League of Legends: temporadas, parches, eventos del juego y competiciones profesionales en una sola página.",
     yearNav: "Año", langNav: "Idioma", yearNotReady: "Año aún sin completar",
@@ -17,7 +17,7 @@ window.LOL_I18N.es = {
     swipeHint: "Desliza la línea temporal para cambiar de mes y toca una barra para abrir su ficha. Contorno discontinuo: fechas aproximadas.",
     footer: "Calendario hecho por fans, sin relación con Riot Games. Datos a 13 de noviembre de 2026: las fechas futuras aún pueden cambiar.",
     show: "Mostrar", all: "Todo", gameOnly: "Solo juego", proOnly: "Solo esports",
-    groupGame: "En el juego", groupPro: "Esports",
+    groupGame: "En el juego", groupPro: "Esports", groupUniverse: "Universo", universeOnly: "Solo universo",
     yearUpcoming: "Año por venir", yearDone: "Año terminado",
     yearSummary: function (a, p, c, ch) { var pl = function (n, one, many) { return n + " " + (n > 1 ? many : one); }; return [a ? pl(a, "acto", "actos") : "", p ? pl(p, "parche", "parches") : "", ch ? pl(ch, "campeón nuevo", "campeones nuevos") : "", c ? pl(c, "competición profesional", "competiciones profesionales") : ""].filter(Boolean).join(", ") + "."; },
     currentSeason: "Temporada actual",
@@ -60,6 +60,7 @@ window.LOL_I18N.es = {
     ewc: "Esports World Cup (web oficial)", lpl: "Web oficial de la LPL"
   },
   lanes: {
+    anim: { label: "Animación", short: "Anim." }, book: { label: "Libros", short: "Libros" }, live: { label: "Exposiciones y conciertos", short: "Live" },
     season: { label: "Temporadas y actos", short: "Temp." }, patch: { label: "Parches", short: "Parches" },
     champ: { label: "Campeones", short: "Camp." }, event: { label: "Eventos del juego", short: "Eventos" },
     intl: { label: "Internacional", short: "Intl", sub: "First Stand, MSI, Worlds…" },

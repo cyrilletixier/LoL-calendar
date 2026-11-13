@@ -13,7 +13,7 @@ window.LOL_I18N = window.LOL_I18N || {};
     date: function (d, m, y) { return d + " " + this.months[m] + (y ? " " + y : ""); },
     sameMonth: function (d1, d2, m) { return d1 + " → " + d2 + " " + this.months[m]; },
 
-    ui: { universe: "Dodatek · Uniwersum", universeAria: "Dodatek: animacja, książki i wydarzenia z uniwersum", universeNote: "Seriale i krótkie filmy animowane, książki, wystawy i koncerty związane z Runeterrą. Tych premier nie ma na osi czasu.", universeJump: "Uniwersum", linksPlain: "Linki",
+    ui: { linksPlain: "Linki",
       title: "lol calendar",
       tagline: "League of Legends: sezony, patche, wydarzenia w grze i rozgrywki profesjonalne na jednej stronie.",
       yearNav: "Rok", langNav: "Język", yearNotReady: "Rok jeszcze nieuzupełniony",
@@ -23,7 +23,7 @@ window.LOL_I18N = window.LOL_I18N || {};
       swipeHint: "Przesuń oś czasu, aby zmienić miesiąc, i dotknij paska, aby zobaczyć szczegóły. Przerywana ramka: daty przybliżone.",
       footer: "Kalendarz stworzony przez fanów, niezwiązany z Riot Games. Dane na 13 listopada 2026: przyszłe daty mogą się jeszcze zmienić.",
       show: "Pokaż", all: "Wszystko", gameOnly: "Tylko gra", proOnly: "Tylko esport",
-      groupGame: "W grze", groupPro: "Esport",
+      groupGame: "W grze", groupPro: "Esport", groupUniverse: "Uniwersum", universeOnly: "Tylko uniwersum",
       yearUpcoming: "Nadchodzący rok", yearDone: "Rok zakończony",
       yearSummary: function (a, p, c, ch) { var s = [a ? "akty: " + a : "", p ? "patche: " + p : "", ch ? "nowi bohaterowie: " + ch : "", c ? "rozgrywki profesjonalne: " + c : ""].filter(Boolean).join(", "); return s.charAt(0).toUpperCase() + s.slice(1) + "."; },
       currentSeason: "Obecny sezon",
@@ -66,6 +66,7 @@ window.LOL_I18N = window.LOL_I18N || {};
       ewc: "Esports World Cup (oficjalna strona)", lpl: "Oficjalna strona LPL"
     },
     lanes: {
+      anim: { label: "Animacja", short: "Anim." }, book: { label: "Książki", short: "Książki" }, live: { label: "Wystawy i koncerty", short: "Live" },
       season: { label: "Sezony i akty", short: "Sezony" }, patch: { label: "Patche", short: "Patche" },
       champ: { label: "Bohaterowie", short: "Boh." }, event: { label: "Wydarzenia w grze", short: "Wydarz." },
       intl: { label: "Międzynarodowe", short: "Międz.", sub: "First Stand, MSI, Worlds…" },

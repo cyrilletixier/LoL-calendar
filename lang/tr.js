@@ -7,7 +7,7 @@ window.LOL_I18N.tr = {
   date: function (d, m, y) { return d + " " + this.months[m] + (y ? " " + y : ""); },
   sameMonth: function (d1, d2, m) { return d1 + " → " + d2 + " " + this.months[m]; },
 
-  ui: { universe: "Ek · Evren", universeAria: "Ek: evrenden animasyonlar, kitaplar ve etkinlikler", universeNote: "Runeterra evreninde geçen animasyon dizileri ve kısa filmler, kitaplar, sergiler ve konserler. Bu yapımlar zaman çizelgesinde yer almaz.", universeJump: "Evren", linksPlain: "Bağlantılar",
+  ui: { linksPlain: "Bağlantılar",
     title: "lol calendar",
     tagline: "League of Legends: sezonlar, yamalar, oyun içi etkinlikler ve profesyonel turnuvalar tek sayfada.",
     yearNav: "Yıl", langNav: "Dil", yearNotReady: "Bu yıl henüz eklenmedi",
@@ -17,7 +17,7 @@ window.LOL_I18N.tr = {
     swipeHint: "Ayı değiştirmek için zaman çizelgesini kaydır, ayrıntılar için bir çubuğa dokun. Kesikli çerçeve: yaklaşık tarihler.",
     footer: "Hayranlar tarafından hazırlanmış bir takvimdir, Riot Games ile bağlantısı yoktur. Veriler 13 Kasım 2026 itibarıyladır; gelecekteki tarihler değişebilir.",
     show: "Göster", all: "Tümü", gameOnly: "Yalnızca oyun", proOnly: "Yalnızca espor",
-    groupGame: "Oyunda", groupPro: "Espor",
+    groupGame: "Oyunda", groupPro: "Espor", groupUniverse: "Evren", universeOnly: "Yalnızca evren",
     yearUpcoming: "Gelecek yıl", yearDone: "Yıl tamamlandı",
     yearSummary: function (a, p, c, ch) { return [a ? a + " perde" : "", p ? p + " yama" : "", ch ? ch + " yeni şampiyon" : "", c ? c + " profesyonel turnuva" : ""].filter(Boolean).join(", ") + "."; },
     currentSeason: "Güncel sezon",
@@ -60,6 +60,7 @@ window.LOL_I18N.tr = {
     ewc: "Esports World Cup (resmî site)", lpl: "LPL resmî sitesi"
   },
   lanes: {
+    anim: { label: "Animasyon", short: "Anim." }, book: { label: "Kitaplar", short: "Kitap" }, live: { label: "Sergiler ve konserler", short: "Canlı" },
     season: { label: "Sezonlar ve perdeler", short: "Sezon" }, patch: { label: "Yamalar", short: "Yama" },
     champ: { label: "Şampiyonlar", short: "Şamp." }, event: { label: "Oyun içi etkinlikler", short: "Etkinlik" },
     intl: { label: "Uluslararası", short: "Ulusl.", sub: "First Stand, MSI, Worlds…" },

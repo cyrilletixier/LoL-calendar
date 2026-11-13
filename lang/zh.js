@@ -8,7 +8,7 @@ window.LOL_I18N.zh = {
   sameMonth: function (d1, d2, m) { return (m + 1) + "月" + d1 + "日 → " + d2 + "日"; },
   monthTitle: function (m, y) { return y + "年" + (m + 1) + "月"; },
 
-  ui: { universe: "附录 · 宇宙", universeAria: "附录：宇宙相关的动画、书籍和活动", universeNote: "以符文之地为背景的动画剧集与短片、书籍、展览和音乐会。这些内容不显示在时间轴上。", universeJump: "宇宙", linksPlain: "链接",
+  ui: { linksPlain: "链接",
     title: "lol calendar",
     tagline: "英雄联盟：赛季、版本、游戏内活动与职业赛事，一页尽览。",
     yearNav: "年份", langNav: "语言", yearNotReady: "该年份尚未录入",
@@ -18,7 +18,7 @@ window.LOL_I18N.zh = {
     swipeHint: "左右滑动时间轴切换月份，点按时间条查看详情。虚线边框：日期为大致时间。",
     footer: "粉丝制作的非官方日历，与 Riot Games 无关。数据截至 2026 年 11 月 13 日，未来日期仍可能调整。",
     show: "显示", all: "全部", gameOnly: "仅游戏", proOnly: "仅电竞",
-    groupGame: "游戏内", groupPro: "电竞",
+    groupGame: "游戏内", groupPro: "电竞", groupUniverse: "宇宙", universeOnly: "仅宇宙",
     yearUpcoming: "即将到来的年份", yearDone: "已结束的年份",
     yearSummary: function (a, p, c, ch) { return [a ? a + " 幕" : "", p ? p + " 个版本" : "", ch ? ch + " 位新英雄" : "", c ? c + " 项职业赛事" : ""].filter(Boolean).join("，") + "。"; },
     currentSeason: "当前赛季",
@@ -61,6 +61,7 @@ window.LOL_I18N.zh = {
     ewc: "电竞世界杯官网", lpl: "LPL 官网"
   },
   lanes: {
+    anim: { label: "动画", short: "动画" }, book: { label: "书籍", short: "书籍" }, live: { label: "展览与演出", short: "演出" },
     season: { label: "赛季与幕", short: "赛季" }, patch: { label: "版本", short: "版本" },
     champ: { label: "英雄", short: "英雄" }, event: { label: "游戏内活动", short: "活动" },
     intl: { label: "国际赛事", short: "国际", sub: "先锋赛、MSI、全球总决赛…" },
