@@ -20,7 +20,7 @@ window.LOL_I18N.ko = {
     show: "표시", all: "전체", gameOnly: "게임만", proOnly: "e스포츠만",
     groupGame: "게임", groupPro: "e스포츠",
     yearUpcoming: "다가오는 연도", yearDone: "종료된 연도",
-    yearSummary: function (a, p, c) { return "액트 " + a + "개, 패치 " + p + "개, 프로 대회 " + c + "개."; },
+    yearSummary: function (a, p, c) { return [a ? "액트 " + a + "개" : "", p ? "패치 " + p + "개" : "", "프로 대회 " + c + "개"].filter(Boolean).join(", ") + "."; },
     currentSeason: "현재 시즌",
     until: function (d) { return d + "까지"; },
     currentPatch: "현재 패치",
@@ -36,6 +36,11 @@ window.LOL_I18N.ko = {
     place: "장소", result: "결과", matchup: "대진", statusTitle: "상태", notes: "참고",
     duration: "기간", days: function (n) { return n + "일"; }, approx: "(대략)",
     patch: "패치", leagueKind: function (l) { return "지역 리그 · " + l; },
+    tplSeason: function (n, x) { return "시즌 " + n + ": " + x; }, tplSeasonShort: function (n, x) { return "시즌 " + n + " · " + x; },
+    tplAct: function (n, a) { return "시즌 " + n + " · 액트 " + a; }, tplActShort: function (a) { return "액트 " + a; },
+    tplSplit: function (n) { return "랭크 스플릿 " + n; }, tplSplitShort: function (n) { return "스플릿 " + n; },
+    tplChampNew: function (c) { return "신규 챔피언 " + c + " 출시"; }, tplRework: function (c) { return c + " 리워크"; }, tplReworkShort: function (c) { return c + " (리워크)"; },
+    tplWorldsFinal: function (y) { return "월즈 " + y + " 결승"; }, tplWorldsFinalShort: "월즈 결승",
     status: { done: "종료", live: "진행 중", next: "예정", planned: "발표됨", postponed: "연기" },
     close: "상세 정보 닫기", links: "공식 링크",
     winner: "우승", runnerUp: "준우승", mvp: "결승 MVP", vs: "vs",
@@ -55,7 +60,8 @@ window.LOL_I18N.ko = {
     champ: { label: "챔피언", short: "챔피언" }, event: { label: "게임 내 이벤트", short: "이벤트" },
     intl: { label: "국제 대회", short: "국제", sub: "퍼스트 스탠드, MSI, 월즈…" },
     LEC: { label: "LEC", sub: "유럽" }, LCK: { label: "LCK", sub: "한국" }, LPL: { label: "LPL", sub: "중국" },
-    LCS: { label: "LCS", sub: "북미" }, CBLOL: { label: "CBLOL", sub: "브라질" }, LCP: { label: "LCP", sub: "아시아·태평양" }, LFL: { label: "LFL", sub: "프랑스" }
+    LCS: { label: "LCS", sub: "북미" }, CBLOL: { label: "CBLOL", sub: "브라질" }, LCP: { label: "LCP", sub: "아시아·태평양" }, LFL: { label: "LFL", sub: "프랑스" },
+    LTA_N: { label: "LTA 북부", short: "LTA N", sub: "북미" }, LTA_S: { label: "LTA 남부", short: "LTA S", sub: "남미" }, PCS: { label: "PCS", sub: "태평양" }
   },
   teams: { KOR: "대한민국", TPE: "차이니스 타이베이" },
   items: {

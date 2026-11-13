@@ -19,7 +19,7 @@ window.LOL_I18N.tr = {
     show: "Göster", all: "Tümü", gameOnly: "Yalnızca oyun", proOnly: "Yalnızca espor",
     groupGame: "Oyunda", groupPro: "Espor",
     yearUpcoming: "Gelecek yıl", yearDone: "Yıl tamamlandı",
-    yearSummary: function (a, p, c) { return a + " perde, " + p + " yama, " + c + " profesyonel turnuva."; },
+    yearSummary: function (a, p, c) { return [a ? a + " perde" : "", p ? p + " yama" : "", c + " profesyonel turnuva"].filter(Boolean).join(", ") + "."; },
     currentSeason: "Güncel sezon",
     until: function (d) { return d + " tarihine kadar"; },
     currentPatch: "Güncel yama",
@@ -35,6 +35,11 @@ window.LOL_I18N.tr = {
     place: "Yer", result: "Sonuç", matchup: "Eşleşme", statusTitle: "Durum", notes: "Bilinmesi gerekenler",
     duration: "Süre", days: function (n) { return n + " gün"; }, approx: "(yaklaşık)",
     patch: "Yama", leagueKind: function (l) { return "Bölgesel lig · " + l; },
+    tplSeason: function (n, x) { return n + ". Sezon: " + x; }, tplSeasonShort: function (n, x) { return n + ". Sezon · " + x; },
+    tplAct: function (n, a) { return n + ". Sezon · " + a + ". Perde"; }, tplActShort: function (a) { return a + ". Perde"; },
+    tplSplit: function (n) { return "Dereceli Split " + n; }, tplSplitShort: function (n) { return "Split " + n; },
+    tplChampNew: function (c) { return "Yeni şampiyon: " + c; }, tplRework: function (c) { return c + " yenilemesi"; }, tplReworkShort: function (c) { return c + " (yenileme)"; },
+    tplWorldsFinal: function (y) { return "Worlds " + y + " Finali"; }, tplWorldsFinalShort: "Worlds Finali",
     status: { done: "Bitti", live: "Devam ediyor", next: "Yakında", planned: "Duyuruldu", postponed: "Ertelendi" },
     close: "Ayrıntıları kapat", links: "Resmî bağlantılar",
     winner: "Kazanan", runnerUp: "Finalist", mvp: "Final MVP'si", vs: "–",
@@ -54,7 +59,8 @@ window.LOL_I18N.tr = {
     champ: { label: "Şampiyonlar", short: "Şamp." }, event: { label: "Oyun içi etkinlikler", short: "Etkinlik" },
     intl: { label: "Uluslararası", short: "Ulusl.", sub: "First Stand, MSI, Worlds…" },
     LEC: { label: "LEC", sub: "Avrupa" }, LCK: { label: "LCK", sub: "Kore" }, LPL: { label: "LPL", sub: "Çin" },
-    LCS: { label: "LCS", sub: "Kuzey Amerika" }, CBLOL: { label: "CBLOL", sub: "Brezilya" }, LCP: { label: "LCP", sub: "Asya-Pasifik" }, LFL: { label: "LFL", sub: "Fransa" }
+    LCS: { label: "LCS", sub: "Kuzey Amerika" }, CBLOL: { label: "CBLOL", sub: "Brezilya" }, LCP: { label: "LCP", sub: "Asya-Pasifik" }, LFL: { label: "LFL", sub: "Fransa" },
+    LTA_N: { label: "LTA Kuzey", short: "LTA N", sub: "Kuzey Amerika" }, LTA_S: { label: "LTA Güney", short: "LTA S", sub: "Güney Amerika" }, PCS: { label: "PCS", sub: "Pasifik" }
   },
   teams: { KOR: "Güney Kore", TPE: "Çin Taipei" },
   items: {

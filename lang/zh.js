@@ -20,7 +20,7 @@ window.LOL_I18N.zh = {
     show: "显示", all: "全部", gameOnly: "仅游戏", proOnly: "仅电竞",
     groupGame: "游戏内", groupPro: "电竞",
     yearUpcoming: "即将到来的年份", yearDone: "已结束的年份",
-    yearSummary: function (a, p, c) { return a + " 幕，" + p + " 个版本，" + c + " 项职业赛事。"; },
+    yearSummary: function (a, p, c) { return [a ? a + " 幕" : "", p ? p + " 个版本" : "", c + " 项职业赛事"].filter(Boolean).join("，") + "。"; },
     currentSeason: "当前赛季",
     until: function (d) { return "至 " + d; },
     currentPatch: "当前版本",
@@ -36,6 +36,11 @@ window.LOL_I18N.zh = {
     place: "地点", result: "结果", matchup: "对阵", statusTitle: "状态", notes: "说明",
     duration: "时长", days: function (n) { return n + " 天"; }, approx: "（大致）",
     patch: "版本", leagueKind: function (l) { return "赛区联赛 · " + l; },
+    tplSeason: function (n, x) { return "第" + "零一二三四五六七八九十".charAt(n) + "赛季：" + x; }, tplSeasonShort: function (n, x) { return "第" + "零一二三四五六七八九十".charAt(n) + "赛季 · " + x; },
+    tplAct: function (n, a) { return "第" + "零一二三四五六七八九十".charAt(n) + "赛季 · 第" + "零一二三四五六七八九十".charAt(a) + "幕"; }, tplActShort: function (a) { return "第" + "零一二三四五六七八九十".charAt(a) + "幕"; },
+    tplSplit: function (n) { return "排位赛第" + "零一二三四五六七八九十".charAt(n) + "赛段"; }, tplSplitShort: function (n) { return "第" + "零一二三四五六七八九十".charAt(n) + "赛段"; },
+    tplChampNew: function (c) { return "新英雄 " + c + " 上线"; }, tplRework: function (c) { return c + " 重做"; }, tplReworkShort: function (c) { return c + "（重做）"; },
+    tplWorldsFinal: function (y) { return "全球总决赛 " + y + " 决赛"; }, tplWorldsFinalShort: "全球总决赛决赛",
     status: { done: "已结束", live: "进行中", next: "即将开始", planned: "已公布", postponed: "已延期" },
     close: "关闭详情", links: "官方链接",
     winner: "冠军", runnerUp: "亚军", mvp: "决赛 MVP", vs: "对阵",
@@ -55,7 +60,8 @@ window.LOL_I18N.zh = {
     champ: { label: "英雄", short: "英雄" }, event: { label: "游戏内活动", short: "活动" },
     intl: { label: "国际赛事", short: "国际", sub: "先锋赛、MSI、全球总决赛…" },
     LEC: { label: "LEC", sub: "欧洲" }, LCK: { label: "LCK", sub: "韩国" }, LPL: { label: "LPL", sub: "中国" },
-    LCS: { label: "LCS", sub: "北美" }, CBLOL: { label: "CBLOL", sub: "巴西" }, LCP: { label: "LCP", sub: "亚太" }, LFL: { label: "LFL", sub: "法国" }
+    LCS: { label: "LCS", sub: "北美" }, CBLOL: { label: "CBLOL", sub: "巴西" }, LCP: { label: "LCP", sub: "亚太" }, LFL: { label: "LFL", sub: "法国" },
+    LTA_N: { label: "LTA 北区", short: "LTA N", sub: "北美" }, LTA_S: { label: "LTA 南区", short: "LTA S", sub: "南美" }, PCS: { label: "PCS", sub: "太平洋" }
   },
   teams: { KOR: "韩国", TPE: "中华台北" },
   items: {

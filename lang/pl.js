@@ -25,7 +25,7 @@ window.LOL_I18N = window.LOL_I18N || {};
       show: "Pokaż", all: "Wszystko", gameOnly: "Tylko gra", proOnly: "Tylko esport",
       groupGame: "W grze", groupPro: "Esport",
       yearUpcoming: "Nadchodzący rok", yearDone: "Rok zakończony",
-      yearSummary: function (a, p, c) { return "Akty: " + a + ", patche: " + p + ", rozgrywki profesjonalne: " + c + "."; },
+      yearSummary: function (a, p, c) { var s = [a ? "akty: " + a : "", p ? "patche: " + p : "", "rozgrywki profesjonalne: " + c].filter(Boolean).join(", "); return s.charAt(0).toUpperCase() + s.slice(1) + "."; },
       currentSeason: "Obecny sezon",
       until: function (d) { return "do " + d; },
       currentPatch: "Obecny patch",
@@ -41,6 +41,11 @@ window.LOL_I18N = window.LOL_I18N || {};
       place: "Miejsce", result: "Wynik", matchup: "Mecz", statusTitle: "Status", notes: "Szczegóły",
       duration: "Czas trwania", days: function (n) { return n + (n === 1 ? " dzień" : " dni"); }, approx: "(w przybliżeniu)",
       patch: "Patch", leagueKind: function (l) { return "Liga regionalna · " + l; },
+      tplSeason: function (n, x) { return "Sezon " + n + ": " + x; }, tplSeasonShort: function (n, x) { return "Sezon " + n + " · " + x; },
+      tplAct: function (n, a) { return "Sezon " + n + " · Akt " + a; }, tplActShort: function (a) { return "Akt " + a; },
+      tplSplit: function (n) { return "Split rankingowy " + n; }, tplSplitShort: function (n) { return "Split " + n; },
+      tplChampNew: function (c) { return "Premiera: " + c; }, tplRework: function (c) { return "Przebudowa: " + c; }, tplReworkShort: function (c) { return c + " (przebudowa)"; },
+      tplWorldsFinal: function (y) { return "Finał Worlds " + y; }, tplWorldsFinalShort: "Finał Worlds",
       status: { done: "Zakończone", live: "Trwa", next: "Wkrótce", planned: "Zapowiedziane", postponed: "Przełożone" },
       close: "Zamknij szczegóły", links: "Oficjalne linki",
       winner: "Zwycięzca", runnerUp: "Finalista", mvp: "MVP finału", vs: "vs",
@@ -60,7 +65,8 @@ window.LOL_I18N = window.LOL_I18N || {};
       champ: { label: "Bohaterowie", short: "Boh." }, event: { label: "Wydarzenia w grze", short: "Wydarz." },
       intl: { label: "Międzynarodowe", short: "Międz.", sub: "First Stand, MSI, Worlds…" },
       LEC: { label: "LEC", sub: "Europa" }, LCK: { label: "LCK", sub: "Korea" }, LPL: { label: "LPL", sub: "Chiny" },
-      LCS: { label: "LCS", sub: "Ameryka Północna" }, CBLOL: { label: "CBLOL", sub: "Brazylia" }, LCP: { label: "LCP", sub: "Azja i Pacyfik" }, LFL: { label: "LFL", sub: "Francja" }
+      LCS: { label: "LCS", sub: "Ameryka Północna" }, CBLOL: { label: "CBLOL", sub: "Brazylia" }, LCP: { label: "LCP", sub: "Azja i Pacyfik" }, LFL: { label: "LFL", sub: "Francja" },
+      LTA_N: { label: "LTA Północ", short: "LTA N", sub: "Ameryka Północna" }, LTA_S: { label: "LTA Południe", short: "LTA S", sub: "Ameryka Południowa" }, PCS: { label: "PCS", sub: "Pacyfik" }
     },
     teams: { KOR: "Korea Południowa", TPE: "Chińskie Tajpej" },
     items: {

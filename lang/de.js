@@ -19,7 +19,7 @@ window.LOL_I18N.de = {
     show: "Anzeigen", all: "Alle", gameOnly: "Nur Spiel", proOnly: "Nur E-Sport",
     groupGame: "Im Spiel", groupPro: "E-Sport",
     yearUpcoming: "Kommendes Jahr", yearDone: "Jahr abgeschlossen",
-    yearSummary: function (a, p, c) { return a + " Akte, " + p + " Patches, " + c + " Profi-Wettbewerbe."; },
+    yearSummary: function (a, p, c) { return [a ? a + " Akte" : "", p ? p + " Patches" : "", c + " Profi-Wettbewerbe"].filter(Boolean).join(", ") + "."; },
     currentSeason: "Aktuelle Saison",
     until: function (d) { return "bis " + d; },
     currentPatch: "Aktueller Patch",
@@ -35,6 +35,11 @@ window.LOL_I18N.de = {
     place: "Ort", result: "Ergebnis", matchup: "Begegnung", statusTitle: "Status", notes: "Gut zu wissen",
     duration: "Dauer", days: function (n) { return n + (n > 1 ? " Tage" : " Tag"); }, approx: "(ungefähr)",
     patch: "Patch", leagueKind: function (l) { return "Regionale Liga · " + l; },
+    tplSeason: function (n, x) { return "Saison " + n + ": " + x; }, tplSeasonShort: function (n, x) { return "Saison " + n + " · " + x; },
+    tplAct: function (n, a) { return "Saison " + n + " · Akt " + a; }, tplActShort: function (a) { return "Akt " + a; },
+    tplSplit: function (n) { return "Ranglisten-Split " + n; }, tplSplitShort: function (n) { return "Split " + n; },
+    tplChampNew: function (c) { return c + " erscheint"; }, tplRework: function (c) { return c + "-Überarbeitung"; }, tplReworkShort: function (c) { return c + " (Überarbeitung)"; },
+    tplWorldsFinal: function (y) { return "Worlds-Finale " + y; }, tplWorldsFinalShort: "Worlds-Finale",
     status: { done: "Beendet", live: "Läuft", next: "Demnächst", planned: "Angekündigt", postponed: "Verschoben" },
     close: "Details schließen", links: "Offizielle Links",
     winner: "Sieger", runnerUp: "Finalist", mvp: "Finals-MVP", vs: "gegen",
@@ -54,7 +59,8 @@ window.LOL_I18N.de = {
     champ: { label: "Champions", short: "Champs" }, event: { label: "Ingame-Events", short: "Events" },
     intl: { label: "International", short: "Intl", sub: "First Stand, MSI, Worlds…" },
     LEC: { label: "LEC", sub: "Europa" }, LCK: { label: "LCK", sub: "Korea" }, LPL: { label: "LPL", sub: "China" },
-    LCS: { label: "LCS", sub: "Nordamerika" }, CBLOL: { label: "CBLOL", sub: "Brasilien" }, LCP: { label: "LCP", sub: "Asien-Pazifik" }, LFL: { label: "LFL", sub: "Frankreich" }
+    LCS: { label: "LCS", sub: "Nordamerika" }, CBLOL: { label: "CBLOL", sub: "Brasilien" }, LCP: { label: "LCP", sub: "Asien-Pazifik" }, LFL: { label: "LFL", sub: "Frankreich" },
+    LTA_N: { label: "LTA Nord", short: "LTA N", sub: "Nordamerika" }, LTA_S: { label: "LTA Süd", short: "LTA S", sub: "Südamerika" }, PCS: { label: "PCS", sub: "Pazifik" }
   },
   teams: { KOR: "Südkorea", TPE: "Chinese Taipei" },
   items: {

@@ -26,6 +26,9 @@
   window.LOL_DATA = window.LOL_DATA || { years: {} };
   window.LOL_DATA.years[2026] = {
     items: [
+      /* Fin de la Saison 3 de 2025 (7 janvier 2026) */
+      { id: "s3-25", lane: "season", kind: "season", tpl: "season", n: 3, name: "Trials of Twilight", color: "s3", d0: "2025-08-27", d1: "01-07" },
+
       /* Saisons & actes */
       { id: "s1",   lane: "season", kind: "season", color: "s1", d0: "01-08", d1: "04-28", links: [["patch", "26.01"]] },
       { id: "s1a1", lane: "season", kind: "act",    color: "s1", d0: "01-08", d1: "03-03", links: [["patch", "26.01"]] },

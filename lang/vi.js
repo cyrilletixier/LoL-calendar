@@ -19,7 +19,7 @@ window.LOL_I18N.vi = {
     show: "Hiển thị", all: "Tất cả", gameOnly: "Chỉ trong game", proOnly: "Chỉ esports",
     groupGame: "Trong game", groupPro: "Esports",
     yearUpcoming: "Năm sắp tới", yearDone: "Năm đã kết thúc",
-    yearSummary: function (a, p, c) { return a + " màn, " + p + " bản cập nhật, " + c + " giải đấu chuyên nghiệp."; },
+    yearSummary: function (a, p, c) { return [a ? a + " màn" : "", p ? p + " bản cập nhật" : "", c + " giải đấu chuyên nghiệp"].filter(Boolean).join(", ") + "."; },
     currentSeason: "Mùa hiện tại",
     until: function (d) { return "đến " + d; },
     currentPatch: "Bản cập nhật hiện tại",
@@ -35,6 +35,11 @@ window.LOL_I18N.vi = {
     place: "Địa điểm", result: "Kết quả", matchup: "Cặp đấu", statusTitle: "Trạng thái", notes: "Ghi chú",
     duration: "Thời lượng", days: function (n) { return n + " ngày"; }, approx: "(dự kiến)",
     patch: "Bản", leagueKind: function (l) { return "Giải khu vực · " + l; },
+    tplSeason: function (n, x) { return "Mùa " + n + ": " + x; }, tplSeasonShort: function (n, x) { return "Mùa " + n + " · " + x; },
+    tplAct: function (n, a) { return "Mùa " + n + " · Màn " + a; }, tplActShort: function (a) { return "Màn " + a; },
+    tplSplit: function (n) { return "Giai đoạn xếp hạng " + n; }, tplSplitShort: function (n) { return "Giai đoạn " + n; },
+    tplChampNew: function (c) { return "Ra mắt " + c; }, tplRework: function (c) { return "Làm lại " + c; }, tplReworkShort: function (c) { return c + " (làm lại)"; },
+    tplWorldsFinal: function (y) { return "Chung kết CKTG " + y; }, tplWorldsFinalShort: "Chung kết CKTG",
     status: { done: "Đã kết thúc", live: "Đang diễn ra", next: "Sắp diễn ra", planned: "Đã công bố", postponed: "Đã hoãn" },
     close: "Đóng chi tiết", links: "Liên kết chính thức",
     winner: "Vô địch", runnerUp: "Á quân", mvp: "MVP chung kết", vs: "gặp",
@@ -54,7 +59,8 @@ window.LOL_I18N.vi = {
     champ: { label: "Tướng", short: "Tướng" }, event: { label: "Sự kiện trong game", short: "Sự kiện" },
     intl: { label: "Quốc tế", short: "Q.tế", sub: "First Stand, MSI, CKTG…" },
     LEC: { label: "LEC", sub: "Châu Âu" }, LCK: { label: "LCK", sub: "Hàn Quốc" }, LPL: { label: "LPL", sub: "Trung Quốc" },
-    LCS: { label: "LCS", sub: "Bắc Mỹ" }, CBLOL: { label: "CBLOL", sub: "Brazil" }, LCP: { label: "LCP", sub: "Châu Á - Thái Bình Dương" }, LFL: { label: "LFL", sub: "Pháp" }
+    LCS: { label: "LCS", sub: "Bắc Mỹ" }, CBLOL: { label: "CBLOL", sub: "Brazil" }, LCP: { label: "LCP", sub: "Châu Á - Thái Bình Dương" }, LFL: { label: "LFL", sub: "Pháp" },
+    LTA_N: { label: "LTA Bắc", short: "LTA N", sub: "Bắc Mỹ" }, LTA_S: { label: "LTA Nam", short: "LTA S", sub: "Nam Mỹ" }, PCS: { label: "PCS", sub: "Thái Bình Dương" }
   },
   teams: { KOR: "Hàn Quốc", TPE: "Đài Bắc Trung Hoa" },
   items: {
