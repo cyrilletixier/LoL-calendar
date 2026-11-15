@@ -139,7 +139,7 @@ Le champ `champ` d'un élément (`champ: "Locke"`) affiche la vignette du champi
 
 ## Sources des données
 
-Wiki League of Legends (dates de tous les patchs et des saisons classées), Liquipedia (dates, vainqueurs et finalistes des ligues, des Worlds et du MSI depuis 2011), liste des dates de sortie des champions, calendriers officiels des patchs de Riot Games, notes de patch, pages d'événements Riot, LoL Esports, Sheep Esports, lolnow.gg, Wikipédia et la presse esport (Inven Global, GosuGamers, Dot Esports, esports.gg…). Pour l'univers : Fortiche, éditeurs (Orbit, Insight Editions, Louis Vuitton), salles de concert et presse. Pour 2027 : annonces de Riot sur les lieux, dates provisoires de la KeSPA pour les Worlds, report de l'Esports Nations Cup. Données arrêtées au 13 novembre 2026. La liste détaillée figure en bas de page.
+Wiki League of Legends (dates de tous les patchs et des saisons classées), Liquipedia (dates, vainqueurs et finalistes des ligues, des Worlds et du MSI depuis 2011), liste des dates de sortie des champions, calendriers officiels des patchs de Riot Games, notes de patch, pages d'événements Riot, LoL Esports, Sheep Esports, lolnow.gg, Wikipédia et la presse esport (Inven Global, GosuGamers, Dot Esports, esports.gg…). Pour l'univers : Fortiche, éditeurs (Orbit, Insight Editions, Louis Vuitton), salles de concert et presse. Pour 2027 : annonces de Riot sur les lieux, dates provisoires de la KeSPA pour les Worlds, report de l'Esports Nations Cup. Données arrêtées au 14 novembre 2026. La liste détaillée figure en bas de page.
 
 ## Avertissement
 

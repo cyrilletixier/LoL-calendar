@@ -96,7 +96,7 @@
       { id: "i-w-playin", lane: "intl", kind: "intl", d0: "10-15", d1: "10-18", links: [WORLDS, NEWS_INTL] },
       { id: "i-w-swiss",  lane: "intl", kind: "intl", d0: "10-23", d1: "10-31", links: [WORLDS, NEWS_INTL] },
       { id: "i-w-ko",     lane: "intl", kind: "intl", d0: "11-03", d1: "11-08", links: [WORLDS, NEWS_INTL], r: { m: [["sf", "GEN", "IG", "3-0"], ["sf", "BLG", "T1", "3-1"], ["qf", "T1", "KC", "3-1"], ["qf", "GEN", "LYON", "3-0"], ["qf", "BLG", "DK", "3-0"]] } },
-      { id: "i-w-final",  lane: "intl", kind: "intl", d0: "11-14", links: [WORLDS, NEWS_INTL], r: { w: "GEN", l: "BLG", up: true } },
+      { id: "i-w-final",  lane: "intl", kind: "intl", d0: "11-14", links: [WORLDS, NEWS_INTL], r: { w: "BLG", l: "GEN", s: "3-1", mvp: "Knight" } },
 
       /* LEC */
       { id: "lec-v",  lane: "LEC", kind: "league", d0: "01-17", d1: "03-01", links: [SPLIT1, ["news", "https://lolesports.com/{le}/news/lec-2026-format-update"]], r: { w: "G2", l: "KC", mvp: "Caps" } },

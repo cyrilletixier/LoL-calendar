@@ -21,7 +21,7 @@ window.LOL_I18N.en = {
     agendaAria: "Month-by-month agenda",
     monthJumpAria: "Jump to month",
     tlNote: "Click a bar to open its details. Dashed outline: approximate dates. Patches release on the date shown, Pacific Time.",
-    footer: "Fan-made calendar, not affiliated with Riot Games. Data as of November 13, 2026: future dates may still change.",
+    footer: "Fan-made calendar, not affiliated with Riot Games. Data as of November 14, 2026: future dates may still change.",
     show: "Show",
     all: "All",
     gameOnly: "In-game only",
@@ -340,8 +340,7 @@ window.LOL_I18N.en = {
       "i-w-ko":     { t: "Worlds 2026: quarterfinals and semifinals", s: "Worlds · Quarters & semis", place: "Allen, Texas",
                       res: "Semis: Gen.G 3-0 Invictus Gaming; Bilibili Gaming eliminate T1",
                       notes: "Quarterfinals November 3–6 (including T1 3-1 Karmine Corp, Gen.G 3-0 LYON, BLG 3-0 Dplus KIA), semifinals November 7–8." },
-      "i-w-final":  { t: "Worlds 2026 Final", s: "Worlds Final", place: "Brooklyn, New York (Barclays Center)", res: "Gen.G vs Bilibili Gaming",
-                      notes: "Gen.G's first shot at the world title since the Samsung era. $1 million for the winner." },
+      "i-w-final":  { t: "Worlds 2026 Final", s: "Worlds Final", place: "Brooklyn, New York (Barclays Center)", notes: "Bilibili Gaming beat Gen.G 3-1 for their first world title, ending four straight years of Korean champions. Finals MVP: Knight." },
 
       "lec-v":  { t: "LEC Versus", s: "Versus", place: "Berlin", res: "G2 Esports champions (final vs Karmine Corp)",
                   notes: "New 12-team format including 2 invited regional league teams; the winner goes to First Stand. MVP: Caps." },
