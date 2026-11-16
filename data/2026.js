@@ -25,6 +25,8 @@
 
   window.LOL_DATA = window.LOL_DATA || { years: {} };
   window.LOL_DATA.years[2026] = {
+    /* Composition 2026 par sigle d'équipe (vue Mercato) : { "G2": [{ joueur: "Caps", role: "Mid" }] } */
+    rosters: {},
     items: [
       /* Fin de la Saison 3 de 2025 (7 janvier 2026) */
       { id: "s3-25", lane: "season", kind: "season", tpl: "season", n: 3, name: "Trials of Twilight", color: "s3", d0: "2025-08-27", d1: "01-07" },

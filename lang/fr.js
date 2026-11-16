@@ -75,6 +75,11 @@ window.LOL_I18N.fr = {
     swipeHint: "Faites glisser la frise pour changer de mois et touchez une barre pour ouvrir sa fiche. Contour pointillé : dates approximatives."
   },
 
+  mercato: { nav: "Mercato", title: "Mercato", team: "Équipe", pickTeam: "Choisissez une équipe pour voir sa composition 2026 et ses mouvements récents.",
+    note: "Mouvements saisis à partir de sources publiques ; aucune actualité n'est récupérée en direct.", back: "Retour au calendrier",
+    roster: "Composition 2026", rosterEmpty: "Composition 2026 non renseignée pour cette équipe.",
+    moves: "Mouvements", movesEmpty: "Aucun mouvement enregistré pour cette équipe.", from: "depuis", to: "vers", source: "Source" },
+
   kinds: { anim: "Animation", book: "Livre", live: "Exposition, concert ou spectacle",
     season: "Saison", act: "Acte", patch: "Patch", champ: "Champion", event: "Événement en jeu",
     intl: "Compétition internationale", league: "Ligue régionale"
