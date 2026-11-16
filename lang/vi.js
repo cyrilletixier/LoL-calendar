@@ -15,7 +15,7 @@ window.LOL_I18N.vi = {
     agendaAria: "Lịch theo tháng", monthJumpAria: "Đến tháng",
     tlNote: "Nhấp vào một thanh để xem chi tiết. Viền nét đứt: ngày dự kiến. Bản cập nhật ra mắt vào ngày ghi, theo giờ Thái Bình Dương.",
     swipeHint: "Vuốt dòng thời gian để đổi tháng, chạm vào một thanh để xem chi tiết. Viền nét đứt: ngày dự kiến.",
-    footer: "Lịch do người hâm mộ thực hiện, không liên quan đến Riot Games. Dữ liệu tính đến ngày 14/11/2026; các mốc trong tương lai có thể thay đổi.",
+    footer: "Lịch do người hâm mộ thực hiện, không liên quan đến Riot Games. Dữ liệu tính đến ngày 16/11/2026; các mốc trong tương lai có thể thay đổi.",
     show: "Hiển thị", all: "Tất cả", gameOnly: "Chỉ trong game", proOnly: "Chỉ esports",
     groupGame: "Trong game", groupPro: "Esports", groupUniverse: "Vũ trụ", universeOnly: "Chỉ vũ trụ",
     yearUpcoming: "Năm sắp tới", yearDone: "Năm đã kết thúc",
@@ -282,10 +282,10 @@ window.LOL_I18N.vi = {
       "lfl-su": { notes: "Galions bất bại ở vòng bảng nhưng thua trận chung kết ngày 12/9. Ngày bắt đầu dự kiến." }
     },
     2027: {
-      "i-fst": { place: "Đông Nam Á", notes: "Khu vực tổ chức đã được Riot công bố; thành phố và ngày thi đấu chưa rõ. Thời gian thường lệ: giữa tháng 3." },
-      "i-msi": { place: "Châu Âu", notes: "Khu vực tổ chức đã được Riot công bố; thành phố và ngày thi đấu chưa rõ. Thời gian thường lệ: cuối tháng 6 đến giữa tháng 7." },
-      "i-worlds": { place: "Hàn Quốc", notes: "Lịch dự kiến do KeSPA chia sẻ: từ 15/10 đến 14/11/2027. Đang chọn thành phố đăng cai.", t: "CKTG 2027", s: "CKTG" },
-      "i-w-final": { place: "Hàn Quốc", notes: "Ngày dự kiến (KeSPA), chờ Riot xác nhận." },
+      "i-fst": { place: "Trung Quốc", notes: "Phiên bản mở rộng một lần „All In”, chuyển từ Đông Nam Á sang Trung Quốc (2028 quay lại Đông Nam Á). Thành phố và ngày thi đấu chưa rõ; thể thức công bố vào tháng 1. Thời gian thường lệ: giữa tháng 3." },
+      "i-msi": { place: "Valencia, Tây Ban Nha", notes: "Feria de València, lần đầu MSI diễn ra tại Tây Ban Nha. Dự kiến từ tháng 6 đến tháng 7/2027, ngày cụ thể chưa rõ." },
+      "i-worlds": { place: "Nagoya (Nhật Bản) · Suwon và Seoul (Hàn Quốc)", notes: "Vòng Thụy Sĩ ở Nagoya, tứ kết và bán kết ở Suwon, chung kết tại Seoul Arena. Lịch dự kiến do KeSPA chia sẻ: từ 15/10 đến 14/11/2027; Riot chưa công bố ngày cụ thể.", t: "CKTG 2027", s: "CKTG" },
+      "i-w-final": { place: "Seoul, Hàn Quốc", notes: "Seoul Arena. Ngày dự kiến (KeSPA), chờ Riot xác nhận." },
       "i-enc": { place: "Riyadh, Ả Rập Xê Út", notes: "Lần tổ chức đầu tiên, với các đội tuyển quốc gia, dời từ tháng 11/2026 sang tháng 11/2027. Chưa công bố ngày cụ thể." }
     },
     2026: {

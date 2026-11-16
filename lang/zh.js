@@ -16,7 +16,7 @@ window.LOL_I18N.zh = {
     agendaAria: "按月日程", monthJumpAria: "跳转到月份",
     tlNote: "点击时间条查看详情。虚线边框：日期为大致时间。版本按所示日期（太平洋时间）上线。",
     swipeHint: "左右滑动时间轴切换月份，点按时间条查看详情。虚线边框：日期为大致时间。",
-    footer: "粉丝制作的非官方日历，与 Riot Games 无关。数据截至 2026 年 11 月 14 日，未来日期仍可能调整。",
+    footer: "粉丝制作的非官方日历，与 Riot Games 无关。数据截至 2026 年 11 月 16 日，未来日期仍可能调整。",
     show: "显示", all: "全部", gameOnly: "仅游戏", proOnly: "仅电竞",
     groupGame: "游戏内", groupPro: "电竞", groupUniverse: "宇宙", universeOnly: "仅宇宙",
     yearUpcoming: "即将到来的年份", yearDone: "已结束的年份",
@@ -285,10 +285,10 @@ window.LOL_I18N.zh = {
       "lfl-su": { notes: "常规赛保持不败的 Galions 在 9 月 12 日的决赛中落败。开赛日期为大致时间。" }
     },
     2027: {
-      "i-fst": { place: "东南亚", notes: "Riot 已公布举办地区，城市和日期尚未公布。通常在 3 月中旬举行。", t: "2027 先锋赛", s: "先锋赛" },
-      "i-msi": { place: "欧洲", notes: "Riot 已公布举办地区，城市和日期尚未公布。通常在 6 月底至 7 月中旬举行。", t: "2027 季中冠军赛", s: "MSI" },
-      "i-worlds": { place: "韩国", notes: "KeSPA 公布的暂定日期：2027 年 10 月 15 日至 11 月 14 日。主办城市正在遴选中。", t: "全球总决赛 2027", s: "全球总决赛" },
-      "i-w-final": { place: "韩国", notes: "暂定日期（KeSPA），有待 Riot 确认。" },
+      "i-fst": { place: "中国", notes: "一次性扩大规模的“All In”版本，由东南亚改至中国（2028 年回到东南亚）。城市和日期尚未公布，赛制将于 1 月公布。通常在 3 月中旬举行。", t: "2027 先锋赛", s: "先锋赛" },
+      "i-msi": { place: "西班牙瓦伦西亚", notes: "Feria de València，MSI 首次在西班牙举办。预计在 2027 年 6 月至 7 月，具体日期尚未确定。", t: "2027 季中冠军赛", s: "MSI" },
+      "i-worlds": { place: "日本名古屋 · 韩国水原、首尔", notes: "瑞士轮在名古屋，八强和四强在水原，决赛在首尔 Seoul Arena。KeSPA 公布的暂定日期：2027 年 10 月 15 日至 11 月 14 日；Riot 尚未公布具体日期。", t: "全球总决赛 2027", s: "全球总决赛" },
+      "i-w-final": { place: "韩国首尔", notes: "首尔 Seoul Arena。暂定日期（KeSPA），有待 Riot 确认。" },
       "i-enc": { place: "沙特阿拉伯利雅得", notes: "首届赛事，由国家队参赛，从 2026 年 11 月推迟至 2027 年 11 月。具体日期尚未公布。", t: "2027 电竞国家杯", s: "电竞国家杯" }
     },
     2026: {

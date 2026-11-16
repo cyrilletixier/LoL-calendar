@@ -15,7 +15,7 @@ window.LOL_I18N.tr = {
     agendaAria: "Aylık ajanda", monthJumpAria: "Aya git",
     tlNote: "Ayrıntılar için bir çubuğa tıkla. Kesikli çerçeve: yaklaşık tarihler. Yamalar belirtilen tarihte, Pasifik saatiyle çıkar.",
     swipeHint: "Ayı değiştirmek için zaman çizelgesini kaydır, ayrıntılar için bir çubuğa dokun. Kesikli çerçeve: yaklaşık tarihler.",
-    footer: "Hayranlar tarafından hazırlanmış bir takvimdir, Riot Games ile bağlantısı yoktur. Veriler 14 Kasım 2026 itibarıyladır; gelecekteki tarihler değişebilir.",
+    footer: "Hayranlar tarafından hazırlanmış bir takvimdir, Riot Games ile bağlantısı yoktur. Veriler 16 Kasım 2026 itibarıyladır; gelecekteki tarihler değişebilir.",
     show: "Göster", all: "Tümü", gameOnly: "Yalnızca oyun", proOnly: "Yalnızca espor",
     groupGame: "Oyunda", groupPro: "Espor", groupUniverse: "Evren", universeOnly: "Yalnızca evren",
     yearUpcoming: "Gelecek yıl", yearDone: "Yıl tamamlandı",
@@ -282,10 +282,10 @@ window.LOL_I18N.tr = {
       "lfl-su": { notes: "Sezonu yenilgisiz tamamlayan Galions, 12 Eylül'de finali kaybediyor. Başlangıç tarihi yaklaşık." }
     },
     2027: {
-      "i-fst": { place: "Güneydoğu Asya", notes: "Bölge Riot tarafından açıklandı; şehir ve tarihler henüz belli değil. Olağan dönem: mart ortası." },
-      "i-msi": { place: "Avrupa", notes: "Bölge Riot tarafından açıklandı; şehir ve tarihler henüz belli değil. Olağan dönem: haziran sonundan temmuz ortasına." },
-      "i-worlds": { place: "Güney Kore", notes: "KeSPA'nın paylaştığı geçici tarihler: 15 Ekim – 14 Kasım 2027. Ev sahibi şehirler seçiliyor." },
-      "i-w-final": { place: "Güney Kore", notes: "Geçici tarih (KeSPA), Riot'un doğrulaması bekleniyor." },
+      "i-fst": { place: "Çin", notes: "Tek seferlik genişletilmiş „All In” edisyonu, Güneydoğu Asya'dan Çin'e taşındı (2028'de Güneydoğu Asya'ya dönüş). Şehir ve tarihler henüz belli değil; format Ocak'ta açıklanacak. Olağan dönem: mart ortası." },
+      "i-msi": { place: "Valensiya, İspanya", notes: "Feria de València, MSI'ın İspanya'da ilk kez yapılışı. Haziran–Temmuz 2027 arası bekleniyor, kesin günler henüz belli değil." },
+      "i-worlds": { place: "Nagoya (Japonya) · Suwon ve Seul (Güney Kore)", notes: "İsviçre aşaması Nagoya'da, çeyrek ve yarı finaller Suwon'da, final Seoul Arena'da. KeSPA'nın paylaştığı geçici tarihler: 15 Ekim – 14 Kasım 2027; kesin tarihleri Riot henüz açıklamadı." },
+      "i-w-final": { place: "Seul, Güney Kore", notes: "Seoul Arena. Geçici tarih (KeSPA), Riot'un doğrulaması bekleniyor." },
       "i-enc": { place: "Riyad, Suudi Arabistan", notes: "Milli takımların yer aldığı ilk turnuva, Kasım 2026'dan Kasım 2027'ye ertelendi. Kesin tarihler açıklanmadı." }
     },
     2026: {

@@ -21,7 +21,7 @@ window.LOL_I18N.fr = {
     agendaAria: "Agenda mois par mois",
     monthJumpAria: "Aller au mois",
     tlNote: "Cliquez sur une barre pour afficher sa fiche. Contour pointillé : dates approximatives. Les patchs sortent à la date indiquée, heure du Pacifique.",
-    footer: "Calendrier de fan, sans lien avec Riot Games. Données arrêtées au 14 novembre 2026 : les dates futures peuvent encore bouger.",
+    footer: "Calendrier de fan, sans lien avec Riot Games. Données arrêtées au 16 novembre 2026 : les dates futures peuvent encore bouger.",
     show: "Afficher",
     all: "Tout",
     gameOnly: "En jeu seulement",
@@ -124,6 +124,7 @@ window.LOL_I18N.fr = {
     ["Inven Global : Gen.G champion LCK 2026", "https://www.invenglobal.com/articles/25926/geng-defeats-hanwha-life-esports-to-win-back-to-back-lck-titles"],
     ["Esports World Cup : Dplus KIA remporte LoL à l'EWC 26", "https://esportsworldcup.com/en/press-releases/dplus-kia-win-lol-at-ewc26"],
     ["2027 · Insider Gaming : dates provisoires des Worlds 2027 (KeSPA)", "https://insider-gaming.com/lol-worlds-2027-tentative-dates-shared-by-kespa-as-host-city-search-begins/"],
+    ["2027 · Esports.net : Worlds au Japon et en Corée, MSI en Espagne, First Stand en Chine (annonce Riot du 13 novembre 2026)", "https://www.esports.net/news/gaming/worlds-2027-heads-to-japan-and-korea-msi-goes-to-spain-and-first-stand-moves-to-china/"],
     ["2027 · SiGMA : lieux des compétitions internationales 2026 et 2027", "https://sigma.world/news/league-of-legends-reveals-global-esports-locations-for-2026-and-2027/"],
     ["2027 · VPEsports : l'Esports Nations Cup repoussée à novembre 2027", "https://vpesports.com/lol/news/esports-nations-cup-moves-from-november-2026-to-november-2027/"],
     ["2025 · esports.gg : calendrier des patchs 2025", "https://esports.gg/news/league-of-legends/when-is-the-next-lol-update-league-of-legends-2025-patch-schedule/"],
@@ -496,10 +497,10 @@ window.LOL_I18N.fr = {
       "lfl-su": { notes: "Galions, invaincus en saison, s'inclinent en finale le 12 septembre. Date de début approximative." }
     },
     2027: {
-      "i-fst": { place: "Asie du Sud-Est", notes: "Lieu annoncé par Riot ; ville et dates pas encore connues. Période habituelle : mi-mars." },
-      "i-msi": { place: "Europe", notes: "Lieu annoncé par Riot ; ville et dates pas encore connues. Période habituelle : fin juin à mi-juillet." },
-      "i-worlds": { place: "Corée du Sud", notes: "Dates provisoires communiquées par la KeSPA : du 15 octobre au 14 novembre 2027. Villes hôtes en cours de sélection." },
-      "i-w-final": { place: "Corée du Sud", notes: "Date provisoire (KeSPA), à confirmer par Riot." },
+      "i-fst": { place: "Chine", notes: "Édition « All In » exceptionnelle, plus grande que d'habitude, déplacée de l'Asie du Sud-Est vers la Chine (retour en Asie du Sud-Est en 2028). Ville et dates pas encore connues ; format annoncé en janvier. Période habituelle : mi-mars." },
+      "i-msi": { place: "Valence, Espagne", notes: "Feria de València, première fois que le MSI se tient en Espagne. Prévu entre juin et juillet 2027, jours exacts pas encore connus." },
+      "i-worlds": { place: "Nagoya (Japon) · Suwon et Séoul (Corée du Sud)", notes: "Phase suisse à Nagoya, quarts et demi-finales à Suwon, finale à la Seoul Arena. Dates provisoires communiquées par la KeSPA : du 15 octobre au 14 novembre 2027 ; dates exactes pas encore annoncées par Riot." },
+      "i-w-final": { place: "Séoul, Corée du Sud", notes: "Seoul Arena. Date provisoire (KeSPA), à confirmer par Riot." },
       "i-enc": { place: "Riyad, Arabie saoudite", notes: "Première édition, avec des sélections nationales, repoussée de novembre 2026 à novembre 2027. Dates précises non annoncées." }
     }
   }

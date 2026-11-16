@@ -15,7 +15,7 @@ window.LOL_I18N.es = {
     agendaAria: "Agenda mes a mes", monthJumpAria: "Ir al mes",
     tlNote: "Haz clic en una barra para ver su ficha. Contorno discontinuo: fechas aproximadas. Los parches salen en la fecha indicada, hora del Pacífico.",
     swipeHint: "Desliza la línea temporal para cambiar de mes y toca una barra para abrir su ficha. Contorno discontinuo: fechas aproximadas.",
-    footer: "Calendario hecho por fans, sin relación con Riot Games. Datos a 14 de noviembre de 2026: las fechas futuras aún pueden cambiar.",
+    footer: "Calendario hecho por fans, sin relación con Riot Games. Datos a 16 de noviembre de 2026: las fechas futuras aún pueden cambiar.",
     show: "Mostrar", all: "Todo", gameOnly: "Solo juego", proOnly: "Solo esports",
     groupGame: "En el juego", groupPro: "Esports", groupUniverse: "Universo", universeOnly: "Solo universo",
     yearUpcoming: "Año por venir", yearDone: "Año terminado",
@@ -282,10 +282,10 @@ window.LOL_I18N.es = {
       "lfl-su": { notes: "Galions, invicto en la temporada, pierde la final el 12 de septiembre. Fecha de inicio aproximada." }
     },
     2027: {
-      "i-fst": { place: "Sudeste Asiático", notes: "Sede anunciada por Riot; ciudad y fechas aún sin confirmar. Periodo habitual: mediados de marzo." },
-      "i-msi": { place: "Europa", notes: "Sede anunciada por Riot; ciudad y fechas aún sin confirmar. Periodo habitual: de finales de junio a mediados de julio." },
-      "i-worlds": { place: "Corea del Sur", notes: "Fechas provisionales comunicadas por la KeSPA: del 15 de octubre al 14 de noviembre de 2027. Ciudades sede en proceso de selección." },
-      "i-w-final": { place: "Corea del Sur", notes: "Fecha provisional (KeSPA), pendiente de confirmación por Riot." },
+      "i-fst": { place: "China", notes: "Edición «All In» excepcional, trasladada del Sudeste Asiático a China (vuelve al Sudeste Asiático en 2028). Ciudad y fechas aún sin confirmar; formato en enero. Periodo habitual: mediados de marzo." },
+      "i-msi": { place: "Valencia, España", notes: "Feria de València, primera vez que el MSI se celebra en España. Previsto entre junio y julio de 2027, días exactos aún sin fijar." },
+      "i-worlds": { place: "Nagoya (Japón) · Suwon y Seúl (Corea del Sur)", notes: "Fase suiza en Nagoya, cuartos y semifinales en Suwon, final en el Seoul Arena. Fechas provisionales de la KeSPA: del 15 de octubre al 14 de noviembre de 2027; fechas exactas aún no anunciadas por Riot." },
+      "i-w-final": { place: "Seúl, Corea del Sur", notes: "Seoul Arena. Fecha provisional (KeSPA), pendiente de confirmación por Riot." },
       "i-enc": { place: "Riad, Arabia Saudí", notes: "Primera edición, con selecciones nacionales, aplazada de noviembre de 2026 a noviembre de 2027. Fechas exactas sin anunciar." }
     },
     2026: {

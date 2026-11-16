@@ -15,7 +15,7 @@ window.LOL_I18N.de = {
     agendaAria: "Monatsübersicht", monthJumpAria: "Zum Monat springen",
     tlNote: "Klicke auf einen Balken, um die Details zu öffnen. Gestrichelter Rand: ungefähre Daten. Patches erscheinen am angegebenen Datum, pazifische Zeit.",
     swipeHint: "Wische über die Zeitleiste, um den Monat zu wechseln, und tippe auf einen Balken für die Details. Gestrichelter Rand: ungefähre Daten.",
-    footer: "Kalender von Fans, ohne Verbindung zu Riot Games. Datenstand: 14. November 2026. Künftige Termine können sich noch ändern.",
+    footer: "Kalender von Fans, ohne Verbindung zu Riot Games. Datenstand: 16. November 2026. Künftige Termine können sich noch ändern.",
     show: "Anzeigen", all: "Alle", gameOnly: "Nur Spiel", proOnly: "Nur E-Sport",
     groupGame: "Im Spiel", groupPro: "E-Sport", groupUniverse: "Universum", universeOnly: "Nur Universum",
     yearUpcoming: "Kommendes Jahr", yearDone: "Jahr abgeschlossen",
@@ -282,10 +282,10 @@ window.LOL_I18N.de = {
       "lfl-su": { notes: "Galions, in der Saison ungeschlagen, verlieren das Finale am 12. September. Startdatum ungefähr." }
     },
     2027: {
-      "i-fst": { place: "Südostasien", notes: "Austragungsregion von Riot angekündigt; Stadt und Daten noch offen. Üblicher Zeitraum: Mitte März." },
-      "i-msi": { place: "Europa", notes: "Austragungsregion von Riot angekündigt; Stadt und Daten noch offen. Üblicher Zeitraum: Ende Juni bis Mitte Juli." },
-      "i-worlds": { place: "Südkorea", notes: "Vorläufige Daten der KeSPA: 15. Oktober bis 14. November 2027. Gastgeberstädte werden noch ausgewählt." },
-      "i-w-final": { place: "Südkorea", notes: "Vorläufiges Datum (KeSPA), von Riot noch zu bestätigen." },
+      "i-fst": { place: "China", notes: "Einmalige erweiterte „All In“-Ausgabe, von Südostasien nach China verlegt (2028 zurück in Südostasien). Stadt und Daten noch offen; Format im Januar. Üblicher Zeitraum: Mitte März." },
+      "i-msi": { place: "Valencia, Spanien", notes: "Feria de València, erstmals MSI in Spanien. Erwartet zwischen Juni und Juli 2027, genaue Tage noch offen." },
+      "i-worlds": { place: "Nagoya (Japan) · Suwon und Seoul (Südkorea)", notes: "Schweizer Phase in Nagoya, Viertel- und Halbfinals in Suwon, Finale in der Seoul Arena. Vorläufige Daten der KeSPA: 15. Oktober bis 14. November 2027; genaue Daten von Riot noch nicht bekannt." },
+      "i-w-final": { place: "Seoul, Südkorea", notes: "Seoul Arena. Vorläufiges Datum (KeSPA), von Riot noch zu bestätigen." },
       "i-enc": { place: "Riad, Saudi-Arabien", notes: "Erste Ausgabe mit Nationalteams, von November 2026 auf November 2027 verschoben. Genaue Daten noch nicht angekündigt." }
     },
     2026: {
