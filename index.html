@@ -254,6 +254,17 @@ button.tile:hover{border-color:var(--gold-4)}
 .hon-t{display:block;font-weight:600;font-size:13.5px;line-height:1.2}
 .hon small{display:block;color:var(--muted);font-size:12px;line-height:1.2}
 
+.mercato{display:grid;gap:14px}
+.mercato[hidden]{display:none}
+.mercato h2{font-family:var(--font-display);color:var(--gold-2);margin:0;font-size:24px;letter-spacing:.06em}
+.mercato h3{font-family:var(--font-display);font-size:16px;letter-spacing:.08em;color:var(--gold-2);margin:14px 0 6px;padding-bottom:6px;border-bottom:1px solid var(--frame)}
+.mer-pick{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.mer-pick select{min-height:36px;background:var(--surface);color:var(--gold-1);border:1px solid var(--gold-2);padding:4px 10px;font:inherit}
+.mer-list{margin:0;padding-left:18px;display:grid;gap:6px}
+.mer-m{color:var(--muted);font-size:14px}
+.mer-empty{color:var(--muted)}
+.mer-note{color:var(--muted);font-size:13px;margin:0}
+
 footer{color:var(--muted);font-size:14px;display:grid;gap:8px;border-top:1px solid var(--frame);padding-top:16px}
 footer ul{margin:0;padding-left:18px;display:grid;gap:3px}
 footer p{margin:0;max-width:75ch}
@@ -396,6 +407,8 @@ footer p{margin:0;max-width:75ch}
 <script src="lang/ko.js"></script>
 <script src="lang/zh.js"></script>
 <script src="lang/vi.js"></script>
+<script src="data/mercato.js"></script>
 <script src="js/app.js"></script>
+<script src="js/mercato.js"></script>
 </body>
 </html>
