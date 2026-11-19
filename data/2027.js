@@ -9,6 +9,10 @@
       /* Fin de la Saison 3 de 2026 (5 janvier 2027) */
       { id: "s3-26", lane: "season", kind: "season", tpl: "season", n: 3, name: "Classic", color: "s3", d0: "2026-07-29", d1: "01-05" },
 
+      /* LEC : début du Winter Split annoncé le 15 janvier 2027 (fin non annoncée) */
+      { id: "lec-v", lane: "LEC", kind: "league", tpl: "lane", sp: "Winter", d0: "01-15", planned: true,
+        links: [["news", "https://lolesports.com/{le}/news/2027-lec-a-look-at-the-year-ahead"]] },
+
       /* International */
       { id: "i-fst",     lane: "intl", kind: "intl", t: "First Stand 2027", s: "First Stand", d0: "03-15", d1: "03-21", approx: true, planned: true },
       { id: "i-msi",     lane: "intl", kind: "intl", t: "Mid-Season Invitational 2027", s: "MSI", d0: "06-26", d1: "07-11", approx: true, planned: true },

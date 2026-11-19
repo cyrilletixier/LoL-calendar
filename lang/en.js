@@ -21,7 +21,7 @@ window.LOL_I18N.en = {
     agendaAria: "Month-by-month agenda",
     monthJumpAria: "Jump to month",
     tlNote: "Click a bar to open its details. Dashed outline: approximate dates. Patches release on the date shown, Pacific Time.",
-    footer: "Fan-made calendar, not affiliated with Riot Games. Data as of November 16, 2026: future dates may still change.",
+    footer: "Fan-made calendar, not affiliated with Riot Games. Data as of November 19, 2026: future dates may still change.",
     show: "Show",
     all: "All",
     gameOnly: "In-game only",
@@ -123,6 +123,7 @@ window.LOL_I18N.en = {
     ["2027 · Esports.net: Worlds in Japan and Korea, MSI in Spain, First Stand in China (Riot announcement of November 13, 2026)", "https://www.esports.net/news/gaming/worlds-2027-heads-to-japan-and-korea-msi-goes-to-spain-and-first-stand-moves-to-china/"],
     ["2027 · SiGMA: 2026 and 2027 international event locations", "https://sigma.world/news/league-of-legends-reveals-global-esports-locations-for-2026-and-2027/"],
     ["2027 · VPEsports: Esports Nations Cup moved to November 2027", "https://vpesports.com/lol/news/esports-nations-cup-moves-from-november-2026-to-november-2027/"],
+    ["2027 · LoL Esports: 2027 LEC, a look at the year ahead (starts January 15)", "https://lolesports.com/en-GB/news/2027-lec-a-look-at-the-year-ahead"],
     ["2025 · esports.gg: 2025 patch schedule", "https://esports.gg/news/league-of-legends/when-is-the-next-lol-update-league-of-legends-2025-patch-schedule/"],
     ["2025 · Riot Games: Trials of Twilight, Act II", "https://support.riotgames.com/en-us/league-of-legends/events/league-of-legends-trials-of-twilight-act-ii"],
     ["2025 · LoL Esports: 2025 season handbook", "https://lolesports.com/en-US/season/113470241010388072/handbook"],
@@ -491,6 +492,7 @@ window.LOL_I18N.en = {
       "lfl-su": { notes: "Galions, unbeaten in the season, lose the final on September 12. Start date approximate." }
     },
     2027: {
+      "lec-v": { notes: "Winter Split starts January 15, 2027 (official LEC announcement). Three splits in 2027 (Winter, Spring, Summer), best-of-three regular season and best-of-five playoffs, no best-of-ones. End date not announced yet." },
       "i-fst": { place: "China", notes: "One-off expanded \"All In\" edition, moved from Southeast Asia to China (back to Southeast Asia in 2028). City and dates not known yet; format to be detailed in January. Usual window: mid-March." },
       "i-msi": { place: "Valencia, Spain", notes: "Feria de València, the first time MSI is held in Spain. Expected between June and July 2027, exact days not set yet." },
       "i-worlds": { place: "Nagoya (Japan) · Suwon and Seoul (South Korea)", notes: "Swiss Stage in Nagoya, quarterfinals and semifinals in Suwon, final at Seoul Arena. Tentative dates shared by KeSPA: October 15 to November 14, 2027; exact dates not announced by Riot yet." },
