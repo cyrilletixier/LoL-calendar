@@ -68,6 +68,26 @@ window.LOL_I18N.de = {
     LCS: { label: "LCS", sub: "Nordamerika" }, CBLOL: { label: "CBLOL", sub: "Brasilien" }, LCP: { label: "LCP", sub: "Asien-Pazifik" }, LFL: { label: "LFL", sub: "Frankreich" },
     LTA_N: { label: "LTA Nord", short: "LTA N", sub: "Nordamerika" }, LTA_S: { label: "LTA Süd", short: "LTA S", sub: "Südamerika" }, PCS: { label: "PCS", sub: "Pazifik" }
   },
+  mercato: {
+    nav: "Transfers",
+    title: "Transfermarkt",
+    team: "Team",
+    pickTeam: "Wähle ein Team, um den Kader 2026, den Stand für 2027 und die jüngsten Wechsel zu sehen.",
+    note: "Wechsel und Gerüchte aus öffentlichen Quellen (Stand 20. November 2026); es werden keine Live-Nachrichten abgerufen. Ein Gerücht ist keine Ankündigung.",
+    back: "Zurück zum Kalender",
+    roster: "Kader 2026",
+    rosterEmpty: "Kader 2026 für dieses Team nicht erfasst.",
+    roster27: "Kader 2027 (im Aufbau)",
+    roster27Empty: "Keine Informationen zum Kader 2027 dieses Teams.",
+    moves: "Wechsel und Gerüchte",
+    movesEmpty: "Für dieses Team ist kein Wechsel erfasst.",
+    source: "Quelle",
+    statuts: { official: "Offiziell", rumor: "Gerücht", confirmed: "Bestätigt" },
+    types: { arrival: "Zugang", departure: "Abgang", extension: "Verlängerung", expiry: "Vertragsende" },
+    roles: { TOP: "Top", JNG: "Jungle", MID: "Mid", ADC: "ADC", SUP: "Support" },
+    reasons: { retirement: "Karriereende", verbal: "mündliche Einigung", buyout: "Vertragsauskauf" }
+  },
+
   teams: { KOR: "Südkorea", TWN: "Taiwan" },
   items: {
     2009: {

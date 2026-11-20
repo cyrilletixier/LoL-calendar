@@ -68,6 +68,26 @@ window.LOL_I18N.vi = {
     LCS: { label: "LCS", sub: "Bắc Mỹ" }, CBLOL: { label: "CBLOL", sub: "Brazil" }, LCP: { label: "LCP", sub: "Châu Á - Thái Bình Dương" }, LFL: { label: "LFL", sub: "Pháp" },
     LTA_N: { label: "LTA Bắc", short: "LTA N", sub: "Bắc Mỹ" }, LTA_S: { label: "LTA Nam", short: "LTA S", sub: "Nam Mỹ" }, PCS: { label: "PCS", sub: "Thái Bình Dương" }
   },
+  mercato: {
+    nav: "Chuyển nhượng",
+    title: "Thị trường chuyển nhượng",
+    team: "Đội",
+    pickTeam: "Chọn một đội để xem đội hình 2026, tình hình 2027 và các biến động gần đây.",
+    note: "Biến động và tin đồn được nhập từ nguồn công khai (tính đến 20/11/2026); không lấy tin tức trực tiếp. Tin đồn không phải thông báo chính thức.",
+    back: "Quay lại lịch",
+    roster: "Đội hình 2026",
+    rosterEmpty: "Chưa nhập đội hình 2026 của đội này.",
+    roster27: "Đội hình 2027 (đang xây dựng)",
+    roster27Empty: "Chưa có thông tin về đội hình 2027 của đội này.",
+    moves: "Biến động và tin đồn",
+    movesEmpty: "Chưa ghi nhận biến động nào của đội này.",
+    source: "Nguồn",
+    statuts: { official: "Chính thức", rumor: "Tin đồn", confirmed: "Đã xác nhận" },
+    types: { arrival: "Gia nhập", departure: "Rời đi", extension: "Gia hạn", expiry: "Hết hợp đồng" },
+    roles: { TOP: "Top", JNG: "Rừng", MID: "Giữa", ADC: "ADC", SUP: "Hỗ trợ" },
+    reasons: { retirement: "giải nghệ", verbal: "thỏa thuận miệng", buyout: "mua đứt hợp đồng" }
+  },
+
   teams: { KOR: "Hàn Quốc", TWN: "Đài Loan" },
   items: {
     2009: {

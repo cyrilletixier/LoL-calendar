@@ -133,6 +133,19 @@ Si l'image ne se charge pas, la pastille revient automatiquement au sigle. Les l
 
 **Règle du projet, sans exception : Taïwan s'appelle Taïwan.** Jamais « Taipei chinois » ni « Chinese Taipei », quel que soit le nom employé par l'organisateur (Jeux asiatiques, etc.). Le sigle est `TWN`, jamais `TPE`. Les noms dans les langues : Taïwan, Taiwan (en, pt, de), Taiwán, Tajwan, Tayvan, 대만, 台湾, Đài Loan. La ville de Taipei et les noms d'équipes comme Taipei Assassins restent inchangés.
 
+## Mercato
+
+La page `#mercato` (bouton « Mercato » à côté des filtres) montre, pour une équipe : sa composition de fin 2026, l'état connu de 2027 (confirmé ou rumeur) et les mouvements récents (arrivées, départs, prolongations) avec leur source. Les données sont saisies à la main :
+
+```js
+// data/mercato.js
+"HLE": [{ date: "2026-11-18", type: "arrivée", statut: "rumeur", joueur: "Kiin", role: "TOP", clubSource: "GEN", commentaire: "", source: "https://…" }]
+// data/2026.js et data/2027.js, rubrique rosters
+rosters: { "HLE": [{ joueur: "Zeka", role: "MID", statut: "confirmé" }] }   // statut seulement en 2027
+```
+
+Les règles de saisie (statuts, sources, un transfert écrit sur les deux équipes) sont dans `CLAUDE.md`. Aucune actualité n'est récupérée en direct : l'état affiché est celui de la dernière mise à jour du fichier (20 novembre 2026). Les ligues couvertes sont la LEC, la LCK, la LCS, le CBLOL et trois équipes de LFL ; la LPL et la LCP n'ont pas encore de compositions.
+
 ## Images de champions
 
 Le champ `champ` d'un élément (`champ: "Locke"`) affiche la vignette du champion dans la frise et son illustration dans la fiche. Ces images viennent de Data Dragon (`ddragon.leagueoflegends.com`). La clé est le nom du champion sans espace ni apostrophe (`Belveth` pour Bel'Veth). Hors ligne, la vignette est remplacée par un losange.

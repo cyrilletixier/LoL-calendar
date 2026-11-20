@@ -69,6 +69,26 @@ window.LOL_I18N.ko = {
     LCS: { label: "LCS", sub: "북미" }, CBLOL: { label: "CBLOL", sub: "브라질" }, LCP: { label: "LCP", sub: "아시아·태평양" }, LFL: { label: "LFL", sub: "프랑스" },
     LTA_N: { label: "LTA 북부", short: "LTA N", sub: "북미" }, LTA_S: { label: "LTA 남부", short: "LTA S", sub: "남미" }, PCS: { label: "PCS", sub: "태평양" }
   },
+  mercato: {
+    nav: "이적시장",
+    title: "이적시장",
+    team: "팀",
+    pickTeam: "팀을 선택하면 2026 로스터, 2027 현황, 최근 이동을 볼 수 있습니다.",
+    note: "이동과 루머는 공개 자료를 바탕으로 입력했습니다(2026년 11월 20일 기준). 실시간 뉴스는 가져오지 않습니다. 루머는 공식 발표가 아닙니다.",
+    back: "캘린더로 돌아가기",
+    roster: "2026 로스터",
+    rosterEmpty: "이 팀의 2026 로스터는 아직 입력되지 않았습니다.",
+    roster27: "2027 로스터(구성 중)",
+    roster27Empty: "이 팀의 2027 로스터에 대한 정보가 없습니다.",
+    moves: "이동 및 루머",
+    movesEmpty: "이 팀에 기록된 이동이 없습니다.",
+    source: "출처",
+    statuts: { official: "공식", rumor: "루머", confirmed: "확정" },
+    types: { arrival: "영입", departure: "이탈", extension: "재계약", expiry: "계약 만료" },
+    roles: { TOP: "탑", JNG: "정글", MID: "미드", ADC: "원딜", SUP: "서포터" },
+    reasons: { retirement: "은퇴", verbal: "구두 합의", buyout: "계약 매입" }
+  },
+
   teams: { KOR: "대한민국", TWN: "대만" },
   /* Phases des ligues (modèle « lane » des fichiers data) */
   splits: { "Spring": "스프링", "Summer": "서머", "Winter": "윈터", "Season Finals": "시즌 파이널", "Regional Finals": "지역 결승", "Finals": "결승", "Split 1": "스플릿 1", "Split 2": "스플릿 2", "Split 3": "스플릿 3" },

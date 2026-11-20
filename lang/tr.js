@@ -68,6 +68,26 @@ window.LOL_I18N.tr = {
     LCS: { label: "LCS", sub: "Kuzey Amerika" }, CBLOL: { label: "CBLOL", sub: "Brezilya" }, LCP: { label: "LCP", sub: "Asya-Pasifik" }, LFL: { label: "LFL", sub: "Fransa" },
     LTA_N: { label: "LTA Kuzey", short: "LTA N", sub: "Kuzey Amerika" }, LTA_S: { label: "LTA Güney", short: "LTA S", sub: "Güney Amerika" }, PCS: { label: "PCS", sub: "Pasifik" }
   },
+  mercato: {
+    nav: "Transferler",
+    title: "Transfer dönemi",
+    team: "Takım",
+    pickTeam: "2026 kadrosunu, 2027 durumunu ve son hareketleri görmek için bir takım seçin.",
+    note: "Hareketler ve söylentiler kamuya açık kaynaklardan girilmiştir (20 Kasım 2026 itibarıyla); canlı haber çekilmez. Söylenti, duyuru değildir.",
+    back: "Takvime dön",
+    roster: "2026 kadrosu",
+    rosterEmpty: "Bu takım için 2026 kadrosu girilmedi.",
+    roster27: "2027 kadrosu (oluşturuluyor)",
+    roster27Empty: "Bu takımın 2027 kadrosu hakkında bilgi yok.",
+    moves: "Hareketler ve söylentiler",
+    movesEmpty: "Bu takım için kayıtlı hareket yok.",
+    source: "Kaynak",
+    statuts: { official: "Resmî", rumor: "Söylenti", confirmed: "Onaylandı" },
+    types: { arrival: "Katılım", departure: "Ayrılık", extension: "Uzatma", expiry: "Sözleşme sonu" },
+    roles: { TOP: "Top", JNG: "Jungle", MID: "Mid", ADC: "ADC", SUP: "Support" },
+    reasons: { retirement: "emeklilik", verbal: "sözlü anlaşma", buyout: "sözleşme satın alımı" }
+  },
+
   teams: { KOR: "Güney Kore", TWN: "Tayvan" },
   items: {
     2009: {

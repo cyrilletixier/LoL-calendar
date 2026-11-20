@@ -25,8 +25,47 @@
 
   window.LOL_DATA = window.LOL_DATA || { years: {} };
   window.LOL_DATA.years[2026] = {
-    /* Composition 2026 par sigle d'équipe (vue Mercato) : { "G2": [{ joueur: "Caps", role: "Mid" }] } */
-    rosters: {},
+    /* Composition 2026 par sigle d'équipe (vue Mercato). role : TOP, JNG, MID, ADC ou SUP.
+       Joueurs de la fin de saison 2026, remplaçants compris ; une équipe dont la liste est incomplète n'est pas saisie. */
+    rosters: {
+      "FNC": [{ joueur: "Soboro", role: "TOP" }, { joueur: "Razork", role: "JNG" }, { joueur: "Vladi", role: "MID" }, { joueur: "Upset", role: "ADC" }, { joueur: "Lospa", role: "SUP" }],
+      "G2": [{ joueur: "BrokenBlade", role: "TOP" }, { joueur: "SkewMond", role: "JNG" }, { joueur: "Caps", role: "MID" }, { joueur: "Hans sama", role: "ADC" }, { joueur: "Labrov", role: "SUP" }],
+      "GX": [{ joueur: "Oscarinin", role: "TOP" }, { joueur: "Isma", role: "JNG" }, { joueur: "Jackies", role: "MID" }, { joueur: "Flakked", role: "ADC" }, { joueur: "Noah", role: "ADC" }, { joueur: "Jun", role: "SUP" }],
+      "TH": [{ joueur: "Tracyn", role: "TOP" }, { joueur: "Daglas", role: "JNG" }, { joueur: "Serin", role: "MID" }, { joueur: "Hype", role: "ADC" }, { joueur: "Way", role: "SUP" }],
+      "KC": [{ joueur: "Canna", role: "TOP" }, { joueur: "Yike", role: "JNG" }, { joueur: "Kyeahoo", role: "MID" }, { joueur: "Caliste", role: "ADC" }, { joueur: "Busio", role: "SUP" }],
+      "MKOI": [{ joueur: "Myrwn", role: "TOP" }, { joueur: "Elyoya", role: "JNG" }, { joueur: "Jojopyun", role: "MID" }, { joueur: "Supa", role: "ADC" }, { joueur: "Alvaro", role: "SUP" }],
+      "NAVI": [{ joueur: "Maynter", role: "TOP" }, { joueur: "Rhilech", role: "JNG" }, { joueur: "Poby", role: "MID" }, { joueur: "SamD", role: "ADC" }, { joueur: "Parus", role: "SUP" }],
+      "SHF": [{ joueur: "Rooster", role: "TOP" }, { joueur: "Sheo", role: "JNG" }, { joueur: "Boukada", role: "JNG" }, { joueur: "nuc", role: "MID" }, { joueur: "Paduck", role: "ADC" }, { joueur: "Stend", role: "SUP" }],
+      "SK": [{ joueur: "Wunder", role: "TOP" }, { joueur: "Skeanz", role: "JNG" }, { joueur: "LIDER", role: "MID" }, { joueur: "SlowQ", role: "MID" }, { joueur: "Jopa", role: "ADC" }, { joueur: "Mikyx", role: "SUP" }],
+      "VIT": [{ joueur: "Naak Nako", role: "TOP" }, { joueur: "Lyncas", role: "JNG" }, { joueur: "FIESTA", role: "MID" }, { joueur: "Carzzy", role: "ADC" }, { joueur: "Fleshy", role: "SUP" }],
+      "BFX": [{ joueur: "Clear", role: "TOP" }, { joueur: "Raptor", role: "JNG" }, { joueur: "VicLaLee", role: "MID" }, { joueur: "Taeyoon", role: "ADC" }, { joueur: "Kellin", role: "SUP" }],
+      "BRO": [{ joueur: "Casting", role: "TOP" }, { joueur: "Gideon", role: "JNG" }, { joueur: "Roamer", role: "MID" }, { joueur: "Pungyeon", role: "MID" }, { joueur: "Teddy", role: "ADC" }, { joueur: "Namgung", role: "SUP" }],
+      "DK": [{ joueur: "Siwoo", role: "TOP" }, { joueur: "Lucid", role: "JNG" }, { joueur: "ShowMaker", role: "MID" }, { joueur: "Smash", role: "ADC" }, { joueur: "Career", role: "SUP" }],
+      "DNS": [{ joueur: "DuDu", role: "TOP" }, { joueur: "Pyosik", role: "JNG" }, { joueur: "Sharvel", role: "JNG" }, { joueur: "Clozer", role: "MID" }, { joueur: "deokdam", role: "ADC" }, { joueur: "Life", role: "SUP" }, { joueur: "Peter", role: "SUP" }],
+      "KRX": [{ joueur: "Frog", role: "TOP" }, { joueur: "Willer", role: "JNG" }, { joueur: "Vincenzo", role: "JNG" }, { joueur: "Ucal", role: "MID" }, { joueur: "Aiming", role: "ADC" }, { joueur: "Andil", role: "SUP" }],
+      "GEN": [{ joueur: "Kiin", role: "TOP" }, { joueur: "Canyon", role: "JNG" }, { joueur: "Chovy", role: "MID" }, { joueur: "Ruler", role: "ADC" }, { joueur: "Duro", role: "SUP" }],
+      "HLE": [{ joueur: "Zeus", role: "TOP" }, { joueur: "Kanavi", role: "JNG" }, { joueur: "Zeka", role: "MID" }, { joueur: "Gumayusi", role: "ADC" }, { joueur: "Delight", role: "SUP" }],
+      "KT": [{ joueur: "PerfecT", role: "TOP" }, { joueur: "Cuzz", role: "JNG" }, { joueur: "Bdd", role: "MID" }, { joueur: "Jiwoo", role: "ADC" }, { joueur: "Effort", role: "SUP" }],
+      "NS": [{ joueur: "Kingen", role: "TOP" }, { joueur: "Sponge", role: "JNG" }, { joueur: "Scout", role: "MID" }, { joueur: "Diable", role: "ADC" }, { joueur: "Lehends", role: "SUP" }],
+      "T1": [{ joueur: "Doran", role: "TOP" }, { joueur: "Oner", role: "JNG" }, { joueur: "Faker", role: "MID" }, { joueur: "Peyz", role: "ADC" }, { joueur: "Keria", role: "SUP" }],
+      "C9": [{ joueur: "Thanatos", role: "TOP" }, { joueur: "Blaber", role: "JNG" }, { joueur: "APA", role: "MID" }, { joueur: "Loki", role: "MID" }, { joueur: "Zven", role: "ADC" }, { joueur: "Tactical", role: "ADC" }, { joueur: "Vulcan", role: "SUP" }],
+      "DSG": [{ joueur: "Srtty", role: "TOP" }, { joueur: "KryRa", role: "JNG" }, { joueur: "callme", role: "MID" }, { joueur: "Sajed", role: "ADC" }, { joueur: "Lyonz", role: "SUP" }],
+      "FLY": [{ joueur: "Gakgos", role: "TOP" }, { joueur: "Gryffinn", role: "JNG" }, { joueur: "Quad", role: "MID" }, { joueur: "Massu", role: "ADC" }, { joueur: "Cryogen", role: "SUP" }],
+      "LYON": [{ joueur: "Dhokla", role: "TOP" }, { joueur: "Inspired", role: "JNG" }, { joueur: "Saint", role: "MID" }, { joueur: "Berserker", role: "ADC" }, { joueur: "Isles", role: "SUP" }],
+      "SEN": [{ joueur: "Impact", role: "TOP" }, { joueur: "HamBak", role: "JNG" }, { joueur: "DarkWings", role: "MID" }, { joueur: "Rahel", role: "ADC" }, { joueur: "huhi", role: "SUP" }],
+      "SR": [{ joueur: "Fudge", role: "TOP" }, { joueur: "Contractz", role: "JNG" }, { joueur: "Zinie", role: "MID" }, { joueur: "Bvoy", role: "ADC" }, { joueur: "Zeyzal", role: "SUP" }],
+      "TL": [{ joueur: "Morgan", role: "TOP" }, { joueur: "Josedeodo", role: "JNG" }, { joueur: "Quid", role: "MID" }, { joueur: "Yeon", role: "ADC" }, { joueur: "CoreJJ", role: "SUP" }],
+      "FLX": [{ joueur: "Zothve", role: "TOP" }, { joueur: "Peach", role: "JNG" }, { joueur: "Cody", role: "MID" }, { joueur: "BAO", role: "ADC" }, { joueur: "Momochi", role: "SUP" }],
+      "FUR": [{ joueur: "GUIGO", role: "TOP" }, { joueur: "Tatu", role: "JNG" }, { joueur: "Tutsz", role: "MID" }, { joueur: "Ayu", role: "ADC" }, { joueur: "Jojo", role: "SUP" }],
+      "LOS": [{ joueur: "Zest", role: "TOP" }, { joueur: "Curse", role: "JNG" }, { joueur: "Feisty", role: "MID" }, { joueur: "Duduhh", role: "ADC" }, { joueur: "Ackerman", role: "SUP" }],
+      "LEV": [{ joueur: "Devost", role: "TOP" }, { joueur: "Booki", role: "JNG" }, { joueur: "Enga", role: "MID" }, { joueur: "Strensh", role: "ADC" }, { joueur: "Shiku", role: "SUP" }],
+      "LOUD": [{ joueur: "xyno", role: "TOP" }, { joueur: "Sinatra", role: "JNG" }, { joueur: "Kaze", role: "MID" }, { joueur: "Rabelo", role: "ADC" }, { joueur: "uZent", role: "SUP" }],
+      "PAIN": [{ joueur: "Boal", role: "TOP" }, { joueur: "CarioK", role: "JNG" }, { joueur: "Namiru", role: "MID" }, { joueur: "Hena", role: "ADC" }, { joueur: "Ceos", role: "SUP" }],
+      "RED": [{ joueur: "zynts", role: "TOP" }, { joueur: "STEPZ", role: "JNG" }, { joueur: "Fuuu", role: "MID" }, { joueur: "Mortheus", role: "ADC" }, { joueur: "Manel", role: "SUP" }],
+      "GL": [{ joueur: "Carlsen", role: "TOP" }, { joueur: "Thayger", role: "JNG" }, { joueur: "OMON", role: "MID" }, { joueur: "Harpoon", role: "ADC" }, { joueur: "Zoelys", role: "SUP" }],
+      "KCB": [{ joueur: "TaoXu", role: "TOP" }, { joueur: "Yukino", role: "JNG" }, { joueur: "Kamiloo", role: "MID" }, { joueur: "Looki", role: "ADC" }, { joueur: "Prime", role: "SUP" }],
+      "SLY": [{ joueur: "Kryze", role: "TOP" }, { joueur: "Zicssi", role: "JNG" }, { joueur: "Jool", role: "MID" }, { joueur: "Aetinoth", role: "ADC" }, { joueur: "Piero", role: "SUP" }]
+    },
     items: [
       /* Fin de la Saison 3 de 2025 (7 janvier 2026) */
       { id: "s3-25", lane: "season", kind: "season", tpl: "season", n: 3, name: "Trials of Twilight", color: "s3", d0: "2025-08-27", d1: "01-07" },

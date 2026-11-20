@@ -74,6 +74,26 @@ window.LOL_I18N = window.LOL_I18N || {};
       LCS: { label: "LCS", sub: "Ameryka Północna" }, CBLOL: { label: "CBLOL", sub: "Brazylia" }, LCP: { label: "LCP", sub: "Azja i Pacyfik" }, LFL: { label: "LFL", sub: "Francja" },
       LTA_N: { label: "LTA Północ", short: "LTA N", sub: "Ameryka Północna" }, LTA_S: { label: "LTA Południe", short: "LTA S", sub: "Ameryka Południowa" }, PCS: { label: "PCS", sub: "Pacyfik" }
     },
+    mercato: {
+      nav: "Transfery",
+      title: "Rynek transferowy",
+      team: "Drużyna",
+      pickTeam: "Wybierz drużynę, aby zobaczyć skład na 2026, stan na 2027 i ostatnie ruchy.",
+      note: "Ruchy i plotki zebrane z publicznych źródeł (stan na 20 listopada 2026); nie pobieramy wiadomości na żywo. Plotka to nie ogłoszenie.",
+      back: "Powrót do kalendarza",
+      roster: "Skład 2026",
+      rosterEmpty: "Skład 2026 nie został uzupełniony dla tej drużyny.",
+      roster27: "Skład 2027 (w budowie)",
+      roster27Empty: "Brak informacji o składzie tej drużyny na 2027.",
+      moves: "Ruchy i plotki",
+      movesEmpty: "Brak zapisanych ruchów dla tej drużyny.",
+      source: "Źródło",
+      statuts: { official: "Oficjalnie", rumor: "Plotka", confirmed: "Potwierdzone" },
+      types: { arrival: "Przyjście", departure: "Odejście", extension: "Przedłużenie", expiry: "Koniec kontraktu" },
+      roles: { TOP: "Top", JNG: "Jungle", MID: "Mid", ADC: "ADC", SUP: "Support" },
+      reasons: { retirement: "koniec kariery", verbal: "ustne porozumienie", buyout: "wykup kontraktu" }
+    },
+
     teams: { KOR: "Korea Południowa", TWN: "Tajwan" },
     items: {
       2009: {

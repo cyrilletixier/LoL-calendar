@@ -141,8 +141,31 @@ window.LOL_I18N.en = {
     ["Universe · Orbit, Insight Editions and Louis Vuitton: books", "https://www.simonandschuster.com/books/Headliners/Insight-Editions/9798337407425"],
     ["2009–2023 · League of Legends Wiki: patches and seasons, year by year", "https://wiki.leagueoflegends.com/en-us/Patch/Season_2019"],
     ["2009–2023 · Liquipedia: Worlds, MSI and regional league winners", "https://liquipedia.net/leagueoflegends/World_Championships"],
-    ["2009–2023 · alviran.net: release dates of every champion", "https://alviran.net/blog/lol-champions-release-order-every-champion-2026/"]
+    ["2009–2023 · alviran.net: release dates of every champion", "https://alviran.net/blog/lol-champions-release-order-every-champion-2026/"],
+    ["2026-27 transfers · Team aAa: roster tracker and rumour table", "https://www.team-aaa.com/fr/actualite/le-roster-tracker-du-mercato-lol-intersaison-2026-2027_137566"],
+    ["2026-27 transfers · Strafe: LEC transfer tracker", "https://www.strafe.com/news/read/lec-2027-transfer-market-tracker-all-moves-so-far/"],
+    ["2026-27 transfers · Rostermania", "https://rostermania.lol/fr"]
   ],
+
+  mercato: {
+    nav: "Transfers",
+    title: "Transfer market",
+    team: "Team",
+    pickTeam: "Pick a team to see its 2026 roster, the 2027 picture and recent moves.",
+    note: "Moves and rumours entered from public sources (as of 20 November 2026); no live news is fetched. A rumour is not an announcement.",
+    back: "Back to the calendar",
+    roster: "2026 roster",
+    rosterEmpty: "2026 roster not filled in for this team.",
+    roster27: "2027 roster (in progress)",
+    roster27Empty: "No information on this team's 2027 roster.",
+    moves: "Moves and rumours",
+    movesEmpty: "No move recorded for this team.",
+    source: "Source",
+    statuts: { official: "Official", rumor: "Rumour", confirmed: "Confirmed" },
+    types: { arrival: "Arrival", departure: "Departure", extension: "Extension", expiry: "Contract end" },
+    roles: { TOP: "Top", JNG: "Jungle", MID: "Mid", ADC: "ADC", SUP: "Support" },
+    reasons: { retirement: "retirement", verbal: "verbal agreement", buyout: "contract buyout" }
+  },
 
   teams: { KOR: "South Korea", TWN: "Taiwan" },
 

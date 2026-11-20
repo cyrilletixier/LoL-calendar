@@ -75,10 +75,25 @@ window.LOL_I18N.fr = {
     swipeHint: "Faites glisser la frise pour changer de mois et touchez une barre pour ouvrir sa fiche. Contour pointillé : dates approximatives."
   },
 
-  mercato: { nav: "Mercato", title: "Mercato", team: "Équipe", pickTeam: "Choisissez une équipe pour voir sa composition 2026 et ses mouvements récents.",
-    note: "Mouvements saisis à partir de sources publiques ; aucune actualité n'est récupérée en direct.", back: "Retour au calendrier",
-    roster: "Composition 2026", rosterEmpty: "Composition 2026 non renseignée pour cette équipe.",
-    moves: "Mouvements", movesEmpty: "Aucun mouvement enregistré pour cette équipe.", from: "depuis", to: "vers", source: "Source" },
+  mercato: {
+    nav: "Mercato",
+    title: "Mercato",
+    team: "Équipe",
+    pickTeam: "Choisissez une équipe pour voir sa composition 2026, l'état de 2027 et les mouvements récents.",
+    note: "Mouvements et rumeurs saisis à partir de sources publiques (état au 20 novembre 2026) ; aucune actualité n'est récupérée en direct. Une rumeur n'est pas une annonce.",
+    back: "Retour au calendrier",
+    roster: "Composition 2026",
+    rosterEmpty: "Composition 2026 non renseignée pour cette équipe.",
+    roster27: "Composition 2027 (en construction)",
+    roster27Empty: "Aucune information sur la composition 2027 de cette équipe.",
+    moves: "Mouvements et rumeurs",
+    movesEmpty: "Aucun mouvement enregistré pour cette équipe.",
+    source: "Source",
+    statuts: { official: "Officiel", rumor: "Rumeur", confirmed: "Confirmé" },
+    types: { arrival: "Arrivée", departure: "Départ", extension: "Prolongation", expiry: "Fin de contrat" },
+    roles: { TOP: "Top", JNG: "Jungle", MID: "Mid", ADC: "ADC", SUP: "Support" },
+    reasons: { retirement: "retraite", verbal: "accord verbal", buyout: "rachat de contrat" }
+  },
 
   kinds: { anim: "Animation", book: "Livre", live: "Exposition, concert ou spectacle",
     season: "Saison", act: "Acte", patch: "Patch", champ: "Champion", event: "Événement en jeu",
@@ -150,7 +165,10 @@ window.LOL_I18N.fr = {
     ["Univers · Orbit, Insight Editions et Louis Vuitton : livres", "https://www.simonandschuster.com/books/Headliners/Insight-Editions/9798337407425"],
     ["2009–2023 · Wiki League of Legends : patchs et saisons, année par année", "https://wiki.leagueoflegends.com/en-us/Patch/Season_2019"],
     ["2009–2023 · Liquipedia : Worlds, MSI et vainqueurs des ligues régionales", "https://liquipedia.net/leagueoflegends/World_Championships"],
-    ["2009–2023 · alviran.net : dates de sortie de tous les champions", "https://alviran.net/blog/lol-champions-release-order-every-champion-2026/"]
+    ["2009–2023 · alviran.net : dates de sortie de tous les champions", "https://alviran.net/blog/lol-champions-release-order-every-champion-2026/"],
+    ["Mercato 2026-2027 · Team aAa : suivi des effectifs et table des rumeurs", "https://www.team-aaa.com/fr/actualite/le-roster-tracker-du-mercato-lol-intersaison-2026-2027_137566"],
+    ["Mercato 2026-2027 · Strafe : suivi des transferts LEC", "https://www.strafe.com/news/read/lec-2027-transfer-market-tracker-all-moves-so-far/"],
+    ["Mercato 2026-2027 · Rostermania", "https://rostermania.lol/fr"]
   ],
 
   /* Textes des éléments, par année puis par identifiant (voir data/<année>.js).

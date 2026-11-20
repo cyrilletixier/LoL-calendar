@@ -69,6 +69,26 @@ window.LOL_I18N.zh = {
     LCS: { label: "LCS", sub: "北美" }, CBLOL: { label: "CBLOL", sub: "巴西" }, LCP: { label: "LCP", sub: "亚太" }, LFL: { label: "LFL", sub: "法国" },
     LTA_N: { label: "LTA 北区", short: "LTA N", sub: "北美" }, LTA_S: { label: "LTA 南区", short: "LTA S", sub: "南美" }, PCS: { label: "PCS", sub: "太平洋" }
   },
+  mercato: {
+    nav: "转会",
+    title: "转会市场",
+    team: "战队",
+    pickTeam: "选择战队，查看其 2026 阵容、2027 现状和近期变动。",
+    note: "变动与传闻整理自公开来源（截至 2026 年 11 月 20 日），不会实时抓取新闻。传闻不等于官宣。",
+    back: "返回日历",
+    roster: "2026 阵容",
+    rosterEmpty: "该战队的 2026 阵容尚未录入。",
+    roster27: "2027 阵容（组建中）",
+    roster27Empty: "暂无该战队 2027 阵容的信息。",
+    moves: "变动与传闻",
+    movesEmpty: "该战队暂无记录的变动。",
+    source: "来源",
+    statuts: { official: "官宣", rumor: "传闻", confirmed: "已确认" },
+    types: { arrival: "加入", departure: "离队", extension: "续约", expiry: "合同到期" },
+    roles: { TOP: "上单", JNG: "打野", MID: "中单", ADC: "ADC", SUP: "辅助" },
+    reasons: { retirement: "退役", verbal: "口头协议", buyout: "买断合同" }
+  },
+
   teams: { KOR: "韩国", TWN: "台湾" },
   /* Phases des ligues (modèle « lane » des fichiers data) */
   splits: { "Spring": "春季赛", "Summer": "夏季赛", "Winter": "冬季赛", "Season Finals": "赛季总决赛", "Regional Finals": "区域决赛", "Finals": "总决赛", "Split 1": "第一赛段", "Split 2": "第二赛段", "Split 3": "第三赛段" },
