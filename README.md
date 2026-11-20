@@ -135,7 +135,7 @@ Si l'image ne se charge pas, la pastille revient automatiquement au sigle. Les l
 
 ## Mercato
 
-La page `#mercato` (bouton « Mercato » à côté des filtres) montre, pour une équipe : sa composition de fin 2026, l'état connu de 2027 (confirmé ou rumeur) et les mouvements récents (arrivées, départs, prolongations) avec leur source. Les données sont saisies à la main :
+La page `#mercato` (bouton « Mercato » à côté des filtres) montre, pour une équipe : sa composition de fin 2026, l'état connu de 2027 (confirmé ou rumeur) et les mouvements récents (arrivées, départs, prolongations) avec leur source. Sans équipe choisie, elle affiche les dix dernières rumeurs, toutes équipes confondues (un transfert écrit sur deux équipes n'y apparaît qu'une fois). Les données sont saisies à la main :
 
 ```js
 // data/mercato.js

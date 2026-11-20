@@ -43,10 +43,53 @@
     }).join("") + "</ul>";
   }
 
+  var LATEST = 10;
+  function teamLink(code) {
+    var n = esc(teamName(code));
+    return TEAMS[code] ? '<a href="#mercato" class="mer-team" data-team="' + esc(code) + '">' + n + "</a>" : n;
+  }
+  /* Dernières rumeurs toutes équipes confondues : un transfert écrit sur deux équipes n'apparaît qu'une fois */
+  function latestRumors() {
+    var all = [];
+    Object.keys(MERCATO).forEach(function (code) {
+      (MERCATO[code] || []).forEach(function (m) { if (m.statut === "rumeur") all.push({ code: code, m: m }); });
+    });
+    all.sort(function (a, b) {
+      if (a.m.date !== b.m.date) return a.m.date < b.m.date ? 1 : -1;
+      return (b.m.type === "arrivée") - (a.m.type === "arrivée");
+    });
+    var seen = {}, out = [];
+    all.forEach(function (e) {
+      var k = e.m.joueur + "|" + e.m.date + "|" + (e.m.source || "");
+      if (seen[k]) return;
+      seen[k] = 1; out.push(e);
+    });
+    return out.slice(0, LATEST);
+  }
+  function latestHtml() {
+    var list = latestRumors();
+    if (!list.length) return '<p class="mer-empty">' + esc(T("latestEmpty")) + "</p>";
+    return '<ul class="mer-list">' + list.map(function (e) {
+      var m = e.m, path;
+      if (m.type === "arrivée") path = (m.clubSource ? teamLink(m.clubSource) + " → " : "→ ") + teamLink(e.code);
+      else if (m.type === "départ") path = teamLink(e.code) + (m.clubDestination ? " → " + teamLink(m.clubDestination) : "");
+      else path = '<span class="tag">' + esc(T("types", TYPE_KEY[m.type] || m.type)) + "</span> " + teamLink(e.code);
+      var why = m.commentaire ? T("reasons", REASON_KEY[m.commentaire] || m.commentaire) : "";
+      return '<li><span class="mer-m">' + esc(m.date) + "</span> " + status(m.statut) + "<b>" + esc(m.joueur) + "</b>" +
+        (m.role ? ' <span class="mer-m">' + esc(T("roles", m.role)) + "</span>" : "") +
+        ' <span class="mer-m">' + path + "</span>" +
+        (why ? ' <span class="mer-m">(' + esc(why) + ")</span>" : "") +
+        (m.source ? ' · <a href="' + esc(m.source) + '" target="_blank" rel="noopener">' + esc(T("source")) + "</a>" : "") + "</li>";
+    }).join("") + "</ul>";
+  }
+
   function render() {
     var code = document.getElementById("mercatoTeam").value;
     var box = document.getElementById("mercatoBody");
-    if (!code) { box.innerHTML = '<p class="mer-empty">' + esc(T("pickTeam")) + "</p>"; return; }
+    if (!code) {
+      box.innerHTML = '<p class="mer-empty">' + esc(T("pickTeam")) + "</p><h3>" + esc(T("latest")) + "</h3>" + latestHtml();
+      return;
+    }
     var r26 = R26[code] || [], r27 = R27[code] || [];
     var mv = (MERCATO[code] || []).slice().sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; });
     var h = "<h3>" + esc(T("roster")) + "</h3>";
@@ -91,7 +134,7 @@
     document.getElementById("mercatoView").hidden = !on;
     document.querySelector(".ctrls").style.display = on ? "none" : "";
     Array.prototype.forEach.call(document.querySelector(".wrap").children, function (el) {
-      if (el.id === "mercatoView" || el.tagName === "HEADER" || el.classList.contains("lang-pick")) return;
+      if (el.id === "mercatoView" || el.tagName === "HEADER" || el.tagName === "FOOTER" || el.classList.contains("lang-pick")) return;
       el.style.display = on ? "none" : "";
     });
     if (on) render();
@@ -109,6 +152,13 @@
       '<div id="mercatoBody"></div><p class="mer-note" id="mercatoNote"></p><p><a href="#" id="mercatoBack"></a></p>';
     wrap.insertBefore(v, wrap.querySelector("footer"));
     document.getElementById("mercatoTeam").addEventListener("change", render);
+    document.getElementById("mercatoBody").addEventListener("click", function (ev) {
+      var a = ev.target.closest && ev.target.closest("a[data-team]");
+      if (!a) return;
+      ev.preventDefault();
+      document.getElementById("mercatoTeam").value = a.getAttribute("data-team");
+      render();
+    });
     document.getElementById("langSel").addEventListener("change", labels);
     window.addEventListener("hashchange", apply);
     labels();
