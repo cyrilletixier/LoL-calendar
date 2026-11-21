@@ -15,7 +15,7 @@ window.LOL_I18N.tr = {
     agendaAria: "Aylık ajanda", monthJumpAria: "Aya git",
     tlNote: "Ayrıntılar için bir çubuğa tıkla. Kesikli çerçeve: yaklaşık tarihler. Yamalar belirtilen tarihte, Pasifik saatiyle çıkar.",
     swipeHint: "Ayı değiştirmek için zaman çizelgesini kaydır, ayrıntılar için bir çubuğa dokun. Kesikli çerçeve: yaklaşık tarihler.",
-    footer: "Hayranlar tarafından hazırlanmış bir takvimdir, Riot Games ile bağlantısı yoktur. Veriler 19 Kasım 2026 itibarıyladır; gelecekteki tarihler değişebilir.",
+    footer: "Hayranlar tarafından hazırlanmış bir takvimdir, Riot Games ile bağlantısı yoktur. Veriler 21 Kasım 2026 itibarıyladır; gelecekteki tarihler değişebilir.",
     show: "Göster", all: "Tümü", gameOnly: "Yalnızca oyun", proOnly: "Yalnızca espor",
     groupGame: "Oyunda", groupPro: "Espor", groupUniverse: "Evren", universeOnly: "Yalnızca evren",
     yearUpcoming: "Gelecek yıl", yearDone: "Yıl tamamlandı",

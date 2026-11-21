@@ -21,7 +21,7 @@ window.LOL_I18N.en = {
     agendaAria: "Month-by-month agenda",
     monthJumpAria: "Jump to month",
     tlNote: "Click a bar to open its details. Dashed outline: approximate dates. Patches release on the date shown, Pacific Time.",
-    footer: "Fan-made calendar, not affiliated with Riot Games. Data as of November 19, 2026: future dates may still change.",
+    footer: "Fan-made calendar, not affiliated with Riot Games. Data as of November 21, 2026: future dates may still change.",
     show: "Show",
     all: "All",
     gameOnly: "In-game only",

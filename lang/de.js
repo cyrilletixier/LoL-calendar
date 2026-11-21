@@ -15,7 +15,7 @@ window.LOL_I18N.de = {
     agendaAria: "Monatsübersicht", monthJumpAria: "Zum Monat springen",
     tlNote: "Klicke auf einen Balken, um die Details zu öffnen. Gestrichelter Rand: ungefähre Daten. Patches erscheinen am angegebenen Datum, pazifische Zeit.",
     swipeHint: "Wische über die Zeitleiste, um den Monat zu wechseln, und tippe auf einen Balken für die Details. Gestrichelter Rand: ungefähre Daten.",
-    footer: "Kalender von Fans, ohne Verbindung zu Riot Games. Datenstand: 19. November 2026. Künftige Termine können sich noch ändern.",
+    footer: "Kalender von Fans, ohne Verbindung zu Riot Games. Datenstand: 21. November 2026. Künftige Termine können sich noch ändern.",
     show: "Anzeigen", all: "Alle", gameOnly: "Nur Spiel", proOnly: "Nur E-Sport",
     groupGame: "Im Spiel", groupPro: "E-Sport", groupUniverse: "Universum", universeOnly: "Nur Universum",
     yearUpcoming: "Kommendes Jahr", yearDone: "Jahr abgeschlossen",
