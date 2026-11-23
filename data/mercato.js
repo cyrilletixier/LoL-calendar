@@ -4,7 +4,7 @@
    statut: "officiel" | "rumeur", joueur, role: "TOP" | "JNG" | "MID" | "ADC" | "SUP" ("" si inconnu),
    clubSource (arrivée) ou clubDestination (départ, sigle de data/teams.js ou nom), commentaire: "" ou clé traduite
    (retraite, accord, rachat), source (adresse) }. Champ inconnu : "".
-   N'ajouter que des mouvements dont la source est vérifiable. État au 21 novembre 2026. */
+   N'ajouter que des mouvements dont la source est vérifiable. État au 23 novembre 2026. */
 window.LOL_MERCATO = {
   "BFX": [
     {"date": "2026-11-20", "type": "arrivée", "statut": "officiel", "joueur": "Vincenzo", "role": "JNG", "clubSource": "", "commentaire": "", "source": "https://www.strafe.com/news/read/lck-2027-transfer-market-tracker-all-moves/"},
@@ -64,6 +64,7 @@ window.LOL_MERCATO = {
     {"date": "2026-11", "type": "départ", "statut": "rumeur", "joueur": "Gryffinn", "role": "JNG", "clubDestination": "SR", "commentaire": "", "source": "https://rostermania.lol/fr"}
   ],
   "FNC": [
+    {"date": "2026-11-20", "type": "départ", "statut": "officiel", "joueur": "Upset", "role": "", "clubDestination": "", "commentaire": "", "source": "https://www.strafe.com/news/read/lec-2027-transfer-market-tracker-all-moves-so-far/"},
     {"date": "2026-11-19", "type": "départ", "statut": "officiel", "joueur": "Lospa", "role": "SUP", "clubDestination": "", "commentaire": "", "source": "https://x.com/FNATIC/status/2123415716074295744"},
     {"date": "2026-11-18", "type": "départ", "statut": "officiel", "joueur": "Razork", "role": "JNG", "clubDestination": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lec-fnatic-annonce-le-depart-de-razork-et-accelere-sa-refonte_137660"},
     {"date": "2026-11-17", "type": "prolongation", "statut": "rumeur", "joueur": "Soboro", "role": "TOP", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lec-fnatic-prolongerait-soboro-sur-la-toplane_137666"},
@@ -98,6 +99,7 @@ window.LOL_MERCATO = {
     {"date": "2026-10-22", "type": "arrivée", "statut": "rumeur", "joueur": "Serin", "role": "MID", "clubSource": "TH", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lfl-serin-ferait-un-retour-chez-galions-pour-2027_137373"}
   ],
   "GX": [
+    {"date": "2026-11-14", "type": "départ", "statut": "officiel", "joueur": "Lot", "role": "", "clubDestination": "", "commentaire": "", "source": "https://www.strafe.com/news/read/lec-2027-transfer-market-tracker-all-moves-so-far/"},
     {"date": "2026-11-14", "type": "départ", "statut": "officiel", "joueur": "Oscarinin", "role": "TOP", "clubDestination": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lec-giantx-officialise-les-departs-doscarinin-et-flakked_137642"},
     {"date": "2026-11-14", "type": "arrivée", "statut": "rumeur", "joueur": "Harpoon", "role": "ADC", "clubSource": "GL", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lec-harpoon-cloturerait-leffectif-de-giantx-pour-la-saison-2027_137635"},
     {"date": "2026-11-14", "type": "départ", "statut": "officiel", "joueur": "Flakked", "role": "ADC", "clubDestination": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lec-giantx-officialise-les-departs-doscarinin-et-flakked_137642"},
