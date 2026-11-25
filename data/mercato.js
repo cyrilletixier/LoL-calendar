@@ -241,6 +241,7 @@ window.LOL_MERCATO = {
     {"date": "2026-08-03", "type": "prolongation", "statut": "officiel", "joueur": "Morgan", "role": "TOP", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lcs-team-liquid-verrouille-son-toplaner-morgan-jusquen-2028_136789"}
   ],
   "VIT": [
+    {"date": "2026-11-17", "type": "départ", "statut": "officiel", "joueur": "Fiesta", "role": "MID", "clubDestination": "", "commentaire": "", "source": "https://www.strafe.com/news/read/lec-2027-transfer-market-tracker-all-moves-so-far/"},
     {"date": "2026-11-20", "type": "départ", "statut": "rumeur", "joueur": "FIESTA", "role": "MID", "clubDestination": "LOS", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/le-mercato-league-of-legends-de-lintersaison-2026-2027-tous-les-transferts-toutes-les-rumeurs_137145"},
     {"date": "2026-11-19", "type": "arrivée", "statut": "rumeur", "joueur": "Targamas", "role": "SUP", "clubSource": "", "commentaire": "accord", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lec-targamas-aurait-trouve-un-accord-verbal-pour-rejoindre-team-vitality-en-2027_137692"},
     {"date": "2026-11-18", "type": "arrivée", "statut": "rumeur", "joueur": "Sheo", "role": "JNG", "clubSource": "SHF", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lec-sheo-sengagerait-avec-team-vitality_137681"},

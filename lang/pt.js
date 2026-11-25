@@ -15,7 +15,7 @@ window.LOL_I18N.pt = {
     agendaAria: "Agenda mês a mês", monthJumpAria: "Ir para o mês",
     tlNote: "Clique em uma barra para ver os detalhes. Contorno tracejado: datas aproximadas. Os patches saem na data indicada, horário do Pacífico.",
     swipeHint: "Deslize a linha do tempo para mudar de mês e toque em uma barra para ver os detalhes. Contorno tracejado: datas aproximadas.",
-    footer: "Calendário feito por fãs, sem vínculo com a Riot Games. Dados de 23 de novembro de 2026: as datas futuras ainda podem mudar.",
+    footer: "Calendário feito por fãs, sem vínculo com a Riot Games. Dados de 25 de novembro de 2026: as datas futuras ainda podem mudar.",
     show: "Mostrar", all: "Tudo", gameOnly: "Só o jogo", proOnly: "Só esports",
     groupGame: "No jogo", groupPro: "Esports", groupUniverse: "Universo", universeOnly: "Só o universo",
     yearUpcoming: "Ano por vir", yearDone: "Ano encerrado",
