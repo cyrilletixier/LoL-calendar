@@ -144,7 +144,7 @@ La page `#mercato` (bouton « Mercato » à côté des filtres) montre, pour une
 rosters: { "HLE": [{ joueur: "Zeka", role: "MID", statut: "confirmé" }] }   // statut seulement en 2027
 ```
 
-Les règles de saisie (statuts, sources, un transfert écrit sur les deux équipes) sont dans `CLAUDE.md`. Aucune actualité n'est récupérée en direct : l'état affiché est celui de la dernière mise à jour du fichier (27 novembre 2026). Les ligues couvertes sont la LEC, la LCK, la LCS, le CBLOL et trois équipes de LFL ; la LPL et la LCP n'ont pas encore de compositions.
+Les règles de saisie (statuts, sources, un transfert écrit sur les deux équipes) sont dans `CLAUDE.md`. Aucune actualité n'est récupérée en direct : l'état affiché est celui de la dernière mise à jour du fichier (27 novembre 2026). Les ligues couvertes sont la LEC, la LCK, la LCS, le CBLOL et trois équipes de LFL ; la LPL (fins de contrat et premières rumeurs seulement) et la LCP n'ont pas encore de compositions.
 
 ## Images de champions
 

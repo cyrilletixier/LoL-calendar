@@ -17,7 +17,44 @@ window.LOL_MERCATO = {
     {"date": "2026-11-26", "type": "départ", "statut": "officiel", "joueur": "Taeyoon", "role": "ADC", "clubDestination": "KT", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lck-les-premieres-annonces-tombent-du-cote-des-equipes-coreennes_137656"}
   ],
   "BLG": [
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "Bin", "role": "TOP", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "Viper", "role": "ADC", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
     {"date": "2026-11-26", "type": "départ", "statut": "rumeur", "joueur": "Viper", "role": "ADC", "clubDestination": "KRX", "commentaire": "", "source": "https://www.ginx.tv/en/viper-scout-lucid-drx-2027-lck"}
+  ],
+  "TES": [
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "369", "role": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "Tian", "role": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "Creme", "role": "MID", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "JackeyLove", "role": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "Zhuo", "role": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"}
+  ],
+  "IG": [
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "TheShy", "role": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "Wei", "role": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "JiaQi", "role": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "Assum", "role": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "Meiko", "role": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"}
+  ],
+  "JDG": [
+    {"date": "2026-11-25", "type": "départ", "statut": "rumeur", "joueur": "GALA", "role": "", "clubDestination": "WBG", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "Xiaoxu", "role": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "JunJia", "role": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "xiaofeng", "role": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "HongQ", "role": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "GALA", "role": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"}
+  ],
+  "WBG": [
+    {"date": "2026-11-25", "type": "arrivée", "statut": "rumeur", "joueur": "GALA", "role": "", "clubSource": "JDG", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "Zika", "role": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "Xiaohao", "role": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "Xiaohu", "role": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "Elk", "role": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "Jwei", "role": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "Moham", "role": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"}
+  ],
+  "AL": [
+    {"date": "2026-11-24", "type": "arrivée", "statut": "rumeur", "joueur": "Monki", "role": "", "clubSource": "Team WE", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"},
+    {"date": "2026-11-17", "type": "fin de contrat", "statut": "officiel", "joueur": "Shanks", "role": "MID", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lpl-les-premieres-rumeurs-agitent-la-ligue-chinoise_137690"}
   ],
   "BRO": [
     {"date": "2026-11-18", "type": "arrivée", "statut": "officiel", "joueur": "SeTab", "role": "MID", "clubSource": "NS Academy", "commentaire": "", "source": "https://x.com/Sheep_Esports/status/2122985267858419974"},
