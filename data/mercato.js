@@ -4,18 +4,20 @@
    statut: "officiel" | "rumeur", joueur, role: "TOP" | "JNG" | "MID" | "ADC" | "SUP" ("" si inconnu),
    clubSource (arrivée) ou clubDestination (départ, sigle de data/teams.js ou nom), commentaire: "" ou clé traduite
    (retraite, accord, rachat), source (adresse) }. Champ inconnu : "".
-   N'ajouter que des mouvements dont la source est vérifiable. État au 26 novembre 2026. */
+   N'ajouter que des mouvements dont la source est vérifiable. État au 27 novembre 2026. */
 window.LOL_MERCATO = {
   "BFX": [
     {"date": "2026-11-20", "type": "arrivée", "statut": "officiel", "joueur": "Vincenzo", "role": "JNG", "clubSource": "", "commentaire": "", "source": "https://www.strafe.com/news/read/lck-2027-transfer-market-tracker-all-moves/"},
     {"date": "2026-11-20", "type": "prolongation", "statut": "officiel", "joueur": "VicLa", "role": "MID", "commentaire": "", "source": "https://www.strafe.com/news/read/lck-2027-transfer-market-tracker-all-moves/"},
     {"date": "2026-11-20", "type": "départ", "statut": "officiel", "joueur": "Clear", "role": "", "clubDestination": "", "commentaire": "", "source": "https://www.strafe.com/news/read/lck-2027-transfer-market-tracker-all-moves/"},
-    {"date": "2026-11-20", "type": "départ", "statut": "officiel", "joueur": "Taeyoon", "role": "ADC", "clubDestination": "", "commentaire": "", "source": "https://www.strafe.com/news/read/lck-2027-transfer-market-tracker-all-moves/"},
     {"date": "2026-11-20", "type": "arrivée", "statut": "rumeur", "joueur": "Thanatos", "role": "TOP", "clubSource": "C9", "commentaire": "", "source": "https://www.sheepesports.com/en/articles/sources-thanatos-set-to-join-bnk-fearx-in-the-lck/en"},
     {"date": "2026-11-20", "type": "arrivée", "statut": "officiel", "joueur": "Noah", "role": "ADC", "clubSource": "GX", "commentaire": "", "source": "https://x.com/Sheep_Esports/status/2123688881136562530"},
     {"date": "2026-11-20", "type": "départ", "statut": "officiel", "joueur": "Kellin", "role": "SUP", "clubDestination": "KT", "commentaire": "", "source": "https://x.com/Sheep_Esports/status/2123721774613594147"},
     {"date": "2026-11-19", "type": "départ", "statut": "officiel", "joueur": "Raptor", "role": "JNG", "clubDestination": "KT", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/le-mercato-league-of-legends-de-lintersaison-2026-2027-tous-les-transferts-toutes-les-rumeurs_137145"},
-    {"date": "2026-10-20", "type": "départ", "statut": "rumeur", "joueur": "Taeyoon", "role": "ADC", "clubDestination": "KT", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lck-kt-rolster-ferait-plusieurs-changements-en-prevision-de-2027-et-ciblerait-raptor-taeyoon-et-kellin_137349"}
+    {"date": "2026-11-26", "type": "départ", "statut": "officiel", "joueur": "Taeyoon", "role": "ADC", "clubDestination": "KT", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lck-les-premieres-annonces-tombent-du-cote-des-equipes-coreennes_137656"}
+  ],
+  "BLG": [
+    {"date": "2026-11-26", "type": "départ", "statut": "rumeur", "joueur": "Viper", "role": "ADC", "clubDestination": "KRX", "commentaire": "", "source": "https://www.ginx.tv/en/viper-scout-lucid-drx-2027-lck"}
   ],
   "BRO": [
     {"date": "2026-11-18", "type": "arrivée", "statut": "officiel", "joueur": "SeTab", "role": "MID", "clubSource": "NS Academy", "commentaire": "", "source": "https://x.com/Sheep_Esports/status/2122985267858419974"},
@@ -94,7 +96,7 @@ window.LOL_MERCATO = {
     {"date": "2026-11-20", "type": "départ", "statut": "rumeur", "joueur": "Duro", "role": "SUP", "clubDestination": "KRX", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/le-mercato-league-of-legends-de-lintersaison-2026-2027-tous-les-transferts-toutes-les-rumeurs_137145"},
     {"date": "2026-11-24", "type": "arrivée", "statut": "officiel", "joueur": "Cloud", "role": "SUP", "clubSource": "", "commentaire": "", "source": "https://www.invenglobal.com/articles/29049/geng-completes-2027-roster-with-signings-of-siwoo-sharvel-and-cloud"},
     {"date": "2026-11-24", "type": "arrivée", "statut": "officiel", "joueur": "Siwoo", "role": "TOP", "clubSource": "DK", "commentaire": "", "source": "https://www.invenglobal.com/articles/29049/geng-completes-2027-roster-with-signings-of-siwoo-sharvel-and-cloud"},
-    {"date": "2026-11-19", "type": "départ", "statut": "officiel", "joueur": "Kiin", "role": "TOP", "clubDestination": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-gen-g-acte-les-departs-de-kiin-et-canyon-siwoo-pressenti-a-la-toplane-pour-2027_137683"},
+    {"date": "2026-11-26", "type": "départ", "statut": "officiel", "joueur": "Kiin", "role": "TOP", "clubDestination": "HLE", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lck-les-premieres-annonces-tombent-du-cote-des-equipes-coreennes_137656"},
     {"date": "2026-11-24", "type": "départ", "statut": "officiel", "joueur": "Canyon", "role": "JNG", "clubDestination": "HLE", "commentaire": "", "source": "https://esportnow.gg/lol/news/canyon-officially-joins-hanwha-life-esports-for-2027-lck-season"}
   ],
   "GL": [
@@ -120,7 +122,7 @@ window.LOL_MERCATO = {
     {"date": "2026-11-23", "type": "départ", "statut": "officiel", "joueur": "Delight", "role": "SUP", "clubDestination": "DK", "commentaire": "", "source": "https://www.invenglobal.com/articles/28981/dk-completes-5-man-roster-with-final-piece-delight-yoo-hwan-joong"},
     {"date": "2026-11-25", "type": "départ", "statut": "officiel", "joueur": "Zeus", "role": "TOP", "clubDestination": "T1", "commentaire": "", "source": "https://www.invenglobal.com/articles/29114/zeus-choi-woo-je-returns-to-t1"},
     {"date": "2026-11-19", "type": "départ", "statut": "officiel", "joueur": "Kanavi", "role": "JNG", "clubDestination": "DK", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/le-mercato-league-of-legends-de-lintersaison-2026-2027-tous-les-transferts-toutes-les-rumeurs_137145"},
-    {"date": "2026-11-18", "type": "arrivée", "statut": "rumeur", "joueur": "Kiin", "role": "TOP", "clubSource": "GEN", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lck-kiin-et-canyon-chez-hanwha-life-esports-pour-2027_137678"},
+    {"date": "2026-11-26", "type": "arrivée", "statut": "officiel", "joueur": "Kiin", "role": "TOP", "clubSource": "GEN", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lck-les-premieres-annonces-tombent-du-cote-des-equipes-coreennes_137656"},
     {"date": "2026-11-24", "type": "arrivée", "statut": "officiel", "joueur": "Canyon", "role": "JNG", "clubSource": "GEN", "commentaire": "", "source": "https://esportnow.gg/lol/news/canyon-officially-joins-hanwha-life-esports-for-2027-lck-season"},
     {"date": "2026-11", "type": "arrivée", "statut": "rumeur", "joueur": "Career", "role": "SUP", "clubSource": "DK", "commentaire": "", "source": "https://rostermania.lol/fr"}
   ],
@@ -135,6 +137,8 @@ window.LOL_MERCATO = {
     {"date": "2026-11-08", "type": "prolongation", "statut": "rumeur", "joueur": "Looki", "role": "ADC", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/le-mercato-league-of-legends-de-lintersaison-2026-2027-tous-les-transferts-toutes-les-rumeurs_137145"}
   ],
   "KRX": [
+    {"date": "2026-11-26", "type": "arrivée", "statut": "rumeur", "joueur": "Viper", "role": "ADC", "clubSource": "BLG", "commentaire": "", "source": "https://www.ginx.tv/en/viper-scout-lucid-drx-2027-lck"},
+    {"date": "2026-11-26", "type": "arrivée", "statut": "rumeur", "joueur": "Scout", "role": "MID", "clubSource": "NS", "commentaire": "", "source": "https://www.ginx.tv/en/viper-scout-lucid-drx-2027-lck"},
     {"date": "2026-11-17", "type": "départ", "statut": "officiel", "joueur": "Rich", "role": "", "clubDestination": "", "commentaire": "", "source": "https://www.strafe.com/news/read/lck-2027-transfer-market-tracker-all-moves/"},
     {"date": "2026-11-17", "type": "départ", "statut": "officiel", "joueur": "Frog", "role": "TOP", "clubDestination": "", "commentaire": "", "source": "https://www.strafe.com/news/read/lck-2027-transfer-market-tracker-all-moves/"},
     {"date": "2026-11-17", "type": "départ", "statut": "officiel", "joueur": "Willer", "role": "", "clubDestination": "", "commentaire": "", "source": "https://www.strafe.com/news/read/lck-2027-transfer-market-tracker-all-moves/"},
@@ -152,7 +156,7 @@ window.LOL_MERCATO = {
     {"date": "2026-11-20", "type": "arrivée", "statut": "officiel", "joueur": "Kellin", "role": "SUP", "clubSource": "BFX", "commentaire": "", "source": "https://x.com/Sheep_Esports/status/2123721774613594147"},
     {"date": "2026-11-19", "type": "arrivée", "statut": "officiel", "joueur": "Raptor", "role": "JNG", "clubSource": "BFX", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/le-mercato-league-of-legends-de-lintersaison-2026-2027-tous-les-transferts-toutes-les-rumeurs_137145"},
     {"date": "2026-11-17", "type": "départ", "statut": "officiel", "joueur": "Cuzz", "role": "JNG", "clubDestination": "DNS", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lck-les-premieres-annonces-tombent-du-cote-des-equipes-coreennes_137656"},
-    {"date": "2026-10-20", "type": "arrivée", "statut": "rumeur", "joueur": "Taeyoon", "role": "ADC", "clubSource": "BFX", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lck-kt-rolster-ferait-plusieurs-changements-en-prevision-de-2027-et-ciblerait-raptor-taeyoon-et-kellin_137349"},
+    {"date": "2026-11-26", "type": "arrivée", "statut": "officiel", "joueur": "Taeyoon", "role": "ADC", "clubSource": "BFX", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lck-les-premieres-annonces-tombent-du-cote-des-equipes-coreennes_137656"},
     {"date": "2026-10-09", "type": "prolongation", "statut": "officiel", "joueur": "PerfecT", "role": "TOP", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lck-kt-rolster-securise-perfect-et-bdd-jusquen-2028_137260"},
     {"date": "2026-10-09", "type": "prolongation", "statut": "officiel", "joueur": "Bdd", "role": "MID", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lck-kt-rolster-securise-perfect-et-bdd-jusquen-2028_137260"}
   ],
@@ -180,6 +184,7 @@ window.LOL_MERCATO = {
     {"date": "2026-10-29", "type": "prolongation", "statut": "rumeur", "joueur": "Rhilech", "role": "JNG", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lec-navi-preparerait-2027-en-reconstruisant-son-equipe-autour-de-rhilech_137464"}
   ],
   "NS": [
+    {"date": "2026-11-26", "type": "départ", "statut": "rumeur", "joueur": "Scout", "role": "MID", "clubDestination": "KRX", "commentaire": "", "source": "https://www.ginx.tv/en/viper-scout-lucid-drx-2027-lck"},
     {"date": "2026-11-19", "type": "arrivée", "statut": "officiel", "joueur": "Pyosik", "role": "JNG", "clubSource": "", "commentaire": "", "source": "https://www.strafe.com/news/read/lck-2027-transfer-market-tracker-all-moves/"},
     {"date": "2026-11-19", "type": "arrivée", "statut": "officiel", "joueur": "Andil", "role": "SUP", "clubSource": "", "commentaire": "", "source": "https://www.strafe.com/news/read/lck-2027-transfer-market-tracker-all-moves/"},
     {"date": "2026-11-19", "type": "prolongation", "statut": "officiel", "joueur": "Kingen", "role": "TOP", "commentaire": "", "source": "https://www.strafe.com/news/read/lck-2027-transfer-market-tracker-all-moves/"},
@@ -191,6 +196,8 @@ window.LOL_MERCATO = {
     {"date": "2026-11-19", "type": "arrivée", "statut": "officiel", "joueur": "Deft", "role": "ADC", "clubSource": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lck-nongshim-redforce-officialise-le-recrutement-de-deft-pour-la-saison-2027_137686"}
   ],
   "SHF": [
+    {"date": "2026-11-25", "type": "arrivée", "statut": "rumeur", "joueur": "Daglas", "role": "JNG", "clubSource": "TH", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lec-shifters-bouclerait-son-effectif-2027-avec-le-recrutement-de-daglas-comme-jungler_137736"},
+    {"date": "2026-11-25", "type": "arrivée", "statut": "rumeur", "joueur": "Adam", "role": "TOP", "clubSource": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lec-shifters-bouclerait-son-effectif-2027-avec-le-recrutement-de-daglas-comme-jungler_137736"},
     {"date": "2026-11-20", "type": "arrivée", "statut": "rumeur", "joueur": "SamD", "role": "ADC", "clubSource": "NAVI", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lec-shifters-lancerait-sa-reconstruction-avec-le-recrutement-de-samd_137699"},
     {"date": "2026-11-20", "type": "arrivée", "statut": "rumeur", "joueur": "Kamiloo", "role": "MID", "clubSource": "KCB", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lec-shifters-ferait-revenir-kamiloo-sur-la-midlane-pour-le-lec-2027_137700"},
     {"date": "2026-11-20", "type": "arrivée", "statut": "rumeur", "joueur": "Fleshy", "role": "SUP", "clubSource": "VIT", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lec-shifters-verrouillerait-fleshy-au-poste-de-support-pour-2027_137703"},
@@ -233,6 +240,7 @@ window.LOL_MERCATO = {
     {"date": "2026-11-25", "type": "arrivée", "statut": "officiel", "joueur": "Zeus", "role": "TOP", "clubSource": "HLE", "commentaire": "", "source": "https://www.invenglobal.com/articles/29114/zeus-choi-woo-je-returns-to-t1"}
   ],
   "TH": [
+    {"date": "2026-11-25", "type": "départ", "statut": "rumeur", "joueur": "Daglas", "role": "JNG", "clubDestination": "SHF", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lec-shifters-bouclerait-son-effectif-2027-avec-le-recrutement-de-daglas-comme-jungler_137736"},
     {"date": "2026-11-18", "type": "départ", "statut": "officiel", "joueur": "Daglas", "role": "JNG", "clubDestination": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/le-mercato-league-of-legends-de-lintersaison-2026-2027-tous-les-transferts-toutes-les-rumeurs_137145"},
     {"date": "2026-11-06", "type": "départ", "statut": "officiel", "joueur": "Way", "role": "SUP", "clubDestination": "", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lec-team-heretics-officialise-le-depart-de-son-support-way_137540"},
     {"date": "2026-11-03", "type": "prolongation", "statut": "officiel", "joueur": "Tracyn", "role": "TOP", "commentaire": "", "source": "https://www.team-aaa.com/fr/actualite/mercato-lol-lec-team-heretics-prolonge-son-troplaner-tracyn-jusquen-2028_137500"},

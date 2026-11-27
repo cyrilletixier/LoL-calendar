@@ -16,7 +16,7 @@ window.LOL_I18N.zh = {
     agendaAria: "按月日程", monthJumpAria: "跳转到月份",
     tlNote: "点击时间条查看详情。虚线边框：日期为大致时间。版本按所示日期（太平洋时间）上线。",
     swipeHint: "左右滑动时间轴切换月份，点按时间条查看详情。虚线边框：日期为大致时间。",
-    footer: "粉丝制作的非官方日历，与 Riot Games 无关。数据截至 2026 年 11 月 26 日，未来日期仍可能调整。",
+    footer: "粉丝制作的非官方日历，与 Riot Games 无关。数据截至 2026 年 11 月 27 日，未来日期仍可能调整。",
     show: "显示", all: "全部", gameOnly: "仅游戏", proOnly: "仅电竞",
     groupGame: "游戏内", groupPro: "电竞", groupUniverse: "宇宙", universeOnly: "仅宇宙",
     yearUpcoming: "即将到来的年份", yearDone: "已结束的年份",

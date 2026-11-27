@@ -21,7 +21,7 @@ window.LOL_I18N.fr = {
     agendaAria: "Agenda mois par mois",
     monthJumpAria: "Aller au mois",
     tlNote: "Cliquez sur une barre pour afficher sa fiche. Contour pointillé : dates approximatives. Les patchs sortent à la date indiquée, heure du Pacifique.",
-    footer: "Calendrier de fan, sans lien avec Riot Games. Données arrêtées au 26 novembre 2026 : les dates futures peuvent encore bouger.",
+    footer: "Calendrier de fan, sans lien avec Riot Games. Données arrêtées au 27 novembre 2026 : les dates futures peuvent encore bouger.",
     show: "Afficher",
     all: "Tout",
     gameOnly: "En jeu seulement",

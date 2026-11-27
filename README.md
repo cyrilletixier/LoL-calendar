@@ -144,7 +144,7 @@ La page `#mercato` (bouton « Mercato » à côté des filtres) montre, pour une
 rosters: { "HLE": [{ joueur: "Zeka", role: "MID", statut: "confirmé" }] }   // statut seulement en 2027
 ```
 
-Les règles de saisie (statuts, sources, un transfert écrit sur les deux équipes) sont dans `CLAUDE.md`. Aucune actualité n'est récupérée en direct : l'état affiché est celui de la dernière mise à jour du fichier (26 novembre 2026). Les ligues couvertes sont la LEC, la LCK, la LCS, le CBLOL et trois équipes de LFL ; la LPL et la LCP n'ont pas encore de compositions.
+Les règles de saisie (statuts, sources, un transfert écrit sur les deux équipes) sont dans `CLAUDE.md`. Aucune actualité n'est récupérée en direct : l'état affiché est celui de la dernière mise à jour du fichier (27 novembre 2026). Les ligues couvertes sont la LEC, la LCK, la LCS, le CBLOL et trois équipes de LFL ; la LPL et la LCP n'ont pas encore de compositions.
 
 ## Images de champions
 
@@ -152,7 +152,7 @@ Le champ `champ` d'un élément (`champ: "Locke"`) affiche la vignette du champi
 
 ## Sources des données
 
-Wiki League of Legends (dates de tous les patchs et des saisons classées), Liquipedia (dates, vainqueurs et finalistes des ligues, des Worlds et du MSI depuis 2011), liste des dates de sortie des champions, calendriers officiels des patchs de Riot Games, notes de patch, pages d'événements Riot, LoL Esports, Sheep Esports, Strafe (trackers d'effectifs LEC et LCK), Team aAa, Rostermania, esports.gg, Liquipedia, lolnow.gg, Wikipédia et la presse esport (Inven Global, GosuGamers, Dot Esports, esports.gg, esportnow.gg…). Pour l'univers : Fortiche, éditeurs (Orbit, Insight Editions, Louis Vuitton), salles de concert et presse. Pour 2027 : annonces de Riot (dont esports.net, 14 novembre 2026) sur les lieux, dates provisoires de la KeSPA pour les Worlds, report de l'Esports Nations Cup, début du LEC 2027 (LoL Esports, 16 novembre 2026). Données arrêtées au 26 novembre 2026. La liste détaillée figure en bas de page.
+Wiki League of Legends (dates de tous les patchs et des saisons classées), Liquipedia (dates, vainqueurs et finalistes des ligues, des Worlds et du MSI depuis 2011), liste des dates de sortie des champions, calendriers officiels des patchs de Riot Games, notes de patch, pages d'événements Riot, LoL Esports, Sheep Esports, Strafe (trackers d'effectifs LEC et LCK), Team aAa, Rostermania, esports.gg, Liquipedia, lolnow.gg, Wikipédia et la presse esport (Inven Global, GosuGamers, Dot Esports, esports.gg, esportnow.gg, GINX TV…). Pour l'univers : Fortiche, éditeurs (Orbit, Insight Editions, Louis Vuitton), salles de concert et presse. Pour 2027 : annonces de Riot (dont esports.net, 14 novembre 2026) sur les lieux, dates provisoires de la KeSPA pour les Worlds, report de l'Esports Nations Cup, début du LEC 2027 (LoL Esports, 16 novembre 2026). Données arrêtées au 27 novembre 2026. La liste détaillée figure en bas de page.
 
 ## Avertissement
 
