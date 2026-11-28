@@ -5,7 +5,7 @@
 (function () {
   window.LOL_DATA = window.LOL_DATA || { years: {} };
   window.LOL_DATA.years[2027] = {
-    /* Composition 2027 par sigle d'équipe (vue Mercato), état au 27 novembre 2026. statut : "confirmé" (annonce officielle
+    /* Composition 2027 par sigle d'équipe (vue Mercato), état au 28 novembre 2026. statut : "confirmé" (annonce officielle
        ou contrat en cours donné sans balise rumeur) ou "rumeur". Les postes non pourvus ou inconnus sont absents. */
     rosters: {
       "FNC": [{ joueur: "Soboro", role: "TOP", statut: "rumeur" }, { joueur: "Yike", role: "JNG", statut: "rumeur" }, { joueur: "Vladi", role: "MID", statut: "rumeur" }, { joueur: "Doggo", role: "ADC", statut: "rumeur" }, { joueur: "Labrov", role: "SUP", statut: "rumeur" }],
@@ -18,7 +18,7 @@
       "SHF": [{ joueur: "Adam", role: "TOP", statut: "rumeur" }, { joueur: "Daglas", role: "JNG", statut: "rumeur" }, { joueur: "Kamiloo", role: "MID", statut: "rumeur" }, { joueur: "SamD", role: "ADC", statut: "rumeur" }, { joueur: "Fleshy", role: "SUP", statut: "rumeur" }],
       "SK": [{ joueur: "Kryze", role: "TOP", statut: "rumeur" }, { joueur: "Zicssi", role: "JNG", statut: "rumeur" }, { joueur: "SlowQ", role: "MID", statut: "rumeur" }, { joueur: "3XA", role: "ADC", statut: "rumeur" }, { joueur: "Lospa", role: "SUP", statut: "rumeur" }],
       "VIT": [{ joueur: "Sheo", role: "JNG", statut: "rumeur" }, { joueur: "Guti", role: "MID", statut: "rumeur" }, { joueur: "Jopa", role: "ADC", statut: "rumeur" }, { joueur: "Targamas", role: "SUP", statut: "rumeur" }],
-      "BFX": [{ joueur: "Thanatos", role: "TOP", statut: "rumeur" }, { joueur: "Vincenzo", role: "JNG", statut: "confirmé" }, { joueur: "VicLaLee", role: "MID", statut: "confirmé" }, { joueur: "Noah", role: "ADC", statut: "confirmé" }],
+      "BFX": [{ joueur: "Thanatos", role: "TOP", statut: "confirmé" }, { joueur: "Vincenzo", role: "JNG", statut: "confirmé" }, { joueur: "VicLaLee", role: "MID", statut: "confirmé" }, { joueur: "Noah", role: "ADC", statut: "confirmé" }],
       "BRO": [{ joueur: "Casting", role: "TOP", statut: "confirmé" }, { joueur: "Gideon", role: "JNG", statut: "confirmé" }, { joueur: "SeTab", role: "MID", statut: "confirmé" }, { joueur: "Teddy", role: "ADC", statut: "confirmé" }, { joueur: "Namgung", role: "SUP", statut: "confirmé" }],
       "DK": [{ joueur: "Doran", role: "TOP", statut: "confirmé" }, { joueur: "Kanavi", role: "JNG", statut: "confirmé" }, { joueur: "ShowMaker", role: "MID", statut: "confirmé" }, { joueur: "Smash", role: "ADC", statut: "confirmé" }, { joueur: "Delight", role: "SUP", statut: "confirmé" }],
       "DNS": [{ joueur: "DuDu", role: "TOP", statut: "confirmé" }, { joueur: "Cuzz", role: "JNG", statut: "confirmé" }, { joueur: "Ucal", role: "MID", statut: "confirmé" }, { joueur: "deokdam", role: "ADC", statut: "confirmé" }, { joueur: "Bluffing", role: "SUP", statut: "confirmé" }],

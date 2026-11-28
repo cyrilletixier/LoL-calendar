@@ -15,7 +15,7 @@ window.LOL_I18N.vi = {
     agendaAria: "Lịch theo tháng", monthJumpAria: "Đến tháng",
     tlNote: "Nhấp vào một thanh để xem chi tiết. Viền nét đứt: ngày dự kiến. Bản cập nhật ra mắt vào ngày ghi, theo giờ Thái Bình Dương.",
     swipeHint: "Vuốt dòng thời gian để đổi tháng, chạm vào một thanh để xem chi tiết. Viền nét đứt: ngày dự kiến.",
-    footer: "Lịch do người hâm mộ thực hiện, không liên quan đến Riot Games. Dữ liệu tính đến ngày 27/11/2026; các mốc trong tương lai có thể thay đổi.",
+    footer: "Lịch do người hâm mộ thực hiện, không liên quan đến Riot Games. Dữ liệu tính đến ngày 28/11/2026; các mốc trong tương lai có thể thay đổi.",
     show: "Hiển thị", all: "Tất cả", gameOnly: "Chỉ trong game", proOnly: "Chỉ esports",
     groupGame: "Trong game", groupPro: "Esports", groupUniverse: "Vũ trụ", universeOnly: "Chỉ vũ trụ",
     yearUpcoming: "Năm sắp tới", yearDone: "Năm đã kết thúc",

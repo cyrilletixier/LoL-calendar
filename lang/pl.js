@@ -21,7 +21,7 @@ window.LOL_I18N = window.LOL_I18N || {};
       agendaAria: "Kalendarz miesiąc po miesiącu", monthJumpAria: "Przejdź do miesiąca",
       tlNote: "Kliknij pasek, aby zobaczyć szczegóły. Przerywana ramka: daty przybliżone. Patche wychodzą we wskazanym dniu, czasu pacyficznego.",
       swipeHint: "Przesuń oś czasu, aby zmienić miesiąc, i dotknij paska, aby zobaczyć szczegóły. Przerywana ramka: daty przybliżone.",
-      footer: "Kalendarz stworzony przez fanów, niezwiązany z Riot Games. Dane na 27 listopada 2026: przyszłe daty mogą się jeszcze zmienić.",
+      footer: "Kalendarz stworzony przez fanów, niezwiązany z Riot Games. Dane na 28 listopada 2026: przyszłe daty mogą się jeszcze zmienić.",
       show: "Pokaż", all: "Wszystko", gameOnly: "Tylko gra", proOnly: "Tylko esport",
       groupGame: "W grze", groupPro: "Esport", groupUniverse: "Uniwersum", universeOnly: "Tylko uniwersum",
       yearUpcoming: "Nadchodzący rok", yearDone: "Rok zakończony",

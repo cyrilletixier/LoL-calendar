@@ -16,7 +16,7 @@ window.LOL_I18N.ko = {
     agendaAria: "월별 일정", monthJumpAria: "월로 이동",
     tlNote: "막대를 클릭하면 상세 정보가 열립니다. 점선 테두리: 대략적인 날짜. 패치는 표시된 날짜(태평양 시간)에 적용됩니다.",
     swipeHint: "타임라인을 밀어 월을 바꾸고, 막대를 눌러 상세 정보를 확인하세요. 점선 테두리: 대략적인 날짜.",
-    footer: "팬이 만든 비공식 달력으로 Riot Games와 관련이 없습니다. 2026년 11월 27일 기준 정보이며 향후 일정은 바뀔 수 있습니다.",
+    footer: "팬이 만든 비공식 달력으로 Riot Games와 관련이 없습니다. 2026년 11월 28일 기준 정보이며 향후 일정은 바뀔 수 있습니다.",
     show: "표시", all: "전체", gameOnly: "게임만", proOnly: "e스포츠만",
     groupGame: "게임", groupPro: "e스포츠", groupUniverse: "세계관", universeOnly: "세계관만",
     yearUpcoming: "다가오는 연도", yearDone: "종료된 연도",
